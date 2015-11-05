@@ -93,45 +93,8 @@ namespace ECommerce.Web {
                     cUserNameStore.Expires = DateTime.Now.AddDays(30);
                     Response.Cookies.Add(cUserNameStore);
                 }
-                LoginToUnido();
                 Response.Redirect("/Manage/Systems/Default.aspx");
             }
         }
-
-        public void LoginToUnido() {
-            try {
-                HttpWebRequest request = null;
-                var cookieContainer = new CookieContainer();
-                if (null != Session["CookieContainer"]) {
-                    cookieContainer = Session["CookieContainer"] as CookieContainer;
-                }
-                ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
-                string url = "https://unido.benchmarkindex.com/login.php";
-                request = WebRequest.Create(url) as HttpWebRequest;
-                request.CookieContainer = cookieContainer;
-                request.ProtocolVersion = HttpVersion.Version10;
-                request.ContentType = "application/x-www-form-urlencoded";
-                request.Method = "POST";
-                request.UserAgent = DefaultUserAgent;
-                //string form = "userId=" + ConfigurationManager.AppSettings["user"] + "&password=" + ConfigurationManager.AppSettings["pwd"] + "&login=Enter&theaction=1";
-                var user = HttpContext.Current.Session["CurrentUser"] as OrgUsers;
-                string form = "userId=" + user.UuserId + "&password=" + user.Upwd + "&login=Enter&theaction=1";
-                byte[] data = Encoding.UTF8.GetBytes(form);
-                request.ContentLength = data.Length;
-                using (Stream stream = request.GetRequestStream()) {
-                    stream.Write(data, 0, data.Length);
-                    stream.Close();
-                }
-                HttpWebResponse wr = request.GetResponse() as HttpWebResponse;
-                Session["CookieContainer"] = cookieContainer;
-            }
-            catch (Exception) {
-            }
-        }
-
-        private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors) {
-            return true;
-        }
-
     }
 }

@@ -8,8 +8,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-
-    <title>专家信息</title>
+    <script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>
+    <title>设备维护</title>
 </head>
 <body>
     <iframe id="ifrSub" name="ifrSub" width="100%" height="100%" frameborder="0" style="display: none" src=""></iframe>
@@ -17,59 +17,48 @@
         <div class="form-horizontal">
             <div class="modal-body">
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>专家姓名：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>名称：</label>
                     <div class="controls">
-                        <input type="text" id="txtName" placeholder="专家姓名" runat="server" />
-                    </div>
-                </div>
-
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>所属分类：</label>
-                    <div class="controls">
-                        <asp:DropDownList ID="ddltype" runat="server"></asp:DropDownList>
+                        <input type="text" id="txtName" placeholder="名称" runat="server" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>专家年龄：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>唯一编号：</label>
                     <div class="controls">
-                        <input type="text" id="txtage" placeholder="年龄" runat="server" />
+                        <input type="text" id="Text1" placeholder="唯一编号" runat="server" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>工作单位：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>可否借出：</label>
                     <div class="controls">
-                        <input type="text" id="txtaddr" placeholder="工作单位" runat="server" />
+                        <asp:DropDownList ID="ddltype" runat="server">
+                            <asp:ListItem Text="是" Value="1" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="否" Value="0"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>职称/职务：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;"></span>采购部门：</label>
                     <div class="controls">
-                        <input type="text" id="txtjob" placeholder="职称/职务" runat="server" />
+                        <input type="text" id="txtage" placeholder="采购部门" runat="server" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>研究方向：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;"></span>采购人：</label>
                     <div class="controls">
-                        <input type="text" id="txtserch" placeholder="研究方向" runat="server" />
+                        <input type="text" id="txtaddr" placeholder="采购人" runat="server" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>专家简介：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>入库时间：</label>
                     <div class="controls">
-                        <textarea id="txtdescr" placeholder="专家简介" runat="server" rows="4"></textarea>
+                        <input type="text" id="txtBirthDay" placeholder="入库时间 2114-01-01" runat="server" onfocus="WdatePicker()" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>学历：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;"></span>备注：</label>
                     <div class="controls">
-                        <input type="text" id="txtedu" placeholder="学历" runat="server" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword"><%--<span style="color: red;">*</span>--%>照片：</label>
-                    <div class="controls">
-                        <asp:FileUpload ID="fuPImg" runat="server" Width="200px" hegith="30px;" />
-                        <asp:Image ID="Image1" runat="server" Width="100px" Height="100px" Visible="False" />
+                        <textarea id="txtdescr" placeholder="备注" runat="server" rows="4"></textarea>
                     </div>
                 </div>
             </div>

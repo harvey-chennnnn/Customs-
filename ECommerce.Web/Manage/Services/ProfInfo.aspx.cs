@@ -22,16 +22,26 @@ namespace ECommerce.Web.Manage.Services {
             int pageNum = 1;
             int pageSize = 10;
             //分页查询语句
-            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.PIID DESC) as rownum,oo.*,ProfType.Name as TName FROM ProfInfo oo left join ProfType on ProfType.PTID=oo.PTID where oo.status=1 ";
+            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.DID DESC) as rownum,oo.* FROM DeviceList oo where oo.status=1 ";
             var name = string.Empty;
             if (!string.IsNullOrEmpty(txtRealName.Value)) {
                 name = txtRealName.Value;
-                sql += " and  oo.Name like '%" + name + "%' ";
+                sql += " and  oo.DeviceName like '%" + name + "%' ";
             }
             else if (!string.IsNullOrEmpty(Request.QueryString["name"])) {
                 name = Request.QueryString["name"];
                 txtRealName.Value = name;
-                sql += " and  oo.Name like '%" + name + "%' ";
+                sql += " and  oo.DeviceName like '%" + name + "%' ";
+            }
+            var puser = string.Empty;
+            if (!string.IsNullOrEmpty(Text1.Value)) {
+                puser = Text1.Value;
+                sql += " and  oo.Loaner like '%" + puser + "%' ";
+            }
+            else if (!string.IsNullOrEmpty(Request.QueryString["loaner"])) {
+                puser = Request.QueryString["loaner"];
+                Text1.Value = puser;
+                sql += " and  oo.Loaner like '%" + puser + "%' ";
             }
             if (!isFirstPage) {
                 try {
@@ -46,7 +56,7 @@ namespace ECommerce.Web.Manage.Services {
                 }
             }
             //分页方法
-            Pager1.GetDataBind("Repeater", "rptListWork", sql, pageNum, pageSize, "", "rownum", "ProfInfo.aspx?name=" + name + "&");
+            Pager1.GetDataBind("Repeater", "rptListWork", sql, pageNum, pageSize, "", "rownum", "ProfInfo.aspx?name=" + name + "&loaner=" + puser + "&");
             #endregion
         }
 
@@ -104,6 +114,23 @@ namespace ECommerce.Web.Manage.Services {
             else {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('操作失败！');</script>");
             }
+        }
+
+        protected string GetBtn(object eval, object loanable, object dId) {
+            string str = string.Empty;
+            if (eval.ToString() == "1") {
+                str =
+                    "<a href=\"javascript:void(0);\" class=\"btn btn-mini\" data-title=\"归还\" onclick=\"editData('" +
+                    eval + "')\">归还</a>";
+            }
+            else {
+                if (loanable.ToString() == "1") {
+                    str =
+                        "<a href=\"javascript:void(0);\" class=\"btn btn-mini\" data-title=\"借出\" onclick=\"editData('" +
+                        eval + "')\">借出</a>";
+                }
+            }
+            return str;
         }
     }
 }

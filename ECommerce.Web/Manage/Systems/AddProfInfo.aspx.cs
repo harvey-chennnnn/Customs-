@@ -9,45 +9,38 @@ using ECommerce.Admin.DAL;
 
 namespace ECommerce.Web.Manage.Systems {
     public partial class AddProfInfo : UI.WebPage {
-        private readonly ProfInfo _dataDal = new ProfInfo();
-        private readonly ProfType _dataSWCDal = new ProfType();
+        private readonly DeviceList _dataDal = new DeviceList();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
-                BindOrgTrain();
                 if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
                     BindData(Request.QueryString["OrgId"]);
                 }
             }
         }
 
-        private void BindOrgTrain() {
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            var str = " 1=1 order by CreateDate desc ";
-            var dt = _dataSWCDal.GetList(str, parameters).Tables[0];
-            ddltype.DataSource = dt;
-            ddltype.DataTextField = "Name";
-            ddltype.DataValueField = "PTID";
-            ddltype.DataBind();
-            ddltype.Items.Insert(0, new ListItem("请选择", ""));
-        }
+        //private void BindOrgTrain() {
+        //    List<SqlParameter> parameters = new List<SqlParameter>();
+        //    var str = " 1=1 order by CreateDate desc ";
+        //    var dt = _dataSWCDal.GetList(str, parameters).Tables[0];
+        //    ddltype.DataSource = dt;
+        //    ddltype.DataTextField = "Name";
+        //    ddltype.DataValueField = "PTID";
+        //    ddltype.DataBind();
+        //    ddltype.Items.Insert(0, new ListItem("请选择", ""));
+        //}
 
         private void BindData(string orgId) {
             try {
                 var model = _dataDal.GetModel(Convert.ToInt32(orgId));
                 if (null != model) {
-                    txtName.Value = model.Name;
-                    txtaddr.Value = model.ComAddr;
-                    txtage.Value = model.Age;
+                    txtName.Value = model.DeviceName;
+                    Text1.Value = model.PKey;
+                    txtage.Value = model.PurchaseDep;
                     txtdescr.Value = model.Descri;
-                    txtedu.Value = model.Education;
-                    txtjob.Value = model.Job;
-                    txtserch.Value = model.MajorSearch;
-                    ddltype.SelectedValue = model.PTID.ToString();
-                    if (!string.IsNullOrEmpty(model.Photo)) {
-                        Image1.Visible = true;
-                        Image1.ImageUrl = model.Photo;
-                    }
+                    txtaddr.Value = model.Purchaser;
+                    txtBirthDay.Value = Convert.ToDateTime(model.EnteringDate).ToString("yyyy-MM-dd");
+                    ddltype.SelectedValue = model.Loanable.ToString();
                 }
             }
             catch (Exception) {
@@ -55,50 +48,25 @@ namespace ECommerce.Web.Manage.Systems {
         }
 
         protected void btnSub_Click(object sender, EventArgs e) {
-            const string imgPath = "/UpLoad/Image";
             var name = txtName.Value.Trim();
-            var type = ddltype.SelectedValue;
-            var addr = txtaddr.Value;
+            var Loanable = ddltype.SelectedValue;
+            var Purchaser = txtaddr.Value;
             var descr = txtdescr.Value;
-            var age = txtage.Value;
-            var job = txtjob.Value;
-            var ser = txtserch.Value;
-            var edu = txtedu.Value;
+            var PurchaseDep = txtage.Value;
+            var EnteringDate = txtBirthDay.Value;
+            var PKey = Text1.Value;
             if (string.IsNullOrEmpty(name)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写专家姓名！');</script>");
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写设备名称！');</script>");
                 return;
             }
-            if (string.IsNullOrEmpty(type)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请选择所属分类！');</script>");
+            if (string.IsNullOrEmpty(PKey)) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写设备唯一编号！');</script>");
                 return;
             }
-            if (string.IsNullOrEmpty(addr)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写工作单位！');</script>");
+            if (string.IsNullOrEmpty(EnteringDate)) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写入库时间！');</script>");
                 return;
             }
-
-            if (string.IsNullOrEmpty(descr)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写专家简介！');</script>");
-                return;
-            }
-            if (string.IsNullOrEmpty(age)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写专家年龄！');</script>");
-                return;
-            }
-            if (string.IsNullOrEmpty(job)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写职称/职务！');</script>");
-                return;
-            }
-            if (string.IsNullOrEmpty(ser)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写研究方向！');</script>");
-                return;
-            }
-            if (string.IsNullOrEmpty(edu)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写学历！');</script>");
-                return;
-            }
-
-
             if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
                 try {
                     List<SqlParameter> parameters = new List<SqlParameter>();
@@ -106,41 +74,24 @@ namespace ECommerce.Web.Manage.Systems {
                     parameters.Add(parameter);
                     var dt = _dataDal.GetModel(Convert.ToInt32(Request.QueryString["OrgId"]));
                     if (null == dt) {
-                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('专家信息不存在！');</script>");
+                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('设备信息不存在！');</script>");
                         return;
                     }
-                    var exists =
-                        _dataDal.GetModel(
-                            " Name='" + name + "' and PIID!=" + Convert.ToInt32(Request.QueryString["OrgId"]),
+                    var exists = _dataDal.GetModel(" PKey='" + PKey + "' and DID!=" + Convert.ToInt32(Request.QueryString["OrgId"]),
                             new List<SqlParameter>());
                     if (null != exists) {
-                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('专家信息已经存在！');</script>");
+                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('设备编号已经存在！');</script>");
                         return;
                     }
-                    dt.Age = age;
-                    dt.ComAddr = addr;
+                    dt.PKey = PKey;
+                    dt.DeviceName = name;
                     dt.Descri = descr;
-                    dt.Education = edu;
-                    dt.Job = job;
-                    dt.MajorSearch = ser;
-                    dt.Name = name;
-                    dt.PTID = Convert.ToInt32(type);
-                    dt.UId = CurrentUser.UId;
+                    dt.EnteringDate = Convert.ToDateTime(EnteringDate);
+                    dt.Loanable = Convert.ToInt32(Loanable);
+                    dt.PurchaseDep = PurchaseDep;
+                    dt.Purchaser = Purchaser;
+                    dt.UID = CurrentUser.UId;
 
-                    if (fuPImg.HasFile) {
-                        if (!string.IsNullOrEmpty(dt.Photo)) {
-                            DirFile.DeleteFile(dt.Photo);
-                        }
-                        int size;
-                        string msg;
-                        string imgUrl;
-                        UpImg(ref fuPImg, out imgUrl, out msg, imgPath, out size);
-                        if (string.IsNullOrEmpty(imgUrl)) {
-                            Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('" + msg + "');</script>");
-                            return;
-                        }
-                        dt.Photo = imgUrl;
-                    }
                     var res = _dataDal.Update(dt);
                     if (res) {
                         Page.ClientScript.RegisterStartupScript(GetType(), "",
@@ -155,33 +106,22 @@ namespace ECommerce.Web.Manage.Systems {
                 }
             }
             else {
-                var model = new ECommerce.Admin.Model.ProfInfo {
-                    Age = age,
-                    Descri = descr,
-                    ComAddr = addr,
+                var model = new ECommerce.Admin.Model.DeviceList {
+                    PKey = PKey,
                     CreateDate = DateTime.Now,
-                    Education = edu,
-                    Job = job,
-                    MajorSearch = ser,
-                    Name = name,
-                    PTID = Convert.ToInt32(type),
+                    DeviceName = name,
+                    Descri = descr,
+                    EnteringDate = Convert.ToDateTime(EnteringDate),
+                    Loanable = Convert.ToInt32(Loanable),
+                    PurchaseDep = PurchaseDep,
+                    Purchaser = Purchaser,
+                    UID = CurrentUser.UId,
                     Status = 1
                 };
-                var exists = _dataDal.GetModel(" Name='" + name + "' ", new List<SqlParameter>());
+                var exists = _dataDal.GetModel(" PKey='" + PKey + "' ", new List<SqlParameter>());
                 if (null != exists) {
-                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('专家信息已经存在！');</script>");
+                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('设备编号已经存在！');</script>");
                     return;
-                }
-                if (fuPImg.HasFile) {
-                    int size;
-                    string msg;
-                    string imgUrl;
-                    UpImg(ref fuPImg, out imgUrl, out msg, imgPath, out size);
-                    if (string.IsNullOrEmpty(imgUrl)) {
-                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('" + msg + "');</script>");
-                        return;
-                    }
-                    model.Photo = imgUrl;
                 }
                 var resAdd = _dataDal.Add(model);
                 if (resAdd > 0) {
