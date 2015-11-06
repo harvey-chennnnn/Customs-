@@ -23,12 +23,22 @@
         });
         function addData(aId) {
             window.top.$op = this.window;
-            window.top.$modal = window.top.$.scojs_modal({ remote: '/Manage/Systems/AddProfInfo.aspx?aId=' + aId, title: '新增专家信息' });
+            window.top.$modal = window.top.$.scojs_modal({ remote: '/Manage/Systems/AddProfInfo.aspx?aId=' + aId, title: '新增设备信息' });
             window.top.$modal.show();
         }
         function editData(aId) {
             window.top.$op = this.window;
-            window.top.$modal = window.top.$.scojs_modal({ remote: '/Manage/Systems/AddProfInfo.aspx?OrgId=' + aId, title: '编辑专家信息' });
+            window.top.$modal = window.top.$.scojs_modal({ remote: '/Manage/Systems/AddProfInfo.aspx?OrgId=' + aId, title: '编辑设备信息' });
+            window.top.$modal.show();
+        }
+        function devOut(aId) {
+            window.top.$op = this.window;
+            window.top.$modal = window.top.$.scojs_modal({ remote: '/Manage/Systems/DevOut.aspx?OrgId=' + aId, title: '借出' });
+            window.top.$modal.show();
+        }
+        function devIn(aId) {
+            window.top.$op = this.window;
+            window.top.$modal = window.top.$.scojs_modal({ remote: '/Manage/Systems/DevIn.aspx?OrgId=' + aId, title: '归还' });
             window.top.$modal.show();
         }
         function openModal(url, title) {
@@ -50,7 +60,7 @@
             <div class="pannel-body">
                 <div class="form-inline">
                     设备名称：<input type="text" runat="server" id="txtRealName" class="input-small" placeholder="设备名称" />
-                    姓名：<input type="text" runat="server" id="Text1" class="input-small" placeholder="姓名" />
+                     借出人：<input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
                     <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-success" Text="搜索" OnClick="btnSearch_Click" />
                 </div>
                 <div class="btn-toolbar">
@@ -78,7 +88,7 @@
                                 <td style="text-align: center"><%#Eval("DeviceName")%></td>
                                 <td style="text-align: center"><%#Eval("Loanable").ToString()=="1"?"是":"否"%></td>
                                 <td style="text-align: center"><%#Eval("LoanStatus").ToString()=="1"?"已借出":"未借出"%></td>
-                                <td style="text-align: center"><%#Eval("LoanDate")??Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd")%></td>
+                                <td style="text-align: center"><%#Eval("LoanDate")!=DBNull.Value?Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd"):""%></td>
                                 <td style="text-align: center"><%#Eval("Loaner")%></td>
                                 <td style="text-align: center"><%#Convert.ToDateTime(Eval("EnteringDate")).ToString("yyyy-MM-dd")%></td>
                                 <td style="text-align: center"><a href="javascript:void(0);" class="btn btn-mini" data-title="查看明细" onclick="editData('<%#Eval("DID")%>')">查看</a></td>

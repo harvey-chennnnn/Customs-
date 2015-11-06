@@ -120,14 +120,14 @@ namespace ECommerce.Web.Manage.Services {
             string str = string.Empty;
             if (eval.ToString() == "1") {
                 str =
-                    "<a href=\"javascript:void(0);\" class=\"btn btn-mini\" data-title=\"归还\" onclick=\"editData('" +
-                    eval + "')\">归还</a>";
+                    "<a href=\"javascript:void(0);\" class=\"btn btn-mini\" data-title=\"归还\" onclick=\"devIn('" +
+                    dId + "')\">归还</a>";
             }
             else {
                 if (loanable.ToString() == "1") {
                     str =
-                        "<a href=\"javascript:void(0);\" class=\"btn btn-mini\" data-title=\"借出\" onclick=\"editData('" +
-                        eval + "')\">借出</a>";
+                        "<a href=\"javascript:void(0);\" class=\"btn btn-mini\" data-title=\"借出\" onclick=\"devOut('" +
+                        dId + "')\">借出</a>";
                 }
             }
             return str;

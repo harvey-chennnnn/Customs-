@@ -10,7 +10,7 @@
 namespace ECommerce.Web.Manage.Systems {
     
     
-    public partial class AddOrgDepUser {
+    public partial class DevIn {
         
         /// <summary>
         /// form1 控件。
@@ -22,94 +22,76 @@ namespace ECommerce.Web.Manage.Systems {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtName 控件。
+        /// litDevName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
+        protected global::System.Web.UI.WebControls.Literal litDevName;
         
         /// <summary>
-        /// txtUserName 控件。
+        /// litPkey 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUserName;
+        protected global::System.Web.UI.WebControls.Literal litPkey;
         
         /// <summary>
-        /// txtPwd 控件。
+        /// litDescri 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPwd;
+        protected global::System.Web.UI.WebControls.Literal litDescri;
         
         /// <summary>
-        /// txtpw 控件。
+        /// litLoaner 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtpw;
+        protected global::System.Web.UI.WebControls.Literal litLoaner;
         
         /// <summary>
-        /// ddlSex 控件。
+        /// litLoanDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect ddlSex;
+        protected global::System.Web.UI.WebControls.Literal litLoanDate;
         
         /// <summary>
-        /// rboSingle 控件。
+        /// litLoanDescri 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rboSingle;
+        protected global::System.Web.UI.WebControls.Literal litLoanDescri;
         
         /// <summary>
-        /// rboSinglestaadmin 控件。
+        /// txtReturnDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rboSinglestaadmin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtReturnDate;
         
         /// <summary>
-        /// txtCell 控件。
+        /// txtdescr 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCell;
-        
-        /// <summary>
-        /// txtUuser 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUuser;
-        
-        /// <summary>
-        /// txtUpwd 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUpwd;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtdescr;
         
         /// <summary>
         /// btnSub 控件。

@@ -1738,6 +1738,8 @@
     <Content Include="Manage\Systems\AddArticleType.aspx" />
     <Content Include="Manage\Systems\AddCmOrgArea.aspx" />
     <Content Include="Manage\Systems\AddColumn.aspx" />
+    <Content Include="Manage\Systems\DevIn.aspx" />
+    <Content Include="Manage\Systems\DevOut.aspx" />
     <Content Include="Manage\Systems\AJAX\DataProcess.aspx" />
     <Content Include="App_Browsers\config.browser" />
     <Content Include="css\main.css" />
@@ -2579,6 +2581,20 @@
     </Compile>
     <Compile Include="Manage\Systems\AddColumn.aspx.designer.cs">
       <DependentUpon>AddColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\DevIn.aspx.cs">
+      <DependentUpon>DevIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\DevIn.aspx.designer.cs">
+      <DependentUpon>DevIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\DevOut.aspx.cs">
+      <DependentUpon>DevOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\DevOut.aspx.designer.cs">
+      <DependentUpon>DevOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\AJAX\DataProcess.aspx.cs">
       <DependentUpon>DataProcess.aspx</DependentUpon>

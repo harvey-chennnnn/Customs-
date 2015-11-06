@@ -10,7 +10,7 @@
 namespace ECommerce.Web.Manage.Systems {
     
     
-    public partial class Top {
+    public partial class DevOut {
         
         /// <summary>
         /// form1 控件。
@@ -22,39 +22,66 @@ namespace ECommerce.Web.Manage.Systems {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// divLogged 控件。
+        /// litDevName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogged;
+        protected global::System.Web.UI.WebControls.Literal litDevName;
         
         /// <summary>
-        /// litUserName 控件。
+        /// litPkey 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litUserName;
+        protected global::System.Web.UI.WebControls.Literal litPkey;
         
         /// <summary>
-        /// lbtnLogout 控件。
+        /// litDescri 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnLogout;
+        protected global::System.Web.UI.WebControls.Literal litDescri;
         
         /// <summary>
-        /// litError 控件。
+        /// ddltype 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litError;
+        protected global::System.Web.UI.WebControls.DropDownList ddltype;
+        
+        /// <summary>
+        /// txtBirthDay 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtBirthDay;
+        
+        /// <summary>
+        /// txtdescr 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtdescr;
+        
+        /// <summary>
+        /// btnSub 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSub;
     }
 }

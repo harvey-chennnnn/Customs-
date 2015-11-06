@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>企业测评诊断与提升服务系统</title>
+    <title>海关笔记本防盗系统</title>
     <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>

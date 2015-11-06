@@ -58,7 +58,7 @@
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;"></span>备注：</label>
                     <div class="controls">
-                        <textarea id="txtdescr" placeholder="备注" runat="server" rows="4"></textarea>
+                        <textarea id="txtdescr" placeholder="备注" runat="server" rows="10"></textarea>
                     </div>
                 </div>
             </div>
