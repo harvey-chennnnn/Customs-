@@ -133,6 +133,7 @@
             background-image: none;
             background-color: transparent;
             border-bottom-color: #ccc;
+            font-size: smaller;
         }
     </style>
 </head>
@@ -187,7 +188,7 @@
                     </tr>
                 </table>
                 <div id="dMsg" runat="server" visible="False">
-                    <strong>消息：</strong>
+                    <h5>消息：</h5>
                     <div class="chats-list chats" style="border: solid 1px #ddd;">
                         <asp:Literal ID="litMsg" runat="server"></asp:Literal>
                     </div>
@@ -204,7 +205,7 @@
                     </div>
                 </div>
                 <div style="margin-top: 50px;">
-                    <strong>借出历史：</strong>
+                    <h5>借出历史：</h5>
                     <table class="table table-bordered" border="0" id="tabList" style="/*width: 70%; margin: 0*/">
                         <tr>
                             <th nowrap="nowrap">借出人</th>

@@ -85,7 +85,7 @@
                         <input id="rboSingle" type="radio" runat="server" name="rboSelectType" value="1" onclick="hideorg();" />
                         系统管理员
                         <input id="rboSinglestaadmin" type="radio" runat="server" name="rboSelectType" value="15" onclick="shorg();" />
-                        测评师
+                        普通用户
                         <%--<input id="rboDouble" type="radio" runat="server" name="rboSelectType" value="14" onclick="shorg();" />
                         专家--%>
                     </div>
@@ -96,7 +96,7 @@
                         <input type="text" id="txtCell" placeholder="手机" runat="server" />
                     </div>
                 </div>
-                <div class="control-group">
+                <%--<div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>测评用户名</label>
                     <div class="controls">
                         <input type="text" id="txtUuser" placeholder="测评用户名" runat="server" />
@@ -108,7 +108,7 @@
                         <span>
                             <input id="txtUpwd" runat="server" name="txtUpwd" placeholder="测评密码" type="text" cssclass="input_txt border_radius" autocomplete="off" /></span>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
         <div class="modal-footer">

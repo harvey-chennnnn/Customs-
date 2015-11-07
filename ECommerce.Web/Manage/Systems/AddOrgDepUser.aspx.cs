@@ -43,8 +43,8 @@ namespace ECommerce.Web.Manage.Systems {
                     txtpw.Attributes.Add("Value", dt.Rows[0]["UserPwd"].ToString());
                     txtpw.Attributes.Add("type", "password");
 
-                    txtUuser.Value = dt.Rows[0]["UuserId"].ToString();
-                    txtUpwd.Value = dt.Rows[0]["Upwd"].ToString();
+                    //txtUuser.Value = dt.Rows[0]["UuserId"].ToString();
+                    //txtUpwd.Value = dt.Rows[0]["Upwd"].ToString();
 
                     if (dt.Rows[0]["Type"].ToString() == "15") {
                         rboSinglestaadmin.Checked = true;
@@ -85,8 +85,8 @@ namespace ECommerce.Web.Manage.Systems {
             var userName = txtUserName.Value.Trim();
             var pwd = txtPwd.Value.Trim();
             var pw = txtpw.Value.Trim();
-            var uUser = txtUuser.Value.Trim();
-            var uPwd = txtUpwd.Value.Trim();
+            //var uUser = txtUuser.Value.Trim();
+            //var uPwd = txtUpwd.Value.Trim();
             if (string.IsNullOrEmpty(name)) {
                 //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写姓名！');window.parent.$modal.destroy();</script>");
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写姓名！');</script>");
@@ -142,14 +142,14 @@ namespace ECommerce.Web.Manage.Systems {
                 return;
 
             }
-            if (string.IsNullOrEmpty(uUser)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写测评用户名！');</script>");
-                return;
-            }
-            if (string.IsNullOrEmpty(uPwd)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写测评密码！');</script>");
-                return;
-            }
+            //if (string.IsNullOrEmpty(uUser)) {
+            //    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写测评用户名！');</script>");
+            //    return;
+            //}
+            //if (string.IsNullOrEmpty(uPwd)) {
+            //    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写测评密码！');</script>");
+            //    return;
+            //}
             var orgid = "0";
             var type = Convert.ToInt32(Request.Form["rboSelectType"]);
             if (1 != type) {
@@ -167,7 +167,7 @@ namespace ECommerce.Web.Manage.Systems {
                     model.HomeAddress = "";
                     model.Phone = cell;
                     model.Sex = sex;
-                    var res = _dataDal.UpdateEmpUser(orgid, Request.QueryString["empId"], name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, "",uUser,uPwd);
+                    var res = _dataDal.UpdateEmpUser(orgid, Request.QueryString["empId"], name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, "","","");
                     if (res == "1") {
                         Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
                         //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
@@ -194,7 +194,7 @@ namespace ECommerce.Web.Manage.Systems {
                     Status = 1
                 };
 
-                var resAdd = _dataDal.AddEmpUserType(orgid, name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, uUser, uPwd);
+                var resAdd = _dataDal.AddEmpUserType(orgid, name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, "", "");
                 if (resAdd > 0) {
                     Page.ClientScript.RegisterStartupScript(GetType(), "",
                         "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
