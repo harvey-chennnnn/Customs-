@@ -148,46 +148,49 @@
                 <div class="btn-toolbar">
                     <a href="/Manage/Services/ProfInfo.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>" class="btn btn-mini">返回</a>
                 </div>
-                <table style="width: 100%" border="0" cellspacing="0" cellpadding="0" class="table-form">
-                    <tr>
-                        <td class="tf-label">名称：
-                        </td>
-                        <td class="tf-con">
-                            <asp:Literal ID="litDevName" runat="server"></asp:Literal>
-                        </td>
-                        <td class="tf-label">唯一编号
-                        </td>
-                        <td class="tf-con">
-                            <asp:Literal ID="litPkey" runat="server"></asp:Literal>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" class="tf-label">备注：</td>
-                        <td colspan="3" valign="top" class="tf-con">
-                            <div style="width: 450px;">
-                                <asp:Literal ID="litDescri" runat="server"></asp:Literal>
-                            </div>
+                <div>
+                    <h5>设备信息：</h5>
+                    <table style="width: 100%;border: 1px solid #ddd;" cellspacing="0" cellpadding="0" class="table-form">
+                        <tr>
+                            <td class="tf-label">名称：
+                            </td>
+                            <td class="tf-con">
+                                <asp:Literal ID="litDevName" runat="server"></asp:Literal>
+                            </td>
+                            <td class="tf-label">唯一编号：
+                            </td>
+                            <td class="tf-con">
+                                <asp:Literal ID="litPkey" runat="server"></asp:Literal>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="tf-label">备注：</td>
+                            <td colspan="3" valign="top" class="tf-con">
+                                <div style="width: 450px;">
+                                    <asp:Literal ID="litDescri" runat="server"></asp:Literal>
+                                </div>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" class="tf-label">状态：</td>
-                        <td colspan="3" valign="top" class="tf-con">
-                            <asp:Literal ID="litStatus" runat="server"></asp:Literal>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" class="tf-label">借出人：</td>
-                        <td valign="top" class="tf-con">
-                            <asp:Literal ID="litLoaner" runat="server"></asp:Literal>
-                        </td>
-                        <td valign="top" class="tf-label">借出时间：</td>
-                        <td valign="top" class="tf-con">
-                            <asp:Literal ID="litLoanDate" runat="server"></asp:Literal>
-                        </td>
-                    </tr>
-                </table>
-                <div id="dMsg" runat="server" visible="False">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="tf-label">状态：</td>
+                            <td colspan="3" valign="top" class="tf-con">
+                                <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="tf-label">借出人：</td>
+                            <td valign="top" class="tf-con">
+                                <asp:Literal ID="litLoaner" runat="server"></asp:Literal>
+                            </td>
+                            <td valign="top" class="tf-label">借出时间：</td>
+                            <td valign="top" class="tf-con">
+                                <asp:Literal ID="litLoanDate" runat="server"></asp:Literal>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="dMsg" runat="server" visible="False" style="margin-bottom: 50px;">
                     <h5>消息：</h5>
                     <div class="chats-list chats" style="border: solid 1px #ddd;">
                         <asp:Literal ID="litMsg" runat="server"></asp:Literal>
@@ -204,7 +207,7 @@
 
                     </div>
                 </div>
-                <div style="margin-top: 50px;">
+                <div>
                     <h5>借出历史：</h5>
                     <table class="table table-bordered" border="0" id="tabList" style="/*width: 70%; margin: 0*/">
                         <tr>
