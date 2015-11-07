@@ -193,7 +193,7 @@
                         <asp:Literal ID="litMsg" runat="server"></asp:Literal>
                     </div>
                     <div style="margin-top: 10px;">
-                        <textarea name="textarea" class="form-control" rows="3" cols="20"></textarea>
+                        <textarea name="textarea" class="form-control" rows="3"></textarea>
                         <div style="margin-top: 5px;">
                             <div class="pull-right">
                                 <div class="btn-group btn-group-sm" style="margin-left: 15px;">

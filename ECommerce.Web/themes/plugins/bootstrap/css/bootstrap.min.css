@@ -1947,6 +1947,7 @@ legend + .control-group {
     width: 160px;
     padding-top: 5px;
     text-align: right;
+    cursor: default;
 }
 
 .form-horizontal .controls {
