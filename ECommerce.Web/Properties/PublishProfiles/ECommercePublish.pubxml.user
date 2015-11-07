@@ -28,22 +28,22 @@
       <publishTime>07/30/2015 20:56:53</publishTime>
     </File>
     <File Include="bin/ECommerce.Admin.dll">
-      <publishTime>08/17/2015 20:24:28</publishTime>
+      <publishTime>11/08/2015 00:10:40</publishTime>
     </File>
     <File Include="bin/ECommerce.Area.dll">
-      <publishTime>08/17/2015 20:24:28</publishTime>
+      <publishTime>10/13/2015 21:01:09</publishTime>
     </File>
     <File Include="bin/ECommerce.CM.dll">
-      <publishTime>08/17/2015 20:24:28</publishTime>
+      <publishTime>10/13/2015 22:59:24</publishTime>
     </File>
     <File Include="bin/ECommerce.DBUtilities.dll">
-      <publishTime>07/30/2015 20:56:53</publishTime>
+      <publishTime>11/08/2015 00:10:39</publishTime>
     </File>
     <File Include="bin/ECommerce.dll">
-      <publishTime>08/17/2015 21:02:13</publishTime>
+      <publishTime>11/08/2015 00:10:41</publishTime>
     </File>
     <File Include="bin/ECommerce.Lib.dll">
-      <publishTime>08/17/2015 20:24:29</publishTime>
+      <publishTime>11/08/2015 00:10:40</publishTime>
     </File>
     <File Include="bin/ECommerce.Order.dll">
       <publishTime>03/25/2014 15:06:05</publishTime>
@@ -58,7 +58,7 @@
       <publishTime>03/25/2014 15:06:05</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
-      <publishTime>07/30/2015 21:24:40</publishTime>
+      <publishTime>11/05/2015 22:12:51</publishTime>
     </File>
     <File Include="bin/ICSharpCode.SharpZipLib.dll">
       <publishTime>05/26/2015 22:18:06</publishTime>
@@ -99,6 +99,12 @@
     <File Include="bootstrap.min.js">
       <publishTime>12/22/2014 22:13:23</publishTime>
     </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>09/01/2015 09:54:40</publishTime>
+    </File>
+    <File Include="css/main-FE.css">
+      <publishTime>10/13/2015 11:03:21</publishTime>
+    </File>
     <File Include="css/main.css">
       <publishTime>07/30/2015 20:57:30</publishTime>
     </File>
@@ -106,7 +112,7 @@
       <publishTime>07/30/2015 20:57:30</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>08/04/2015 21:47:16</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/26/2015 22:33:04</publishTime>
@@ -132,6 +138,9 @@
     <File Include="icons/unknown.gif">
       <publishTime>07/30/2015 20:57:31</publishTime>
     </File>
+    <File Include="images/1444474795_mail_search.png">
+      <publishTime>10/10/2015 14:02:18</publishTime>
+    </File>
     <File Include="images/ajax-loader.gif">
       <publishTime>07/30/2015 20:57:33</publishTime>
     </File>
@@ -147,14 +156,71 @@
     <File Include="images/back.png">
       <publishTime>07/30/2015 20:57:33</publishTime>
     </File>
+    <File Include="images/banner-library.jpg">
+      <publishTime>10/10/2015 17:33:17</publishTime>
+    </File>
+    <File Include="images/banner-word.png">
+      <publishTime>08/31/2015 15:19:24</publishTime>
+    </File>
+    <File Include="images/banner.jpg">
+      <publishTime>08/25/2015 10:59:22</publishTime>
+    </File>
     <File Include="images/bg.png">
       <publishTime>07/30/2015 20:57:33</publishTime>
+    </File>
+    <File Include="images/color_border.jpg">
+      <publishTime>01/31/2015 08:14:40</publishTime>
     </File>
     <File Include="images/hand.png">
       <publishTime>05/26/2015 22:33:04</publishTime>
     </File>
     <File Include="images/hot.png">
       <publishTime>05/26/2015 22:33:04</publishTime>
+    </File>
+    <File Include="images/icno-zx.png">
+      <publishTime>08/26/2015 11:20:32</publishTime>
+    </File>
+    <File Include="images/image/expert.jpg">
+      <publishTime>08/28/2015 16:40:54</publishTime>
+    </File>
+    <File Include="images/image/ico-cp.jpg">
+      <publishTime>08/31/2015 09:32:54</publishTime>
+    </File>
+    <File Include="images/image/ico-cp.png">
+      <publishTime>10/10/2015 14:04:52</publishTime>
+    </File>
+    <File Include="images/image/ico-cp1.png">
+      <publishTime>10/09/2015 18:32:18</publishTime>
+    </File>
+    <File Include="images/image/ico-qyk.png">
+      <publishTime>10/10/2015 14:21:00</publishTime>
+    </File>
+    <File Include="images/image/ico-qyk1.png">
+      <publishTime>10/09/2015 18:38:18</publishTime>
+    </File>
+    <File Include="images/image/ico-ts.png">
+      <publishTime>10/10/2015 14:15:25</publishTime>
+    </File>
+    <File Include="images/image/ico-ts1.png">
+      <publishTime>10/09/2015 18:35:16</publishTime>
+    </File>
+    <File Include="images/image/man1.jpg">
+      <publishTime>01/31/2015 07:31:22</publishTime>
+    </File>
+    <File Include="images/image/man2.jpg">
+      <publishTime>01/31/2015 07:34:02</publishTime>
+    </File>
+    <File Include="images/image/woman1.jpg">
+      <publishTime>01/31/2015 07:32:48</publishTime>
+    </File>
+    <File Include="images/jigou-logo1.png">
+      <publishTime>10/10/2015 12:09:41</publishTime>
+    </File>
+    <File Include="images/jigou-logo2.png">
+      <publishTime>10/09/2015 15:17:12</publishTime>
+    </File>
+    <File Include="images/line.gif">
+      <publishTime>08/31/2015 10:51:58</publishTime>
     </File>
     <File Include="images/Line.png">
       <publishTime>07/30/2015 20:57:33</publishTime>
@@ -170,6 +236,9 @@
     </File>
     <File Include="images/menu_tit.png">
       <publishTime>05/26/2015 22:33:04</publishTime>
+    </File>
+    <File Include="images/pingjia.png">
+      <publishTime>08/26/2015 09:56:48</publishTime>
     </File>
     <File Include="images/play.png">
       <publishTime>05/26/2015 22:33:04</publishTime>
@@ -230,6 +299,9 @@
     </File>
     <File Include="images/templatepwi.jpg">
       <publishTime>05/26/2015 22:33:04</publishTime>
+    </File>
+    <File Include="images/w3cfuns_code.html">
+      <publishTime>10/10/2015 14:39:55</publishTime>
     </File>
     <File Include="includes/CalendarPopup.js">
       <publishTime>07/30/2015 20:57:35</publishTime>
@@ -4902,6 +4974,9 @@
     <File Include="Info.aspx">
       <publishTime>07/30/2015 20:56:55</publishTime>
     </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>09/01/2015 20:51:59</publishTime>
+    </File>
     <File Include="js/bootstrap/.svn/all-wcprops">
       <publishTime>12/25/2014 23:44:26</publishTime>
     </File>
@@ -4983,6 +5058,9 @@
     <File Include="js/html5shiv.min.js">
       <publishTime>07/30/2015 21:18:28</publishTime>
     </File>
+    <File Include="js/jquery.js">
+      <publishTime>09/01/2015 20:51:59</publishTime>
+    </File>
     <File Include="js/jquery.min.js">
       <publishTime>07/30/2015 21:18:28</publishTime>
     </File>
@@ -4992,11 +5070,14 @@
     <File Include="js/respond.min.js">
       <publishTime>07/30/2015 21:18:28</publishTime>
     </File>
+    <File Include="js/scroll.js">
+      <publishTime>10/13/2015 23:06:53</publishTime>
+    </File>
     <File Include="json1.json">
       <publishTime>05/26/2015 22:33:20</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>08/04/2015 21:47:16</publishTime>
+      <publishTime>11/07/2015 17:58:02</publishTime>
     </File>
     <File Include="Manage/Adver/AddAd.aspx">
       <publishTime>05/26/2015 22:18:11</publishTime>
@@ -5026,19 +5107,19 @@
       <publishTime>07/30/2015 20:56:55</publishTime>
     </File>
     <File Include="Manage/Area/Area.aspx">
-      <publishTime>08/04/2015 21:47:16</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Area/AreaAtt.aspx">
       <publishTime>07/30/2015 20:56:55</publishTime>
     </File>
     <File Include="Manage/Area/AreaMain.aspx">
-      <publishTime>08/04/2015 21:47:16</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/BaselineData/Default.aspx">
-      <publishTime>08/04/2015 21:47:16</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/BaselineData/Detail.aspx">
-      <publishTime>08/01/2015 20:14:16</publishTime>
+      <publishTime>09/03/2015 14:52:21</publishTime>
     </File>
     <File Include="Manage/CM/AddArticle.aspx">
       <publishTime>07/30/2015 20:56:56</publishTime>
@@ -5074,7 +5155,7 @@
       <publishTime>07/30/2015 20:56:59</publishTime>
     </File>
     <File Include="Manage/CM/CMAuditArticle.aspx">
-      <publishTime>07/30/2015 20:56:59</publishTime>
+      <publishTime>09/03/2015 21:05:03</publishTime>
     </File>
     <File Include="Manage/CM/CMColumn.aspx">
       <publishTime>07/30/2015 20:56:59</publishTime>
@@ -5092,13 +5173,13 @@
       <publishTime>07/30/2015 20:56:59</publishTime>
     </File>
     <File Include="Manage/Companies/Default.aspx">
-      <publishTime>08/13/2015 21:10:32</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Companies/Detail.aspx">
-      <publishTime>08/01/2015 20:36:09</publishTime>
+      <publishTime>11/07/2015 17:53:09</publishTime>
     </File>
     <File Include="Manage/Companies/Report.aspx">
-      <publishTime>08/05/2015 00:15:20</publishTime>
+      <publishTime>09/03/2015 14:52:22</publishTime>
     </File>
     <File Include="Manage/Farmer/FarmerDefault.aspx">
       <publishTime>02/14/2014 13:48:10</publishTime>
@@ -5116,10 +5197,10 @@
       <publishTime>07/30/2015 20:57:00</publishTime>
     </File>
     <File Include="Manage/MeasurementData/Default.aspx">
-      <publishTime>08/04/2015 21:47:16</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/MeasurementData/Detail.aspx">
-      <publishTime>08/01/2015 20:18:33</publishTime>
+      <publishTime>09/03/2015 20:53:37</publishTime>
     </File>
     <File Include="Manage/News/AddAdInfoPic.aspx">
       <publishTime>05/26/2015 22:18:29</publishTime>
@@ -5245,16 +5326,22 @@
       <publishTime>01/23/2014 14:50:07</publishTime>
     </File>
     <File Include="Manage/Services/Advisory.aspx">
-      <publishTime>08/17/2015 20:57:12</publishTime>
+      <publishTime>10/14/2015 01:02:15</publishTime>
+    </File>
+    <File Include="Manage/Services/Advisory1.aspx">
+      <publishTime>10/14/2015 01:02:42</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList.aspx">
-      <publishTime>08/14/2015 00:25:01</publishTime>
+      <publishTime>11/07/2015 17:56:27</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList1.aspx">
       <publishTime>08/14/2015 00:24:41</publishTime>
     </File>
+    <File Include="Manage/Services/DevDetail.aspx">
+      <publishTime>11/07/2015 23:14:25</publishTime>
+    </File>
     <File Include="Manage/Services/ProfInfo.aspx">
-      <publishTime>08/13/2015 23:14:04</publishTime>
+      <publishTime>11/07/2015 21:19:15</publishTime>
     </File>
     <File Include="Manage/Services/ProfOrg.aspx">
       <publishTime>08/13/2015 23:29:14</publishTime>
@@ -5287,7 +5374,7 @@
       <publishTime>07/30/2015 20:57:00</publishTime>
     </File>
     <File Include="Manage/SysLogs/ValueCompare.aspx">
-      <publishTime>08/04/2015 21:47:17</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddArea.aspx">
       <publishTime>12/20/2014 14:13:24</publishTime>
@@ -5302,13 +5389,13 @@
       <publishTime>12/20/2014 14:13:24</publishTime>
     </File>
     <File Include="Manage/Systems/AddArticleType.aspx">
-      <publishTime>08/04/2015 21:47:17</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddCmOrgArea.aspx">
       <publishTime>07/30/2015 20:57:05</publishTime>
     </File>
     <File Include="Manage/Systems/AddColumn.aspx">
-      <publishTime>08/04/2015 21:47:17</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddEarlyWCount.aspx">
       <publishTime>03/03/2014 11:34:51</publishTime>
@@ -5332,7 +5419,7 @@
       <publishTime>12/17/2014 20:49:41</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgDepUser.aspx">
-      <publishTime>08/04/2015 21:47:17</publishTime>
+      <publishTime>11/07/2015 22:25:17</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgLogistics.aspx">
       <publishTime>12/17/2014 20:49:42</publishTime>
@@ -5356,10 +5443,10 @@
       <publishTime>08/03/2015 10:07:58</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgWorkStation.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgWorStaUser.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddProductBrand.aspx">
       <publishTime>01/23/2014 14:50:02</publishTime>
@@ -5377,13 +5464,13 @@
       <publishTime>01/23/2014 14:50:03</publishTime>
     </File>
     <File Include="Manage/Systems/AddProfInfo.aspx">
-      <publishTime>08/17/2015 20:28:02</publishTime>
+      <publishTime>11/06/2015 20:40:42</publishTime>
     </File>
     <File Include="Manage/Systems/AddProfOrg.aspx">
-      <publishTime>08/17/2015 20:28:02</publishTime>
+      <publishTime>10/13/2015 22:35:20</publishTime>
     </File>
     <File Include="Manage/Systems/AddProfType.aspx">
-      <publishTime>08/13/2015 21:49:45</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddRechargeInfo.aspx">
       <publishTime>02/24/2014 18:04:27</publishTime>
@@ -5416,13 +5503,13 @@
       <publishTime>07/30/2015 20:57:05</publishTime>
     </File>
     <File Include="Manage/Systems/AddSystemPageConfig.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddSystemRoleInfo.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Systems/AddWorStaMach.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/AJAX/AddPC.aspx">
       <publishTime>07/30/2015 20:57:01</publishTime>
@@ -5518,7 +5605,7 @@
       <publishTime>05/26/2015 22:19:00</publishTime>
     </File>
     <File Include="Manage/Systems/ChangePass.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/07/2015 21:30:56</publishTime>
     </File>
     <File Include="Manage/Systems/ChFarmerAcc.aspx">
       <publishTime>12/19/2014 14:47:26</publishTime>
@@ -5560,7 +5647,13 @@
       <publishTime>01/23/2014 14:50:04</publishTime>
     </File>
     <File Include="Manage/Systems/Default.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/08/2015 00:07:13</publishTime>
+    </File>
+    <File Include="Manage/Systems/DevIn.aspx">
+      <publishTime>11/07/2015 21:35:59</publishTime>
+    </File>
+    <File Include="Manage/Systems/DevOut.aspx">
+      <publishTime>11/07/2015 21:36:28</publishTime>
     </File>
     <File Include="Manage/Systems/InBillHouse.aspx">
       <publishTime>02/14/2014 13:48:09</publishTime>
@@ -5584,10 +5677,10 @@
       <publishTime>12/15/2014 08:37:58</publishTime>
     </File>
     <File Include="Manage/Systems/OrgDefault.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/OrgDep.aspx">
-      <publishTime>08/04/2015 21:47:19</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/OrgLogistics.aspx">
       <publishTime>12/19/2014 14:47:26</publishTime>
@@ -5614,10 +5707,10 @@
       <publishTime>08/03/2015 10:07:58</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserDefault.aspx">
-      <publishTime>08/04/2015 21:47:20</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserDep.aspx">
-      <publishTime>08/04/2015 21:47:20</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserLogistics.aspx">
       <publishTime>12/17/2014 20:49:43</publishTime>
@@ -5635,7 +5728,7 @@
       <publishTime>08/03/2015 10:07:58</publishTime>
     </File>
     <File Include="Manage/Systems/OrgWorStaDefault.aspx">
-      <publishTime>08/04/2015 21:47:20</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/OutBill.aspx">
       <publishTime>02/28/2014 16:10:27</publishTime>
@@ -5680,22 +5773,22 @@
       <publishTime>07/30/2015 20:57:05</publishTime>
     </File>
     <File Include="Manage/Systems/SystemPageConfig.aspx">
-      <publishTime>08/04/2015 21:47:23</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/SystemRoleInfo.aspx">
-      <publishTime>08/04/2015 21:47:23</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/SystemSetPage.aspx">
-      <publishTime>08/04/2015 21:47:23</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/SystemSetRole.aspx">
-      <publishTime>08/04/2015 21:47:23</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/Top.aspx">
-      <publishTime>08/04/2015 21:47:23</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/UserRole.aspx">
-      <publishTime>08/04/2015 21:47:23</publishTime>
+      <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/Welcome.aspx">
       <publishTime>07/30/2015 20:57:05</publishTime>
@@ -6499,10 +6592,10 @@
       <publishTime>05/26/2015 22:41:00</publishTime>
     </File>
     <File Include="themes/default/main.css">
-      <publishTime>07/30/2015 21:21:10</publishTime>
+      <publishTime>11/07/2015 22:47:51</publishTime>
     </File>
     <File Include="themes/default/Master.min.css">
-      <publishTime>08/01/2015 20:05:54</publishTime>
+      <publishTime>09/03/2015 14:52:22</publishTime>
     </File>
     <File Include="themes/default/pad.css">
       <publishTime>07/30/2015 21:21:10</publishTime>
@@ -7480,7 +7573,7 @@
       <publishTime>07/30/2015 21:22:59</publishTime>
     </File>
     <File Include="themes/plugins/bootstrap/css/bootstrap.min.css">
-      <publishTime>07/30/2015 21:22:59</publishTime>
+      <publishTime>11/07/2015 22:49:46</publishTime>
     </File>
     <File Include="themes/plugins/bootstrap/img/glyphicons-halflings-white.png">
       <publishTime>07/30/2015 21:23:00</publishTime>
@@ -8007,11 +8100,14 @@
     <File Include="UserControl/Pager.ascx">
       <publishTime>07/30/2015 20:57:30</publishTime>
     </File>
+    <File Include="UserControl/Pager1.ascx">
+      <publishTime>10/13/2015 23:51:52</publishTime>
+    </File>
     <File Include="ValidateCode.aspx">
       <publishTime>07/30/2015 20:57:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/04/2015 21:54:37</publishTime>
+      <publishTime>11/06/2015 23:24:48</publishTime>
     </File>
     <File Include="WebServices/ECWebservices.asmx">
       <publishTime>02/11/2014 17:25:13</publishTime>
