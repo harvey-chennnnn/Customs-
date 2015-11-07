@@ -16,9 +16,9 @@
         <div class="form-horizontal">
             <div class="modal-body">
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword">老密码：</label>
+                    <label class="control-label" for="inputPassword">原始密码：</label>
                     <div class="controls">
-                        <asp:TextBox ID="txtOldPwd" runat="server" TextMode="Password" placeholder="老密码"></asp:TextBox>
+                        <asp:TextBox ID="txtOldPwd" runat="server" TextMode="Password" placeholder="原始密码"></asp:TextBox>
                     </div>
                 </div>
 

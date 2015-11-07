@@ -60,7 +60,7 @@
             <div class="pannel-body">
                 <div class="form-inline">
                     设备名称：<input type="text" runat="server" id="txtRealName" class="input-small" placeholder="设备名称" />
-                     借出人：<input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
+                    借出人：<input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
                     <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-success" Text="搜索" OnClick="btnSearch_Click" />
                 </div>
                 <div class="btn-toolbar">
@@ -91,7 +91,7 @@
                                 <td style="text-align: center"><%#Eval("LoanDate")!=DBNull.Value?Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd"):""%></td>
                                 <td style="text-align: center"><%#Eval("Loaner")%></td>
                                 <td style="text-align: center"><%#Convert.ToDateTime(Eval("EnteringDate")).ToString("yyyy-MM-dd")%></td>
-                                <td style="text-align: center"><a href="javascript:void(0);" class="btn btn-mini" data-title="查看明细" onclick="editData('<%#Eval("DID")%>')">查看</a></td>
+                                <td style="text-align: center"><a href="/Manage/Services/DevDetail.aspx?did=<%#Eval("DID")%>&name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>" class="btn btn-mini" data-title="查看明细">查看</a></td>
                                 <td style="text-align: center">
                                     <a href="javascript:void(0);" class="btn btn-mini" data-title="编辑设备信息" onclick="editData('<%#Eval("DID")%>')">编辑</a>
                                     <%#GetBtn(Eval("LoanStatus"),Eval("Loanable"),Eval("DID"))%>

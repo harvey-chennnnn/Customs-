@@ -31,15 +31,6 @@ namespace ECommerce.Web.Manage.Services {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtProName;
         
         /// <summary>
-        /// ddlStatus 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
-        
-        /// <summary>
         /// btnSearch 控件。
         /// </summary>
         /// <remarks>
@@ -47,24 +38,6 @@ namespace ECommerce.Web.Manage.Services {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
-        /// <summary>
-        /// btnCheck 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCheck;
-        
-        /// <summary>
-        /// btnoBackCheck 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnoBackCheck;
         
         /// <summary>
         /// rptArticle 控件。

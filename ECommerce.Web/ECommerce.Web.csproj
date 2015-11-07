@@ -48,10 +48,6 @@
     <Reference Include="DotNet.Framework.Common">
       <HintPath>..\ECommerce.Lib\DLL\DotNet.Framework.Common.dll</HintPath>
     </Reference>
-    <Reference Include="ECommerce.DBUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ECommerce.Lib\DLL\ECommerce.DBUtilities.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net20\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -166,6 +162,7 @@
     <Content Include="Manage\CM\AddArticle.aspx" />
     <Content Include="Manage\Companies\Detail.aspx" />
     <Content Include="Manage\Companies\Default.aspx" />
+    <Content Include="Manage\Services\DevDetail.aspx" />
     <Content Include="Manage\Services\Advisory1.aspx" />
     <Content Include="Manage\Systems\AddReply.aspx" />
     <Content Include="Manage\MeasurementData\Default.aspx" />
@@ -914,6 +911,13 @@
     <Compile Include="Manage\Companies\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Services\DevDetail.aspx.cs">
+      <DependentUpon>DevDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Services\DevDetail.aspx.designer.cs">
+      <DependentUpon>DevDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Services\Advisory1.aspx.cs">
       <DependentUpon>Advisory1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1546,6 +1550,10 @@
     <ProjectReference Include="..\ECommerce.CM\ECommerce.CM.csproj">
       <Project>{013cf61d-0526-4cb3-85df-3cdc493cc75c}</Project>
       <Name>ECommerce.CM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECommerce.DBUtilities\ECommerce.DBUtilities.csproj">
+      <Project>{c5b738c6-27d2-497e-8fdb-0b59e27c1d9b}</Project>
+      <Name>ECommerce.DBUtilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\ECommerce.Lib\ECommerce.Lib.csproj">
       <Project>{9b04dbbc-6a09-4678-92d2-87758b4b75c1}</Project>

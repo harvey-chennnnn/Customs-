@@ -72,10 +72,13 @@ namespace ECommerce.Lib.Security
                     if (dataReader.Read())
                     {
                         var orgUsersDal = new OrgUsers();
+                        var empDal = new OrgEmployees();
                         var user = orgUsersDal.ReaderBind(dataReader);
                         user.LastLoginTime = DateTime.Now;
                         orgUsersDal.Update(user);
+                        var emp = empDal.GetModel(Convert.ToInt32(user.EmplId));
                         HttpContext.Current.Session["CurrentUser"] = user;
+                        HttpContext.Current.Session["CurrentEmp"] = emp;
                     }
                     else
                     {

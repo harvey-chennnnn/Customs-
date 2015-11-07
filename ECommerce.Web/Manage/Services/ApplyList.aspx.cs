@@ -13,9 +13,9 @@ namespace ECommerce.Web.Manage.Services {
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
-                if (!string.IsNullOrEmpty(Request.QueryString["Status"])) {
-                    ddlStatus.SelectedValue = Request.QueryString["Status"];
-                }
+                //if (!string.IsNullOrEmpty(Request.QueryString["Status"])) {
+                //    ddlStatus.SelectedValue = Request.QueryString["Status"];
+                //}
                 if (!string.IsNullOrEmpty(Request.QueryString["ProName"])) {
                     txtProName.Value = Request.QueryString["ProName"];
                 }
@@ -26,16 +26,16 @@ namespace ECommerce.Web.Manage.Services {
             #region 分页
             //当前页码
             int pageNum = 1;
-            string sql = "select row_number() over(order by CreateDate desc) as rownum,* FROM ApplyList where AType=1 ";
+            string sql = "SELECT n.* FROM (select MAX(createtime) createtime,username,fromuser,Message,InfoId,MsgTitle,stTime,EdTime,IsValid,Remark from dr_user_notice GROUP BY UserName,FromUser) n left join dr_user tuser on tuser.UserName=n.UserName left JOIN dr_user fuser on fuser.UserName=n.fromuser where n.username='" + CurrentEmp.EmplName + "' ";
             var name = string.Empty;
             var status = string.Empty;
-            if (!string.IsNullOrEmpty(ddlStatus.SelectedValue) && ddlStatus.SelectedValue != "-1") {
-                status = ddlStatus.SelectedValue;
-                sql += " and Status =" + status;
-            }
+            //if (!string.IsNullOrEmpty(ddlStatus.SelectedValue) && ddlStatus.SelectedValue != "-1") {
+            //    status = ddlStatus.SelectedValue;
+            //    sql += " and Status =" + status;
+            //}
             if (!string.IsNullOrEmpty(txtProName.Value)) {
                 name = txtProName.Value;
-                sql += " and Name like '%" + name.Trim() + "%'";
+                sql += " and fuser.UserName like '%" + name.Trim() + "%'";
             }
 
             if (!isFirstPage) {
@@ -51,7 +51,7 @@ namespace ECommerce.Web.Manage.Services {
             }
 
             //分页方法
-            Pager.GetDataBind("Repeater", "rptArticle", sql, pageNum, 10, " ", "rownum", "ApplyList.aspx?ProName=" + name + "&Status=" + status + "&");
+            Pager.GetDataBindMySql("Repeater", "rptArticle", sql, pageNum, 10, " ORDER BY n.InfoId desc ", "ApplyList.aspx?ProName=" + name + "&Status=" + status + "&");
             #endregion
         }
         protected void btnCheck_Click(object sender, EventArgs e) {

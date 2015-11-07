@@ -23,12 +23,12 @@ namespace ECommerce.Web.Manage.Systems
                     var dalAccount = new Admin.DAL.OrgUsers();
                     if (user.UserPwd != uPwd)
                     {
-                        DotNet.Framework.Common.MessageBox.Show(this, "原密码输入错误！");
+                        DotNet.Framework.Common.MessageBox.Show(this, "原始密码错误！");
                         return;
                     }
                     if (nPwd != nPwd2)
                     {
-                        DotNet.Framework.Common.MessageBox.Show(this, "再次密码不一致！");
+                        DotNet.Framework.Common.MessageBox.Show(this, "两次密码不一致！");
                         return;
                     }
                     user.UserPwd = nPwd2;
@@ -52,12 +52,12 @@ namespace ECommerce.Web.Manage.Systems
                     var dalAccount = new Admin.DAL.FactroyInfo();
                     if (facUser.PassWord != uPwd)
                     {
-                        DotNet.Framework.Common.MessageBox.Show(this, "原密码输入错误！");
+                        DotNet.Framework.Common.MessageBox.Show(this, "原始密码错误！");
                         return;
                     }
                     if (nPwd != nPwd2)
                     {
-                        DotNet.Framework.Common.MessageBox.Show(this, "再次密码不一致！");
+                        DotNet.Framework.Common.MessageBox.Show(this, "两次密码不一致！");
                         return;
                     }
                     facUser.PassWord = nPwd2;

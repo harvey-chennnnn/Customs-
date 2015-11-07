@@ -10,6 +10,11 @@
     <meta http-equiv="Expires" content="0">
     <script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>
     <title>借出</title>
+    <style>
+        .form-horizontal .controls {
+            line-height: 28px;
+        }
+    </style>
 </head>
 <body>
     <iframe id="ifrSub" name="ifrSub" width="100%" height="100%" frameborder="0" style="display: none" src=""></iframe>

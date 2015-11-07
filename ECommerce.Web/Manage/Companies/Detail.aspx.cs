@@ -1,50 +1,64 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 using ECommerce.Admin.DAL;
+using ECommerce.DBUtilities;
 using ECommerce.Web.UI;
 
 namespace ECommerce.Web.Manage.Companies {
     public partial class Detail : WebPage {
-        private readonly ComInfo _comInfoDal = new ComInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             try {
                 if (!string.IsNullOrEmpty(Request.QueryString["id"])) {
-                    Admin.Model.ComInfo model = _comInfoDal.GetModel(Convert.ToInt32(Request.QueryString["id"]));
-                    if (null != model) {
-                        Literal1.Text = model.ComName;
-                        Literal2.Text = model.Add1;
-                        Literal3.Text = model.Add2;
-                        Literal4.Text = model.Add3;
-                        Literal5.Text = model.City;
-                        Literal6.Text = model.Area;
-                        Literal7.Text = model.PostCode;
-                        Literal8.Text = model.Country;
-                        Literal9.Text = model.Phone;
-                        Literal10.Text = model.Fax;
-                        Literal11.Text = model.ComDesc;
-                        Literal12.Text = model.Industry;
-                        Literal13.Text = model.SubIndustry;
-                        Literal14.Text = model.SicCode;
-
-                        Literal24.Text = model.Industry2;
-                        Literal25.Text = model.SubIndustry2;
-                        Literal26.Text = model.SicCode2;
-
-                        Literal15.Text = model.Probe_sic;
-                        Literal16.Text = model.Probe_sic2;
-                        Literal17.Text = model.Probe_sic3;
-                        Literal18.Text = model.Employees;
-                        Literal19.Text = model.Domestic_company;
-                        Literal20.Text = model.Title;
-                        Literal21.Text = model.ContactFirstName;
-                        Literal22.Text = model.contactSurname;
-                        Literal23.Text = model.JobTitle;
-                        Literal27.Text = model.ComID;
-                    }
+                    litMsg.Text = GetMsg().ToString();
                 }
             }
             catch {
             }
+        }
+        private StringBuilder GetMsg() {
+            var sb = new StringBuilder();
+            #region
+            MySQlHelper mySQlHelper = new MySQlHelper();
+            var sql = "SELECT * FROM dr_user_notice WHERE (UserName='" + CurrentEmp.EmplName + "' AND FromUser='" + Request.QueryString["id"] + "') OR (UserName='" + Request.QueryString["id"] + "' AND FromUser='" + CurrentEmp.EmplName + "') ORDER BY InfoId ";
+            var dt = mySQlHelper.ExecuteDataset(sql).Tables[0];
+            if (dt.Rows.Count > 0) {
+                sb.Append("<ul class=\"clearfix\">");
+                for (int i = 0; i < dt.Rows.Count; i++) {
+                    if (CurrentEmp.EmplName == dt.Rows[i]["FromUser"].ToString()) {
+                        sb.Append("<li class=\"out\">");
+                        sb.Append("<div class=\"message\">");
+                        sb.Append("<span class=\"arrow\"></span>");
+                        sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + CurrentEmp.EmplName + "</a>");
+                        sb.Append("<span class=\"datetime\"> " +
+                                  Convert.ToDateTime(dt.Rows[i]["CreateTime"])
+                                      .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
+                        sb.Append("<span class=\"body\">" + dt.Rows[i]["Message"]);
+                        sb.Append("</span>");
+                        sb.Append("</div>");
+                        sb.Append("</li>");
+                    }
+                    else {
+                        sb.Append("<li class=\"in\">");
+                        sb.Append("<div class=\"message\">");
+                        sb.Append("<span class=\"arrow\"></span>");
+                        sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + dt.Rows[i]["FromUser"] + "</a>");
+                        sb.Append("<span class=\"datetime\"> " +
+                                  Convert.ToDateTime(dt.Rows[i]["CreateTime"])
+                                      .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
+                        sb.Append("<span class=\"body\">" + dt.Rows[i]["Message"]);
+                        sb.Append("</span>");
+                        sb.Append("</div>");
+                        sb.Append("</li>");
+                    }
+                }
+                sb.Append("</ul>");
+            }
+            #endregion
+            return sb;
         }
     }
 }

@@ -5,6 +5,7 @@ namespace ECommerce.Web.UI
     public class WebPage : System.Web.UI.Page
     {
         public OrgUsers CurrentUser = null;
+        public OrgEmployees CurrentEmp = null;
         public Admin.DAL.OrgUsers MAdn = new Admin.DAL.OrgUsers();
 
         /// <summary>
@@ -24,6 +25,7 @@ namespace ECommerce.Web.UI
             }
             if (Session["CurrentUser"] == null) return Session["CurrentFacUser"] != null;
             CurrentUser = (OrgUsers)Session["CurrentUser"];
+            CurrentEmp = (OrgEmployees)Session["CurrentEmp"];
             // 验证菜单权限
             if (desiredFunction == "") return true;
             if (MAdn.ExistsUsersPage(desiredFunction, CurrentUser.UId))
