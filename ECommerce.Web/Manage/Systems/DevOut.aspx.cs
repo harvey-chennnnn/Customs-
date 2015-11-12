@@ -14,17 +14,24 @@ namespace ECommerce.Web.Manage.Systems {
         private readonly LoanInfo _loanInfo = new LoanInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
-            if (!IsPostBack) {
-                BindOrgTrain();
-                if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
-                    BindData(Request.QueryString["OrgId"]);
+            try {
+                if (!IsPostBack) {
+                    BindOrgTrain();
+                    if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
+                        BindData(Request.QueryString["OrgId"]);
+                    }
                 }
             }
+            catch (Exception ex) {
+                //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('" + ex.Message + "');</script>");
+                //throw;
+            }
+
         }
 
         private void BindOrgTrain() {
             MySQlHelper h = new MySQlHelper();
-            string sql = "select * from dr_user";
+            string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!=''";
             DataTable dtTable = h.ExecuteQuery(sql, CommandType.Text);
             ddltype.DataSource = dtTable;
             ddltype.DataTextField = "UserName";
@@ -43,7 +50,8 @@ namespace ECommerce.Web.Manage.Systems {
                     //ddltype.SelectedValue = model.Loanable.ToString();
                 }
             }
-            catch (Exception) {
+            catch (Exception ex) {
+                throw ex;
             }
         }
 
