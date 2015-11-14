@@ -26,7 +26,7 @@
         var $tmp;
         var $ajaxget;
         $(document).ready(function () {
-            $('body').layout({ resizable: false });
+            $('body').layout({ resizable: false, south__closable: false });
         });
         function openModal(url, title) {
             window.top.$op = this.window;
@@ -74,7 +74,30 @@
             <div class="dl-menu">
                 <asp:Literal ID="litRoleTree" runat="server"></asp:Literal>
             </div>
+            <div style="bottom: 0px; position: absolute">
+                <img src="/images/sitelogo.png" /><strong>西安擎天软件科技有限公司</strong><br />
+                联系电话：4000291776<br />
+                邮件地址：service@angeletsoft.cn<br />
+                联系地址：国家级西安高新技术产业开发区锦业路69号创业研发园瞪羚谷B座五楼504<br />
+            </div>
         </div>
+        <%--<div class="ui-layout-south" style="overflow: visible">
+            <div class="bottom clearfix">
+                <div class="pull-left">
+                    <div class="logo">
+                        &nbsp;
+                    </div>
+                </div>
+                <div>
+                    <strong>西安擎天软件科技有限公司</strong>
+                    <div style="line-height: 14px">
+                        联系电话：4000291776<br />
+                        邮件地址：service@angeletsoft.cn<br />
+                        联系地址：国家级西安高新技术产业开发区锦业路69号创业研发园瞪羚谷B座五楼504                        
+                    </div>
+                </div>
+            </div>
+        </div>--%>
     </form>
 </body>
 </html>

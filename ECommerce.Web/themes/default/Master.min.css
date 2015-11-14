@@ -22,7 +22,22 @@ a:hover {
     color: #FFF;
     background-color: #01A478;
 }
-
+.bottom {
+    /*background-image: url(images/top.pn);*/
+    background-repeat: repeat-x;
+    height: 65px;
+    /*color: #FFF;
+    background-color: #01A478;*/
+}
+.bottom .logo {
+    font-size: 24px;
+    line-height: 65px;
+    float: left;
+    padding-left: 230px;
+    background-image: url(/images/sitelogo.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
 .top-info {
     color: #FFF;
     padding-top: 8px;
