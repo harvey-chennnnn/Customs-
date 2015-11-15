@@ -9,6 +9,7 @@ namespace ECommerce.Web.Manage.Systems {
         private readonly OrgEmployees _dataDal = new OrgEmployees();
         private readonly OrgUsers _dataDal1 = new OrgUsers();
         private readonly OrgOrganize _orgOrganizeDal = new OrgOrganize();
+        private readonly SYS_RoleInfo _roleInfoDal = new SYS_RoleInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
@@ -16,9 +17,9 @@ namespace ECommerce.Web.Manage.Systems {
                 if (!string.IsNullOrEmpty(Request.QueryString["empId"])) {
                     BindData(Request.QueryString["empId"]);
                 }
-                else {
-                    rboSinglestaadmin.Checked = true;
-                }
+                //else {
+                //    rboSinglestaadmin.Checked = true;
+                //}
             }
         }
 
@@ -43,36 +44,19 @@ namespace ECommerce.Web.Manage.Systems {
                     txtpw.Attributes.Add("Value", dt.Rows[0]["UserPwd"].ToString());
                     txtpw.Attributes.Add("type", "password");
 
-                    //txtUuser.Value = dt.Rows[0]["UuserId"].ToString();
-                    //txtUpwd.Value = dt.Rows[0]["Upwd"].ToString();
-
-                    if (dt.Rows[0]["Type"].ToString() == "15") {
-                        rboSinglestaadmin.Checked = true;
-                        //dorg.Style.Add("display", "block");
-                        //ddlOrgName.SelectedValue = model.OrgId.ToString();
-                    }
-                    else if (dt.Rows[0]["Type"].ToString() == "14") {
-                        //rboDouble.Checked = true;
-                        //dorg.Style.Add("display", "block");
-                        //ddlOrgName.SelectedValue = model.OrgId.ToString();
-                    }
-                    else if (dt.Rows[0]["Type"].ToString() == "1") {
-                        rboSingle.Checked = true;
-                        //dorg.Style.Add("display", "none");
-                    }
+                    //ddlOrgName.SelectedValue = dt.Rows[0]["Type"].ToString();
                 }
             }
             catch (Exception) {
             }
         }
-        //private void BindOrgName()
-        //{
+        //private void BindOrgName() {
         //    List<SqlParameter> parameters = new List<SqlParameter>();         //创建sql参数存储对象
-        //    string sqlWhere = " Status =1 and OrgType=1 ";
-        //    DataSet dtor = _orgOrganizeDal.GetList(sqlWhere, parameters);
+        //    string sqlWhere = " Role_Status =1 ";
+        //    DataSet dtor = _roleInfoDal.GetList(sqlWhere);
         //    ddlOrgName.DataSource = dtor;
-        //    ddlOrgName.DataTextField = "OrgName";
-        //    ddlOrgName.DataValueField = "OrgId";
+        //    ddlOrgName.DataTextField = "Role_Name";
+        //    ddlOrgName.DataValueField = "Role_Id";
         //    ddlOrgName.DataBind();
         //}
 
@@ -151,7 +135,7 @@ namespace ECommerce.Web.Manage.Systems {
             //    return;
             //}
             var orgid = "0";
-            var type = Convert.ToInt32(Request.Form["rboSelectType"]);
+            var type = 1;
             if (1 != type) {
                 //orgid = ddlOrgName.SelectedValue;
             }
@@ -173,7 +157,7 @@ namespace ECommerce.Web.Manage.Systems {
                         //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
                     }
                     else {
-                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名已存在！');</script>");
+                        Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('姓名或用户名已存在！');</script>");
                     }
                 }
                 catch (Exception) {
@@ -200,7 +184,7 @@ namespace ECommerce.Web.Manage.Systems {
                         "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
                 }
                 else {
-                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名已存在！');</script>");
+                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('姓名或用户名已存在！');</script>");
                 }
                 //}
                 //else

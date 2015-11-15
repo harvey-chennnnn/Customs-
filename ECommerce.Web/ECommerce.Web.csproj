@@ -238,6 +238,7 @@
     <Content Include="Manage\Systems\OrgUserDefault.aspx" />
     <Content Include="Manage\Systems\OrgUserDep.aspx" />
     <Content Include="Manage\Systems\OrgWorStaDefault.aspx" />
+    <Content Include="Manage\Systems\ProductAutoComplete.aspx" />
     <Content Include="Manage\Systems\ResetPassword.aspx" />
     <Content Include="Manage\Systems\SystemConfig.aspx" />
     <Content Include="Manage\Systems\SystemDepartmentInfo.aspx" />
@@ -1434,6 +1435,13 @@
     </Compile>
     <Compile Include="Manage\Systems\OrgWorStaDefault.aspx.designer.cs">
       <DependentUpon>OrgWorStaDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\ProductAutoComplete.aspx.cs">
+      <DependentUpon>ProductAutoComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\ProductAutoComplete.aspx.designer.cs">
+      <DependentUpon>ProductAutoComplete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>

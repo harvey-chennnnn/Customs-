@@ -28,7 +28,7 @@
       <publishTime>07/30/2015 20:56:53</publishTime>
     </File>
     <File Include="bin/ECommerce.Admin.dll">
-      <publishTime>11/08/2015 00:10:40</publishTime>
+      <publishTime>11/15/2015 21:50:03</publishTime>
     </File>
     <File Include="bin/ECommerce.Area.dll">
       <publishTime>10/13/2015 21:01:09</publishTime>
@@ -40,10 +40,10 @@
       <publishTime>11/08/2015 00:10:39</publishTime>
     </File>
     <File Include="bin/ECommerce.dll">
-      <publishTime>11/12/2015 23:27:14</publishTime>
+      <publishTime>11/15/2015 21:50:04</publishTime>
     </File>
     <File Include="bin/ECommerce.Lib.dll">
-      <publishTime>11/08/2015 00:10:40</publishTime>
+      <publishTime>11/15/2015 21:50:03</publishTime>
     </File>
     <File Include="bin/ECommerce.Order.dll">
       <publishTime>03/25/2014 15:06:05</publishTime>
@@ -245,6 +245,9 @@
     </File>
     <File Include="images/rc.png">
       <publishTime>05/26/2015 22:33:04</publishTime>
+    </File>
+    <File Include="images/sitelogo.png">
+      <publishTime>11/14/2015 21:57:48</publishTime>
     </File>
     <File Include="images/template1.jpg">
       <publishTime>05/26/2015 22:33:04</publishTime>
@@ -5332,7 +5335,7 @@
       <publishTime>10/14/2015 01:02:42</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList.aspx">
-      <publishTime>11/07/2015 17:56:27</publishTime>
+      <publishTime>11/15/2015 21:25:50</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList1.aspx">
       <publishTime>08/14/2015 00:24:41</publishTime>
@@ -5419,7 +5422,7 @@
       <publishTime>12/17/2014 20:49:41</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgDepUser.aspx">
-      <publishTime>11/07/2015 22:25:17</publishTime>
+      <publishTime>11/15/2015 21:34:37</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgLogistics.aspx">
       <publishTime>12/17/2014 20:49:42</publishTime>
@@ -5647,13 +5650,13 @@
       <publishTime>01/23/2014 14:50:04</publishTime>
     </File>
     <File Include="Manage/Systems/Default.aspx">
-      <publishTime>11/08/2015 00:07:13</publishTime>
+      <publishTime>11/15/2015 18:45:31</publishTime>
     </File>
     <File Include="Manage/Systems/DevIn.aspx">
       <publishTime>11/07/2015 21:35:59</publishTime>
     </File>
     <File Include="Manage/Systems/DevOut.aspx">
-      <publishTime>11/07/2015 21:36:28</publishTime>
+      <publishTime>11/15/2015 20:03:04</publishTime>
     </File>
     <File Include="Manage/Systems/InBillHouse.aspx">
       <publishTime>02/14/2014 13:48:09</publishTime>
@@ -5746,7 +5749,7 @@
       <publishTime>05/26/2015 21:59:55</publishTime>
     </File>
     <File Include="Manage/Systems/ProductAutoComplete.aspx">
-      <publishTime>01/23/2014 14:50:04</publishTime>
+      <publishTime>11/15/2015 19:49:14</publishTime>
     </File>
     <File Include="Manage/Systems/ResetPassword.aspx">
       <publishTime>07/30/2015 20:57:05</publishTime>
@@ -6637,7 +6640,7 @@
       <publishTime>11/07/2015 22:47:51</publishTime>
     </File>
     <File Include="themes/default/Master.min.css">
-      <publishTime>11/08/2015 00:46:34</publishTime>
+      <publishTime>11/14/2015 22:16:44</publishTime>
     </File>
     <File Include="themes/default/pad.css">
       <publishTime>07/30/2015 21:21:10</publishTime>
@@ -7636,7 +7639,7 @@
       <publishTime>07/30/2015 21:23:02</publishTime>
     </File>
     <File Include="themes/plugins/jquerylayout/layout-default.css">
-      <publishTime>07/30/2015 21:23:02</publishTime>
+      <publishTime>11/14/2015 21:30:23</publishTime>
     </File>
     <File Include="themes/sco.js/css/sco.message.css">
       <publishTime>07/30/2015 21:23:13</publishTime>

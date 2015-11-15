@@ -16,7 +16,7 @@ namespace ECommerce.Web.Manage.Systems {
             VerifyPage("", false);
             try {
                 if (!IsPostBack) {
-                    BindOrgTrain();
+                    //BindOrgTrain();
                     if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
                         BindData(Request.QueryString["OrgId"]);
                     }
@@ -29,16 +29,16 @@ namespace ECommerce.Web.Manage.Systems {
 
         }
 
-        private void BindOrgTrain() {
-            MySQlHelper h = new MySQlHelper();
-            string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!=''";
-            DataTable dtTable = h.ExecuteQuery(sql, CommandType.Text);
-            ddltype.DataSource = dtTable;
-            ddltype.DataTextField = "UserName";
-            ddltype.DataValueField = "UID";
-            ddltype.DataBind();
-            ddltype.Items.Insert(0, new ListItem("请选择", ""));
-        }
+        //private void BindOrgTrain() {
+        //    MySQlHelper h = new MySQlHelper();
+        //    string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!=''";
+        //    DataTable dtTable = h.ExecuteQuery(sql, CommandType.Text);
+        //    ddltype.DataSource = dtTable;
+        //    ddltype.DataTextField = "UserName";
+        //    ddltype.DataValueField = "UID";
+        //    ddltype.DataBind();
+        //    ddltype.Items.Insert(0, new ListItem("请选择", ""));
+        //}
 
         private void BindData(string orgId) {
             try {
@@ -56,11 +56,13 @@ namespace ECommerce.Web.Manage.Systems {
         }
 
         protected void btnSub_Click(object sender, EventArgs e) {
-            var LoID = ddltype.SelectedValue;
-            var Loaner = ddltype.SelectedItem.Text;
+            //var LoID = ddltype.SelectedValue;
+            //var Loaner = ddltype.SelectedItem.Text;
+            var LoID = HiddenField1.Value;
+            var Loaner = txtDId.Value;
             var LoanDescri = txtdescr.Value;
             var LoanDate = txtBirthDay.Value;
-            if (string.IsNullOrEmpty(LoID)) {
+            if (string.IsNullOrEmpty(Loaner) || string.IsNullOrEmpty(LoID)) {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请选择借出人！');</script>");
                 return;
             }

@@ -63,6 +63,8 @@
                                 <input type="checkbox" name="cbSelectAll" id="cbSelectAll"></th>
                             <th nowrap="nowrap" style="text-align: center">发送人
                             </th>
+                            <th nowrap="nowrap" style="text-align: center">接收人
+                            </th>
                             <th nowrap="nowrap" style="text-align: center">内容
                             </th>
                             <th nowrap="nowrap" style="text-align: center">发送时间
@@ -77,7 +79,10 @@
                                         <%#Eval("FromUser")%>
                                     </td>
                                     <td style="text-align: center">
-                                        <a href="/Manage/Companies/Detail.aspx?id=<%#Eval("FromUser") %>"><%#Eval("Message")%></a>
+                                        <%#Eval("username")%>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="/Manage/Companies/Detail.aspx?fu=<%#Eval("FromUser") %>&tu=<%#Eval("username") %>"><%#Eval("Message")%></a>
                                     </td>
                                     <td style="text-align: center"><%#Convert.ToDateTime(Eval("CreateTime")).ToString("yyyy-MM-dd")%></td>
                                 </tr>

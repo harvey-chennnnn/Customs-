@@ -590,10 +590,11 @@ namespace ECommerce.Admin.DAL {
                     var empId = db.ExecuteScalar(dbCommand, trans);
                     StringBuilder strSql3 = new StringBuilder();
 
-                    strSql3.Append("select count(1) from OrgUsers  a join OrgEmployees b on a.EmplId=b.EmplId  where a.UserName=@UserName and a.Status=1 and b.Status=1 ");
+                    strSql3.Append("select count(1) from OrgUsers  a join OrgEmployees b on a.EmplId=b.EmplId  where (a.UserName=@UserName  or b.EmplName=@EmplName) and a.Status=1 and b.Status=1 ");
 
                     DbCommand dbCommand3 = db.GetSqlStringCommand(strSql3.ToString());
                     db.AddInParameter(dbCommand3, "UserName", DbType.AnsiString, userName);
+                    db.AddInParameter(dbCommand3, "EmplName", DbType.AnsiString, emplName);
                     object obj3 = db.ExecuteScalar(dbCommand3, trans);
                     if (obj3.ToString() == "0") {
                         StringBuilder strSql2 = new StringBuilder();
@@ -832,10 +833,11 @@ namespace ECommerce.Admin.DAL {
             Database db = DatabaseFactory.CreateDatabase();
             StringBuilder strSql3 = new StringBuilder();
 
-            strSql3.Append("select count(1) from OrgUsers a  join OrgEmployees b on a.EmplId=b.EmplId where a.Status=1 and b.Status=1 and UserName=@UserName  and  a.EmplId!=@EmplId");
+            strSql3.Append("select count(1) from OrgUsers a  join OrgEmployees b on a.EmplId=b.EmplId where a.Status=1 and b.Status=1 and (UserName=@UserName or b.EmplName=@EmplName)  and  a.EmplId!=@EmplId");
 
             DbCommand dbCommand3 = db.GetSqlStringCommand(strSql3.ToString());
             db.AddInParameter(dbCommand3, "UserName", DbType.AnsiString, userName);
+            db.AddInParameter(dbCommand3, "EmplName", DbType.AnsiString, emplName);
             db.AddInParameter(dbCommand3, "EmplId", DbType.AnsiString, emplId);
             db.AddInParameter(dbCommand3, "OrgId", DbType.AnsiString, orgId);
             object obj3 = db.ExecuteScalar(dbCommand3);

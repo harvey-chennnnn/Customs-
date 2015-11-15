@@ -12,7 +12,7 @@ namespace ECommerce.Web.Manage.Companies {
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             try {
-                if (!string.IsNullOrEmpty(Request.QueryString["id"])) {
+                if (!string.IsNullOrEmpty(Request.QueryString["fu"])&&!string.IsNullOrEmpty(Request.QueryString["tu"])) {
                     litMsg.Text = GetMsg().ToString();
                 }
             }
@@ -23,7 +23,7 @@ namespace ECommerce.Web.Manage.Companies {
             var sb = new StringBuilder();
             #region
             MySQlHelper mySQlHelper = new MySQlHelper();
-            var sql = "SELECT * FROM dr_user_notice WHERE (UserName='" + CurrentEmp.EmplName + "' AND FromUser='" + Request.QueryString["id"] + "') OR (UserName='" + Request.QueryString["id"] + "' AND FromUser='" + CurrentEmp.EmplName + "') ORDER BY InfoId ";
+            var sql = "SELECT * FROM dr_user_notice WHERE (UserName='" + Request.QueryString["fu"] + "' AND FromUser='" + Request.QueryString["tu"] + "') OR (UserName='" + Request.QueryString["tu"] + "' AND FromUser='" + Request.QueryString["fu"] + "') ORDER BY InfoId ";
             var dt = mySQlHelper.ExecuteDataset(sql).Tables[0];
             if (dt.Rows.Count > 0) {
                 sb.Append("<ul class=\"clearfix\">");

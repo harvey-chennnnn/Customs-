@@ -79,17 +79,19 @@
                         <input type="text" id="txtAddr" placeholder="地址" runat="server" />
                     </div>
                 </div>--%>
-                <div class="control-group">
+                <%--<div class="control-group">
                     <label class="control-label"><span style="color: red;">*</span>人员类型：</label>
                     <div class="controls">
                         <input id="rboSingle" type="radio" runat="server" name="rboSelectType" value="1" onclick="hideorg();" />
                         系统管理员
                         <input id="rboSinglestaadmin" type="radio" runat="server" name="rboSelectType" value="15" onclick="shorg();" />
                         普通用户
-                        <%--<input id="rboDouble" type="radio" runat="server" name="rboSelectType" value="14" onclick="shorg();" />
-                        专家--%>
+                        <input id="rboDouble" type="radio" runat="server" name="rboSelectType" value="14" onclick="shorg();" />
+                        专家
+                        <asp:DropDownList ID="ddlOrgName" runat="server">
+                        </asp:DropDownList>
                     </div>
-                </div>
+                </div>--%>
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>手机</label>
                     <div class="controls">

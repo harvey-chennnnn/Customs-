@@ -26,7 +26,7 @@ namespace ECommerce.Web.Manage.Services {
             #region 分页
             //当前页码
             int pageNum = 1;
-            string sql = "SELECT n.* FROM (select MAX(createtime) createtime,username,fromuser,Message,InfoId,MsgTitle,stTime,EdTime,IsValid,Remark from dr_user_notice GROUP BY UserName,FromUser) n left join dr_user tuser on tuser.UserName=n.UserName left JOIN dr_user fuser on fuser.UserName=n.fromuser where n.username='" + CurrentEmp.EmplName + "' ";
+            string sql = "SELECT * FROM dr_user_notice n WHERE CreateTime=(SELECT MAX(CreateTime) FROM dr_user_notice as un WHERE  (un.UserName=n.UserName AND un.FromUser=n.FromUser) OR (un.UserName=n.FromUser AND un.FromUser=n.UserName)) and (n.username='" + CurrentEmp.EmplName + "' or n.fromuser='" + CurrentEmp.EmplName + "') ";
             var name = string.Empty;
             var status = string.Empty;
             //if (!string.IsNullOrEmpty(ddlStatus.SelectedValue) && ddlStatus.SelectedValue != "-1") {

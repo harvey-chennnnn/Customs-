@@ -74,11 +74,13 @@
             <div class="dl-menu">
                 <asp:Literal ID="litRoleTree" runat="server"></asp:Literal>
             </div>
-            <div style="bottom: 0px; position: absolute">
+            <div style="bottom: 0px; position: absolute; text-align: center">
                 <img src="/images/sitelogo.png" /><strong>西安擎天软件科技有限公司</strong><br />
-                联系电话：4000291776<br />
-                邮件地址：service@angeletsoft.cn<br />
-                联系地址：国家级西安高新技术产业开发区锦业路69号创业研发园瞪羚谷B座五楼504<br />
+                service@angeletsoft.cn<br />
+                <strong style="font-size: 16px;color:dodgerblue">4000291776</strong><br />
+                西安高新技术产业开发区<br />
+                锦业路69号创业研发园<br />
+                瞪羚谷B座五楼504<br />
             </div>
         </div>
         <%--<div class="ui-layout-south" style="overflow: visible">
