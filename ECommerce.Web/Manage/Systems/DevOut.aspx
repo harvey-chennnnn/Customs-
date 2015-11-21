@@ -60,6 +60,7 @@
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>借出人：</label>
                     <div class="controls">
                         <input type="text" id="txtDId" placeholder="借出人" runat="server" />
+                        <span id="spError" style="color: red;"></span>
                         <asp:HiddenField ID="HiddenField1" runat="server" />
                         <%--<asp:DropDownList ID="ddltype" runat="server">
                         </asp:DropDownList>--%>
@@ -68,7 +69,7 @@
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>借出时间：</label>
                     <div class="controls">
-                        <input type="text" id="txtBirthDay" placeholder="借出时间 2114-01-01" runat="server" onfocus="WdatePicker()" />
+                        <input type="text" id="txtBirthDay" placeholder="" runat="server" onfocus="WdatePicker()" />
                     </div>
                 </div>
                 <div class="control-group">
@@ -85,12 +86,54 @@
         </div>
         <script>
             $(document).ready(function () {
+                function getNowFormatDate() {
+                    var day = new Date();
+                    var Year = 0;
+                    var Month = 0;
+                    var Day = 0;
+                    var CurrentDate = "";
+                    Year = day.getFullYear();
+                    Month = day.getMonth() + 1;
+                    Day = day.getDate();
+                    CurrentDate += Year + "-";
+                    if (Month >= 10) {
+                        CurrentDate += Month + "-";
+                    }
+                    else {
+                        CurrentDate += "0" + Month + "-";
+                    }
+                    if (Day >= 10) {
+                        CurrentDate += Day;
+                    }
+                    else {
+                        CurrentDate += "0" + Day;
+                    }
+                    return CurrentDate;
+                }
+                $("#<%=txtBirthDay.ClientID%>").attr('placeholder', getNowFormatDate);
                 $("#txtDId").autocomplete({
                     minLength: 1,
                     source: function (request, response) {
-                        $.getJSON("ProductAutoComplete.aspx?jsoncallback=?", {
-                            term: encodeURI(request.term)
-                        }, response);
+                        $.ajax({
+                            type: "GET",
+                            url: "ProductAutoComplete.aspx",
+                            dataType: "json",
+                            data: {
+                                term: request.term
+                            },
+                            //error: function (xhr, textStatus, errorThrown) {
+                            //    alert('Error: ' + xhr.responseText);
+                            //},
+                            success: function (data) {
+                                response(data);
+                                if (data == "" || data == null) {
+                                    $("#txtDId").val('');
+                                    $("#spError").html("查无此人");
+                                } else {
+                                    $("#spError").html("");
+                                }
+                            }
+                        });
                     },
                     open: function (event, ui) {
                         $(this).autocomplete("widget").css({ "width": "214px" });
@@ -104,7 +147,10 @@
                         return false;
                     },
                     close: function () {
-                        $(".ui-autocomplete").addClass("txb");
+                        if (!$(".ui-autocomplete").hasClass("txb")) {
+                            $(this).val('');
+                        }
+                        $(".ui-autocomplete").removeClass("txb");
                         $(this).blur();
                         return false;
                     }

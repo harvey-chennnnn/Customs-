@@ -75,6 +75,33 @@
             <asp:Button ID="btnSub" CssClass="btn btn-success" runat="server" Text="确定" OnClick="btnSub_Click" />
             <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
         </div>
+        <script>
+            function getNowFormatDate() {
+                var day = new Date();
+                var Year = 0;
+                var Month = 0;
+                var Day = 0;
+                var CurrentDate = "";
+                Year = day.getFullYear();
+                Month = day.getMonth() + 1;
+                Day = day.getDate();
+                CurrentDate += Year + "-";
+                if (Month >= 10) {
+                    CurrentDate += Month + "-";
+                }
+                else {
+                    CurrentDate += "0" + Month + "-";
+                }
+                if (Day >= 10) {
+                    CurrentDate += Day;
+                }
+                else {
+                    CurrentDate += "0" + Day;
+                }
+                return CurrentDate;
+            }
+            $("#<%=txtReturnDate.ClientID%>").attr('placeholder', getNowFormatDate);
+        </script>
     </form>
 </body>
 </html>

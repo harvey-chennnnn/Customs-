@@ -80,13 +80,19 @@ namespace ECommerce.Web.Manage.Systems {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写用户名！');</script>");
                 return;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(userName, @"^[\u4E00-\u9FA5\uf900-\ufa2d\w]{2,16}")) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名只能用中文、英文、数字、下划线、2-16个字符，请重新输入！');</script>");
+            if (!System.Text.RegularExpressions.Regex.IsMatch(userName, @"^[\u4E00-\u9FA5\uf900-\ufa2d\w]{6,16}")) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名只能用中文、英文、数字、下划线、6-16个字符，请重新输入！');</script>");
                 return;
             }
             if (string.IsNullOrEmpty(Request.QueryString["empId"])) {
                 if (string.IsNullOrEmpty(pwd)) {
                     Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写密码！');</script>");
+                    return;
+                }
+            }
+            if (string.IsNullOrEmpty(Request.QueryString["empId"])) {
+                if (pwd.Length<6) {
+                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('密码长度需6位以上！');</script>");
                     return;
                 }
             }
@@ -121,7 +127,7 @@ namespace ECommerce.Web.Manage.Systems {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写手机号码！');</script>");
                 return;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(cell, @"^[1]+[3,4,5,8]+\d{9}")) {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(cell, @"^[1]+[3,4,5,8]+\d{9}$")) {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('手机号码格式错误，请重新输入！');</script>");
                 return;
 

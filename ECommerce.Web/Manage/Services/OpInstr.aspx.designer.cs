@@ -7,9 +7,9 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace ECommerce.Web.Manage.Systems {
+namespace ECommerce.Web.Manage.Services {
     
     
-    public partial class Welcome {
+    public partial class OpInstr {
     }
 }

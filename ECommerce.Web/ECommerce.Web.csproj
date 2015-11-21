@@ -136,6 +136,18 @@
     <Content Include="images\image\man1.jpg" />
     <Content Include="images\image\man2.jpg" />
     <Content Include="images\image\woman1.jpg" />
+    <Content Include="images\instr1.jpg" />
+    <Content Include="images\instr10.jpg" />
+    <Content Include="images\instr11.jpg" />
+    <Content Include="images\instr12.jpg" />
+    <Content Include="images\instr2.jpg" />
+    <Content Include="images\instr3.jpg" />
+    <Content Include="images\instr4.jpg" />
+    <Content Include="images\instr5.jpg" />
+    <Content Include="images\instr6.jpg" />
+    <Content Include="images\instr7.jpg" />
+    <Content Include="images\instr8.jpg" />
+    <Content Include="images\instr9.jpg" />
     <Content Include="images\jigou-logo1.png" />
     <Content Include="images\jigou-logo2.png" />
     <Content Include="images\line.gif" />
@@ -161,8 +173,10 @@
     <Content Include="Manage\CM\AddArticle.aspx" />
     <Content Include="Manage\Companies\Detail.aspx" />
     <Content Include="Manage\Companies\Default.aspx" />
+    <Content Include="Manage\Services\Instr.aspx" />
     <Content Include="Manage\Services\DevDetail.aspx" />
     <Content Include="Manage\Services\Advisory1.aspx" />
+    <Content Include="Manage\Services\OpInstr.aspx" />
     <Content Include="Manage\Systems\AddReply.aspx" />
     <Content Include="Manage\MeasurementData\Default.aspx" />
     <Content Include="Manage\MeasurementData\Detail.aspx" />
@@ -925,6 +939,13 @@
     <Compile Include="Manage\Companies\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Services\Instr.aspx.cs">
+      <DependentUpon>Instr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Services\Instr.aspx.designer.cs">
+      <DependentUpon>Instr.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Services\DevDetail.aspx.cs">
       <DependentUpon>DevDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -938,6 +959,13 @@
     </Compile>
     <Compile Include="Manage\Services\Advisory1.aspx.designer.cs">
       <DependentUpon>Advisory1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Services\OpInstr.aspx.cs">
+      <DependentUpon>OpInstr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Services\OpInstr.aspx.designer.cs">
+      <DependentUpon>OpInstr.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\AddReply.aspx.cs">
       <DependentUpon>AddReply.aspx</DependentUpon>

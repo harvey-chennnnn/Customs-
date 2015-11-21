@@ -35,7 +35,7 @@ namespace ECommerce.Web.Manage.Services {
             //}
             if (!string.IsNullOrEmpty(txtProName.Value)) {
                 name = txtProName.Value;
-                sql += " and fuser.UserName like '%" + name.Trim() + "%'";
+                sql += " and n.FromUser like '%" + name.Trim() + "%'";
             }
 
             if (!isFirstPage) {

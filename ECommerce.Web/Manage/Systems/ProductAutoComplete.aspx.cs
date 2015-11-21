@@ -26,7 +26,7 @@ namespace ECommerce.Web.Manage.Systems {
                         string names = "";
                         for (int i = 0; i < dt.Rows.Count; i++) {
 
-                            string s = "{label:\"" + dt.Rows[i]["UserName"] + "\",value:\"" + dt.Rows[i]["UID"] + "\"},";
+                            string s = "{\"label\":\"" + dt.Rows[i]["UserName"] + "\",\"value\":\"" + dt.Rows[i]["UID"] + "\"},";
                             names += s;
 
                         }
@@ -39,7 +39,7 @@ namespace ECommerce.Web.Manage.Systems {
                     Response.Clear();
                     Response.ContentEncoding = Encoding.UTF8;
                     Response.ContentType = "application/json";
-                    Response.Write(result);
+                    Response.Write(data);
 
                     Response.Flush();
                     Response.End();

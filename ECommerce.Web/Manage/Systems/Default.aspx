@@ -74,8 +74,9 @@
             <div class="dl-menu">
                 <asp:Literal ID="litRoleTree" runat="server"></asp:Literal>
             </div>
-            <div style="bottom: 0px; position: absolute; text-align: center">
-                <img src="/images/sitelogo.png" /><strong>西安擎天软件科技有限公司</strong><br />
+            <div style="bottom: 30px; position: absolute; text-align: center; line-height: 30px;">
+                <img width="50%" height="50%" src="/images/sitelogo.png" /><br/>
+                <strong>西安擎天软件科技有限公司</strong><br />
                 service@angeletsoft.cn<br />
                 <strong style="font-size: 16px;color:dodgerblue">4000291776</strong><br />
                 西安高新技术产业开发区<br />
