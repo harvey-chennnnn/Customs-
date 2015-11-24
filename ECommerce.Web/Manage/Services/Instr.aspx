@@ -13,7 +13,7 @@
 </head>
 <style>
     p {
-        font-size: 18px;
+        font-size: 15px;
     }
 </style>
 <body class="pd">

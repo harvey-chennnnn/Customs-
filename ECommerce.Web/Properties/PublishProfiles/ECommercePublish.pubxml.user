@@ -40,7 +40,7 @@
       <publishTime>11/08/2015 00:10:39</publishTime>
     </File>
     <File Include="bin/ECommerce.dll">
-      <publishTime>11/15/2015 21:50:04</publishTime>
+      <publishTime>11/24/2015 22:20:55</publishTime>
     </File>
     <File Include="bin/ECommerce.Lib.dll">
       <publishTime>11/15/2015 21:50:03</publishTime>
@@ -212,6 +212,42 @@
     </File>
     <File Include="images/image/woman1.jpg">
       <publishTime>01/31/2015 07:32:48</publishTime>
+    </File>
+    <File Include="images/instr1.jpg">
+      <publishTime>11/21/2015 22:14:31</publishTime>
+    </File>
+    <File Include="images/instr10.jpg">
+      <publishTime>11/21/2015 22:27:30</publishTime>
+    </File>
+    <File Include="images/instr11.jpg">
+      <publishTime>11/21/2015 22:27:30</publishTime>
+    </File>
+    <File Include="images/instr12.jpg">
+      <publishTime>11/21/2015 22:33:06</publishTime>
+    </File>
+    <File Include="images/instr2.jpg">
+      <publishTime>11/21/2015 22:14:19</publishTime>
+    </File>
+    <File Include="images/instr3.jpg">
+      <publishTime>11/21/2015 22:14:19</publishTime>
+    </File>
+    <File Include="images/instr4.jpg">
+      <publishTime>11/21/2015 22:14:19</publishTime>
+    </File>
+    <File Include="images/instr5.jpg">
+      <publishTime>11/21/2015 22:25:19</publishTime>
+    </File>
+    <File Include="images/instr6.jpg">
+      <publishTime>11/21/2015 22:25:19</publishTime>
+    </File>
+    <File Include="images/instr7.jpg">
+      <publishTime>11/21/2015 22:25:19</publishTime>
+    </File>
+    <File Include="images/instr8.jpg">
+      <publishTime>11/21/2015 22:27:30</publishTime>
+    </File>
+    <File Include="images/instr9.jpg">
+      <publishTime>11/21/2015 22:27:30</publishTime>
     </File>
     <File Include="images/jigou-logo1.png">
       <publishTime>10/10/2015 12:09:41</publishTime>
@@ -5179,7 +5215,7 @@
       <publishTime>11/06/2015 20:43:39</publishTime>
     </File>
     <File Include="Manage/Companies/Detail.aspx">
-      <publishTime>11/07/2015 17:53:09</publishTime>
+      <publishTime>11/21/2015 22:59:31</publishTime>
     </File>
     <File Include="Manage/Companies/Report.aspx">
       <publishTime>09/03/2015 14:52:22</publishTime>
@@ -5335,13 +5371,19 @@
       <publishTime>10/14/2015 01:02:42</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList.aspx">
-      <publishTime>11/15/2015 21:25:50</publishTime>
+      <publishTime>11/21/2015 22:09:49</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList1.aspx">
       <publishTime>08/14/2015 00:24:41</publishTime>
     </File>
     <File Include="Manage/Services/DevDetail.aspx">
-      <publishTime>11/07/2015 23:14:25</publishTime>
+      <publishTime>11/21/2015 22:59:38</publishTime>
+    </File>
+    <File Include="Manage/Services/Instr.aspx">
+      <publishTime>11/21/2015 22:36:23</publishTime>
+    </File>
+    <File Include="Manage/Services/OpInstr.aspx">
+      <publishTime>11/21/2015 22:44:05</publishTime>
     </File>
     <File Include="Manage/Services/ProfInfo.aspx">
       <publishTime>11/07/2015 21:19:15</publishTime>
@@ -5650,13 +5692,13 @@
       <publishTime>01/23/2014 14:50:04</publishTime>
     </File>
     <File Include="Manage/Systems/Default.aspx">
-      <publishTime>11/15/2015 18:45:31</publishTime>
+      <publishTime>11/21/2015 22:05:22</publishTime>
     </File>
     <File Include="Manage/Systems/DevIn.aspx">
-      <publishTime>11/07/2015 21:35:59</publishTime>
+      <publishTime>11/21/2015 21:13:20</publishTime>
     </File>
     <File Include="Manage/Systems/DevOut.aspx">
-      <publishTime>11/15/2015 20:03:04</publishTime>
+      <publishTime>11/21/2015 21:12:14</publishTime>
     </File>
     <File Include="Manage/Systems/InBillHouse.aspx">
       <publishTime>02/14/2014 13:48:09</publishTime>
@@ -5794,7 +5836,7 @@
       <publishTime>11/06/2015 20:43:38</publishTime>
     </File>
     <File Include="Manage/Systems/Welcome.aspx">
-      <publishTime>07/30/2015 20:57:05</publishTime>
+      <publishTime>11/21/2015 22:37:07</publishTime>
     </File>
     <File Include="Manage/Template/Ajax_DelTempInfo.aspx">
       <publishTime>05/26/2015 22:19:13</publishTime>
