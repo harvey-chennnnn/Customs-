@@ -10,11 +10,11 @@ using System.Data.Common;
 namespace ECommerce.Admin.DAL
 {
 	/// <summary>
-	/// 数据访问类:ProfInfo
+	/// 数据访问类:AUserInfo
 	/// </summary>
-	public partial class ProfInfo
+	public partial class AUserInfo
 	{
-		public ProfInfo()
+		public AUserInfo()
 		{}
 		#region  Method
 
@@ -23,7 +23,7 @@ namespace ECommerce.Admin.DAL
 		/// </summary>
 		public int GetMaxId()
 		{
-			string strsql = "select max(PIID)+1 from ProfInfo";
+			string strsql = "select max(ID)+1 from AUserInfo";
 			Database db = DatabaseFactory.CreateDatabase();
 			object obj = db.ExecuteScalar(CommandType.Text, strsql);
 			if (obj != null && obj != DBNull.Value)
@@ -36,13 +36,13 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool Exists(int PIID)
+		public bool Exists(int ID)
 		{
 			Database db = DatabaseFactory.CreateDatabase();
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append("select count(1) from ProfInfo where PIID=@PIID ");
+			strSql.Append("select count(1) from AUserInfo where ID=@ID ");
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
-			db.AddInParameter(dbCommand, "PIID", DbType.Int32,PIID);
+			db.AddInParameter(dbCommand, "ID", DbType.Int32,ID);
 			int cmdresult;
 			object obj = db.ExecuteScalar(dbCommand);
 			if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
@@ -67,30 +67,23 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(ECommerce.Admin.Model.ProfInfo model)
+		public int Add(ECommerce.Admin.Model.AUserInfo model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("insert into ProfInfo(");
-			strSql.Append("PTID,Name,UId,Age,ComAddr,Job,MajorSearch,Descri,Education,Photo,Status,CreateDate,UpdateDate)");
+			strSql.Append("insert into AUserInfo(");
+			strSql.Append("Name,UserName,AUID,EntID,UID,CreateDate)");
 
 			strSql.Append(" values (");
-			strSql.Append("@PTID,@Name,@UId,@Age,@ComAddr,@Job,@MajorSearch,@Descri,@Education,@Photo,@Status,@CreateDate,@UpdateDate)");
+			strSql.Append("@Name,@UserName,@AUID,@EntID,@UID,@CreateDate)");
 			strSql.Append(";select @@IDENTITY");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
-			db.AddInParameter(dbCommand, "PTID", DbType.Int32, model.PTID);
 			db.AddInParameter(dbCommand, "Name", DbType.String, model.Name);
-			db.AddInParameter(dbCommand, "UId", DbType.Int32, model.UId);
-			db.AddInParameter(dbCommand, "Age", DbType.String, model.Age);
-			db.AddInParameter(dbCommand, "ComAddr", DbType.String, model.ComAddr);
-			db.AddInParameter(dbCommand, "Job", DbType.String, model.Job);
-			db.AddInParameter(dbCommand, "MajorSearch", DbType.String, model.MajorSearch);
-			db.AddInParameter(dbCommand, "Descri", DbType.String, model.Descri);
-			db.AddInParameter(dbCommand, "Education", DbType.String, model.Education);
-			db.AddInParameter(dbCommand, "Photo", DbType.String, model.Photo);
-			db.AddInParameter(dbCommand, "Status", DbType.Byte, model.Status);
+			db.AddInParameter(dbCommand, "UserName", DbType.String, model.UserName);
+			db.AddInParameter(dbCommand, "AUID", DbType.Int32, model.AUID);
+			db.AddInParameter(dbCommand, "EntID", DbType.Int32, model.EntID);
+			db.AddInParameter(dbCommand, "UID", DbType.Int32, model.UID);
 			db.AddInParameter(dbCommand, "CreateDate", DbType.DateTime, model.CreateDate);
-			db.AddInParameter(dbCommand, "UpdateDate", DbType.DateTime, model.UpdateDate);
 			int result;
 			object obj = db.ExecuteScalar(dbCommand);
 			if(!int.TryParse(obj.ToString(),out result))
@@ -102,40 +95,26 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(ECommerce.Admin.Model.ProfInfo model)
+		public bool Update(ECommerce.Admin.Model.AUserInfo model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("update ProfInfo set ");
-			strSql.Append("PTID=@PTID,");
+			strSql.Append("update AUserInfo set ");
 			strSql.Append("Name=@Name,");
-			strSql.Append("UId=@UId,");
-			strSql.Append("Age=@Age,");
-			strSql.Append("ComAddr=@ComAddr,");
-			strSql.Append("Job=@Job,");
-			strSql.Append("MajorSearch=@MajorSearch,");
-			strSql.Append("Descri=@Descri,");
-			strSql.Append("Education=@Education,");
-			strSql.Append("Photo=@Photo,");
-			strSql.Append("Status=@Status,");
-			strSql.Append("CreateDate=@CreateDate,");
-			strSql.Append("UpdateDate=@UpdateDate");
-			strSql.Append(" where PIID=@PIID ");
+			strSql.Append("UserName=@UserName,");
+			strSql.Append("AUID=@AUID,");
+			strSql.Append("EntID=@EntID,");
+			strSql.Append("UID=@UID,");
+			strSql.Append("CreateDate=@CreateDate");
+			strSql.Append(" where ID=@ID ");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
-			db.AddInParameter(dbCommand, "PIID", DbType.Int32, model.PIID);
-			db.AddInParameter(dbCommand, "PTID", DbType.Int32, model.PTID);
+			db.AddInParameter(dbCommand, "ID", DbType.Int32, model.ID);
 			db.AddInParameter(dbCommand, "Name", DbType.String, model.Name);
-			db.AddInParameter(dbCommand, "UId", DbType.Int32, model.UId);
-			db.AddInParameter(dbCommand, "Age", DbType.String, model.Age);
-			db.AddInParameter(dbCommand, "ComAddr", DbType.String, model.ComAddr);
-			db.AddInParameter(dbCommand, "Job", DbType.String, model.Job);
-			db.AddInParameter(dbCommand, "MajorSearch", DbType.String, model.MajorSearch);
-			db.AddInParameter(dbCommand, "Descri", DbType.String, model.Descri);
-			db.AddInParameter(dbCommand, "Education", DbType.String, model.Education);
-			db.AddInParameter(dbCommand, "Photo", DbType.String, model.Photo);
-			db.AddInParameter(dbCommand, "Status", DbType.Byte, model.Status);
+			db.AddInParameter(dbCommand, "UserName", DbType.String, model.UserName);
+			db.AddInParameter(dbCommand, "AUID", DbType.Int32, model.AUID);
+			db.AddInParameter(dbCommand, "EntID", DbType.Int32, model.EntID);
+			db.AddInParameter(dbCommand, "UID", DbType.Int32, model.UID);
 			db.AddInParameter(dbCommand, "CreateDate", DbType.DateTime, model.CreateDate);
-			db.AddInParameter(dbCommand, "UpdateDate", DbType.DateTime, model.UpdateDate);
 			int rows=db.ExecuteNonQuery(dbCommand);
 
 			if (rows > 0)
@@ -151,15 +130,15 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(int PIID)
+		public bool Delete(int ID)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from ProfInfo ");
-			strSql.Append(" where PIID=@PIID ");
+			strSql.Append("delete from AUserInfo ");
+			strSql.Append(" where ID=@ID ");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
-			db.AddInParameter(dbCommand, "PIID", DbType.Int32,PIID);
+			db.AddInParameter(dbCommand, "ID", DbType.Int32,ID);
 			int rows=db.ExecuteNonQuery(dbCommand);
 
 			if (rows > 0)
@@ -174,11 +153,11 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 批量删除数据
 		/// </summary>
-		public bool DeleteList(string PIIDlist )
+		public bool DeleteList(string IDlist )
 		{
 			StringBuilder strSql=new StringBuilder();
-            strSql.Append("update DeviceList set Status=0 ");
-            strSql.Append(" where DID in (" + PIIDlist + ")  ");
+			strSql.Append("delete from AUserInfo ");
+			strSql.Append(" where ID in ("+IDlist + ")  ");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
 			int rows=db.ExecuteNonQuery(dbCommand);
@@ -196,16 +175,16 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public ECommerce.Admin.Model.ProfInfo GetModel(int PIID)
+		public ECommerce.Admin.Model.AUserInfo GetModel(int ID)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select PIID,PTID,Name,UId,Age,ComAddr,Job,MajorSearch,Descri,Education,Photo,Status,CreateDate,UpdateDate from ProfInfo ");
-			strSql.Append(" where PIID=@PIID ");
+			strSql.Append("select ID,Name,UserName,AUID,EntID,UID,CreateDate from AUserInfo ");
+			strSql.Append(" where ID=@ID ");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
-			db.AddInParameter(dbCommand, "PIID", DbType.Int32,PIID);
-			ECommerce.Admin.Model.ProfInfo model=null;
+			db.AddInParameter(dbCommand, "ID", DbType.Int32,ID);
+			ECommerce.Admin.Model.AUserInfo model=null;
 			using (IDataReader dataReader = db.ExecuteReader(dbCommand))
 			{
 				if(dataReader.Read())
@@ -220,66 +199,38 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public ECommerce.Admin.Model.ProfInfo DataRowToModel(DataRow row)
+		public ECommerce.Admin.Model.AUserInfo DataRowToModel(DataRow row)
 		{
-			ECommerce.Admin.Model.ProfInfo model=new ECommerce.Admin.Model.ProfInfo();
+			ECommerce.Admin.Model.AUserInfo model=new ECommerce.Admin.Model.AUserInfo();
 			if (row != null)
 			{
-				if(row["PIID"]!=null && row["PIID"].ToString()!="")
+				if(row["ID"]!=null && row["ID"].ToString()!="")
 				{
-					model.PIID=Convert.ToInt32(row["PIID"].ToString());
-				}
-				if(row["PTID"]!=null && row["PTID"].ToString()!="")
-				{
-					model.PTID=Convert.ToInt32(row["PTID"].ToString());
+					model.ID=Convert.ToInt32(row["ID"].ToString());
 				}
 				if(row["Name"]!=null)
 				{
 					model.Name=row["Name"].ToString();
 				}
-				if(row["UId"]!=null && row["UId"].ToString()!="")
+				if(row["UserName"]!=null)
 				{
-					model.UId=Convert.ToInt32(row["UId"].ToString());
+					model.UserName=row["UserName"].ToString();
 				}
-				if(row["Age"]!=null)
+				if(row["AUID"]!=null && row["AUID"].ToString()!="")
 				{
-					model.Age=row["Age"].ToString();
+					model.AUID=Convert.ToInt32(row["AUID"].ToString());
 				}
-				if(row["ComAddr"]!=null)
+				if(row["EntID"]!=null && row["EntID"].ToString()!="")
 				{
-					model.ComAddr=row["ComAddr"].ToString();
+					model.EntID=Convert.ToInt32(row["EntID"].ToString());
 				}
-				if(row["Job"]!=null)
+				if(row["UID"]!=null && row["UID"].ToString()!="")
 				{
-					model.Job=row["Job"].ToString();
-				}
-				if(row["MajorSearch"]!=null)
-				{
-					model.MajorSearch=row["MajorSearch"].ToString();
-				}
-				if(row["Descri"]!=null)
-				{
-					model.Descri=row["Descri"].ToString();
-				}
-				if(row["Education"]!=null)
-				{
-					model.Education=row["Education"].ToString();
-				}
-				if(row["Photo"]!=null)
-				{
-					model.Photo=row["Photo"].ToString();
-				}
-				if(row["Status"]!=null && row["Status"].ToString()!="")
-				{
-					model.Status=Convert.ToInt32(row["Status"].ToString());
+					model.UID=Convert.ToInt32(row["UID"].ToString());
 				}
 				if(row["CreateDate"]!=null && row["CreateDate"].ToString()!="")
 				{
 					model.CreateDate=Convert.ToDateTime(row["CreateDate"].ToString());
-				}
-				if(row["UpdateDate"]!=null && row["UpdateDate"].ToString()!="")
-				{
-					model.UpdateDate=Convert.ToDateTime(row["UpdateDate"].ToString());
 				}
 			}
 			return model;
@@ -293,8 +244,8 @@ namespace ECommerce.Admin.DAL
 		public DataSet GetList(string strWhere, List<SqlParameter> parameters)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select PIID,PTID,Name,UId,Age,ComAddr,Job,MajorSearch,Descri,Education,Photo,Status,CreateDate,UpdateDate ");
-			strSql.Append(" FROM ProfInfo ");
+			strSql.Append("select ID,Name,UserName,AUID,EntID,UID,CreateDate ");
+			strSql.Append(" FROM AUserInfo ");
 			Database db = DatabaseFactory.CreateDatabase();
 			if(strWhere.Trim()!="")
 			{
@@ -325,8 +276,8 @@ namespace ECommerce.Admin.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" PIID,PTID,Name,UId,Age,ComAddr,Job,MajorSearch,Descri,Education,Photo,Status,CreateDate,UpdateDate ");
-			strSql.Append(" FROM ProfInfo ");
+			strSql.Append(" ID,Name,UserName,AUID,EntID,UID,CreateDate ");
+			strSql.Append(" FROM AUserInfo ");
 			Database db = DatabaseFactory.CreateDatabase();
 			if(strWhere.Trim()!="")
 			{
@@ -350,7 +301,7 @@ namespace ECommerce.Admin.DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM ProfInfo ");
+			strSql.Append("select count(1) FROM AUserInfo ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -385,9 +336,9 @@ namespace ECommerce.Admin.DAL
 			}
 			else
 			{
-				strSql.Append("order by T.PIID desc");
+				strSql.Append("order by T.ID desc");
 			}
-			strSql.Append(")AS Row, T.*  from ProfInfo T ");
+			strSql.Append(")AS Row, T.*  from AUserInfo T ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -413,8 +364,8 @@ namespace ECommerce.Admin.DAL
 		{
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetStoredProcCommand("UP_GetRecordByPage");
-			db.AddInParameter(dbCommand, "tblName", DbType.AnsiString, "ProfInfo");
-			db.AddInParameter(dbCommand, "fldName", DbType.AnsiString, "PIID");
+			db.AddInParameter(dbCommand, "tblName", DbType.AnsiString, "AUserInfo");
+			db.AddInParameter(dbCommand, "fldName", DbType.AnsiString, "ID");
 			db.AddInParameter(dbCommand, "PageSize", DbType.Int32, PageSize);
 			db.AddInParameter(dbCommand, "PageIndex", DbType.Int32, PageIndex);
 			db.AddInParameter(dbCommand, "IsReCount", DbType.Boolean, 0);
@@ -428,11 +379,11 @@ namespace ECommerce.Admin.DAL
 		/// <param name="strWhere">查询条件 Status=@Status and Cell=@Cell order by CreateDate Desc  like写法:'%'+@Cell+'%' </param>
 		/// <param name="parameters">List<SqlParameter> parameters</param>
 		/// </summary>
-		public List<ECommerce.Admin.Model.ProfInfo> GetListArray(string strWhere, List<SqlParameter> parameters)
+		public List<ECommerce.Admin.Model.AUserInfo> GetListArray(string strWhere, List<SqlParameter> parameters)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select PIID,PTID,Name,UId,Age,ComAddr,Job,MajorSearch,Descri,Education,Photo,Status,CreateDate,UpdateDate ");
-			strSql.Append(" FROM ProfInfo ");
+			strSql.Append("select ID,Name,UserName,AUID,EntID,UID,CreateDate ");
+			strSql.Append(" FROM AUserInfo ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -446,7 +397,7 @@ namespace ECommerce.Admin.DAL
 					dbCommand.Parameters.Add(sqlParameter);
 				}
 			}
-			List<ECommerce.Admin.Model.ProfInfo> list = new List<ECommerce.Admin.Model.ProfInfo>();
+			List<ECommerce.Admin.Model.AUserInfo> list = new List<ECommerce.Admin.Model.AUserInfo>();
 			using (IDataReader dataReader = db.ExecuteReader(dbCommand))
 			{
 				while (dataReader.Read())
@@ -461,47 +412,36 @@ namespace ECommerce.Admin.DAL
 		/// <summary>
 		/// 对象实体绑定数据
 		/// </summary>
-		public ECommerce.Admin.Model.ProfInfo ReaderBind(IDataReader dataReader)
+		public ECommerce.Admin.Model.AUserInfo ReaderBind(IDataReader dataReader)
 		{
-			ECommerce.Admin.Model.ProfInfo model=new ECommerce.Admin.Model.ProfInfo();
+			ECommerce.Admin.Model.AUserInfo model=new ECommerce.Admin.Model.AUserInfo();
 			object ojb; 
-			ojb = dataReader["PIID"];
+			ojb = dataReader["ID"];
 			if(ojb != null && ojb != DBNull.Value)
 			{
-				model.PIID=Convert.ToInt32(ojb);
-			}
-			ojb = dataReader["PTID"];
-			if(ojb != null && ojb != DBNull.Value)
-			{
-				model.PTID=Convert.ToInt32(ojb);
+				model.ID=Convert.ToInt32(ojb);
 			}
 			model.Name=dataReader["Name"].ToString();
-			ojb = dataReader["UId"];
+			model.UserName=dataReader["UserName"].ToString();
+			ojb = dataReader["AUID"];
 			if(ojb != null && ojb != DBNull.Value)
 			{
-				model.UId=Convert.ToInt32(ojb);
+				model.AUID=Convert.ToInt32(ojb);
 			}
-			model.Age=dataReader["Age"].ToString();
-			model.ComAddr=dataReader["ComAddr"].ToString();
-			model.Job=dataReader["Job"].ToString();
-			model.MajorSearch=dataReader["MajorSearch"].ToString();
-			model.Descri=dataReader["Descri"].ToString();
-			model.Education=dataReader["Education"].ToString();
-			model.Photo=dataReader["Photo"].ToString();
-			ojb = dataReader["Status"];
+			ojb = dataReader["EntID"];
 			if(ojb != null && ojb != DBNull.Value)
 			{
-				model.Status=Convert.ToInt32(ojb);
+				model.EntID=Convert.ToInt32(ojb);
+			}
+			ojb = dataReader["UID"];
+			if(ojb != null && ojb != DBNull.Value)
+			{
+				model.UID=Convert.ToInt32(ojb);
 			}
 			ojb = dataReader["CreateDate"];
 			if(ojb != null && ojb != DBNull.Value)
 			{
 				model.CreateDate=Convert.ToDateTime(ojb);
-			}
-			ojb = dataReader["UpdateDate"];
-			if(ojb != null && ojb != DBNull.Value)
-			{
-				model.UpdateDate=Convert.ToDateTime(ojb);
 			}
 			return model;
 		}
@@ -510,10 +450,10 @@ namespace ECommerce.Admin.DAL
 
         #region
 
-        public Model.ProfInfo GetModel(string strWhere, List<SqlParameter> parameters) {
+        public Model.AUserInfo GetModel(string strWhere, List<SqlParameter> parameters) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * from ProfInfo ");
+            strSql.Append("select * from AUserInfo ");
             Database db = DatabaseFactory.CreateDatabase();
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);
@@ -524,7 +464,7 @@ namespace ECommerce.Admin.DAL
                     dbCommand.Parameters.Add(sqlParameter);
                 }
             }
-            Model.ProfInfo model = null;
+            Model.AUserInfo model = null;
             using (IDataReader dataReader = db.ExecuteReader(dbCommand)) {
                 if (dataReader.Read()) {
                     model = ReaderBind(dataReader);

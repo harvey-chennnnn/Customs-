@@ -12,6 +12,7 @@ namespace ECommerce.Web.Manage.Systems {
     public partial class DevOut : UI.WebPage {
         private readonly DeviceList _dataDal = new DeviceList();
         private readonly LoanInfo _loanInfo = new LoanInfo();
+        private readonly AUserInfo _aUserInfo = new AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             try {
@@ -58,15 +59,21 @@ namespace ECommerce.Web.Manage.Systems {
         protected void btnSub_Click(object sender, EventArgs e) {
             //var LoID = ddltype.SelectedValue;
             //var Loaner = ddltype.SelectedItem.Text;
-            var LoID = HiddenField1.Value;
+            //var LoID = HiddenField1.Value;
             var Loaner = txtDId.Value;
             var LoanDescri = txtdescr.Value;
             var LoanDate = txtBirthDay.Value;
-            if (string.IsNullOrEmpty(Loaner) || string.IsNullOrEmpty(LoID)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请选择借出人！');</script>");
+            if (string.IsNullOrEmpty(Loaner)) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写借出人！');</script>");
+                return;
+            }
+            var auser = _aUserInfo.GetModel(" Name='" + Loaner + "' ", new List<SqlParameter>());
+            if (null == auser) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('借出人不存在！');</script>");
                 return;
             }
             if (string.IsNullOrEmpty(LoanDate)) {
+                //LoanDate = DateTime.Now.ToString();
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写借出时间！');</script>");
                 return;
             }
@@ -115,7 +122,7 @@ namespace ECommerce.Web.Manage.Systems {
                     LoanDescri = LoanDescri,
                     LoanDate = Convert.ToDateTime(LoanDate),
                     DID = Convert.ToInt32(Request.QueryString["OrgId"]),
-                    LoID = Convert.ToInt32(LoID),
+                    LoID = auser.AUID,
                     Loaner = Loaner,
                     UId = CurrentUser.UId,
                     OpName = CurrentUser.UserName,

@@ -6,16 +6,13 @@ using System.Web;
 using System.Web.UI.WebControls;
 using DotNet.Framework.Common;
 using ECommerce.Admin.DAL;
-using ECommerce.DBUtilities;
 
 namespace ECommerce.Web.Manage.Systems {
-    public partial class DevIn : UI.WebPage {
-        private readonly DeviceList _dataDal = new DeviceList();
-        private readonly LoanInfo _loanInfo = new LoanInfo();
+    public partial class AddAUInfo : UI.WebPage {
+        private readonly AUserInfo _dataDal = new AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
-                //BindOrgTrain();
                 if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
                     BindData(Request.QueryString["OrgId"]);
                 }
@@ -23,12 +20,12 @@ namespace ECommerce.Web.Manage.Systems {
         }
 
         //private void BindOrgTrain() {
-        //    MySQlHelper h = new MySQlHelper();
-        //    string sql = "select * from dr_user";
-        //    DataTable dtTable = h.ExecuteQuery(sql, CommandType.Text);
-        //    ddltype.DataSource = dtTable;
-        //    ddltype.DataTextField = "UserName";
-        //    ddltype.DataValueField = "UID";
+        //    List<SqlParameter> parameters = new List<SqlParameter>();
+        //    var str = " 1=1 order by CreateDate desc ";
+        //    var dt = _dataSWCDal.GetList(str, parameters).Tables[0];
+        //    ddltype.DataSource = dt;
+        //    ddltype.DataTextField = "Name";
+        //    ddltype.DataValueField = "PTID";
         //    ddltype.DataBind();
         //    ddltype.Items.Insert(0, new ListItem("请选择", ""));
         //}
@@ -37,14 +34,8 @@ namespace ECommerce.Web.Manage.Systems {
             try {
                 var model = _dataDal.GetModel(Convert.ToInt32(orgId));
                 if (null != model) {
-                    litDevName.Text = model.DeviceName;
-                    litPkey.Text = model.PKey;
-                    litDescri.Text = model.Descri;
-                    var lmodel = _loanInfo.GetModel(Convert.ToInt32(model.LoanerID));
-                    litLoanDescri.Text = lmodel.LoanDescri;
-                    HiddenField1.Value = litLoanDate.Text = Convert.ToDateTime(lmodel.LoanDate).ToString("yyyy-MM-dd");
-                    litLoaner.Text = lmodel.Loaner;
-                    //ddltype.SelectedValue = model.Loanable.ToString();
+                    txtName.Value = model.Name;
+                    txtDId.Value = model.UserName;
                 }
             }
             catch (Exception) {
@@ -52,14 +43,20 @@ namespace ECommerce.Web.Manage.Systems {
         }
 
         protected void btnSub_Click(object sender, EventArgs e) {
-            var ReturnDescri = txtdescr.Value;
-            var ReturnDate = txtReturnDate.Value;
-            if (string.IsNullOrEmpty(ReturnDate)) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写归还时间！');</script>");
+            var name = txtName.Value.Trim();
+            var LoID = HiddenField1.Value;
+            var Loaner = txtDId.Value;
+
+            if (string.IsNullOrEmpty(name)) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写姓名！');</script>");
+                return;
+            }
+            if (string.IsNullOrEmpty(Loaner) || string.IsNullOrEmpty(LoID)) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请选择小天使帐户名！');</script>");
                 return;
             }
 
-            if (string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
+            if (!string.IsNullOrEmpty(Request.QueryString["OrgId"])) {
                 //try {
                 //    List<SqlParameter> parameters = new List<SqlParameter>();
                 //    var parameter = new SqlParameter("@OrgId", DbType.AnsiString) { Value = Request.QueryString["OrgId"] };
@@ -98,18 +95,25 @@ namespace ECommerce.Web.Manage.Systems {
                 //}
             }
             else {
-                var model = _dataDal.GetModel(Convert.ToInt32(Request.QueryString["OrgId"]));
-                var lmodel = _loanInfo.GetModel(Convert.ToInt32(model.LoanerID));
-                lmodel.ReturnDescri = ReturnDescri;
-                lmodel.ReturnDate = Convert.ToDateTime(ReturnDate);
-                lmodel.UId = CurrentUser.UId;
-                lmodel.OpName = CurrentUser.UserName;
-                if (_loanInfo.ReturnDev(lmodel)) {
+                var model = new ECommerce.Admin.Model.AUserInfo {
+                    Name = name,
+                    CreateDate = DateTime.Now,
+                    UserName = Loaner,
+                    AUID = Convert.ToInt32(LoID),
+                    UID = CurrentUser.UId
+                };
+                var exists = _dataDal.GetModel(" UserName='"+Loaner+"' ", new List<SqlParameter>());
+                if (null != exists) {
+                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('员工信息已经存在！');</script>");
+                    return;
+                }
+                var resAdd = _dataDal.Add(model);
+                if (resAdd > 0) {
                     Page.ClientScript.RegisterStartupScript(GetType(), "",
                         "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
                 }
                 else {
-                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('操作失败！');window.top.$modal.destroy();</script>");
+                    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('新增失败！');window.top.$modal.destroy();</script>");
                 }
             }
         }

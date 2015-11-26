@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DevOut.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.DevOut" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddAUInfo.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.AddAUInfo" %>
 
 <!DOCTYPE html>
 
@@ -9,9 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <%--<script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>--%>
-    <link href="/Scripts/jquery-ui-1.8.7.custom.css" rel="stylesheet" />
-    <script src="/Scripts/jquery-ui-1.8.7.custom.min.js"></script>
-    <title>借出</title>
+    <title>员工管理</title>
     <style>
         .form-horizontal .controls {
             line-height: 28px;
@@ -39,45 +37,20 @@
         <div class="form-horizontal">
             <div class="modal-body">
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword">名称：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>姓名：</label>
                     <div class="controls">
-                        <asp:Literal ID="litDevName" runat="server"></asp:Literal>
+                        <input type="text" id="txtName" placeholder="名称" runat="server" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPassword">唯一编号：</label>
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>小天使帐户名：</label>
                     <div class="controls">
-                        <asp:Literal ID="litPkey" runat="server"></asp:Literal>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword">设备备注：</label>
-                    <div class="controls">
-                        <asp:Literal ID="litDescri" runat="server"></asp:Literal>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>借出人：</label>
-                    <div class="controls">
-                        <input type="text" id="txtDId" placeholder="借出人" runat="server" />
+                        <input type="text" id="txtDId" placeholder="小天使帐户名" runat="server" />
                         <span id="spError" style="color: red;"></span>
                         <asp:HiddenField ID="HiddenField1" runat="server" />
-                        <%--<asp:DropDownList ID="ddltype" runat="server">
-                        </asp:DropDownList>--%>
                     </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>借出时间：</label>
-                    <div class="controls">
-                        <input type="text" id="txtBirthDay" placeholder="" runat="server" onfocus="WdatePicker()" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword"><span style="color: red;"></span>借出备注：</label>
-                    <div class="controls">
-                        <textarea id="txtdescr" placeholder="借出备注" runat="server" rows="4"></textarea>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="modal-footer">
@@ -86,32 +59,7 @@
         </div>
         <script>
             $(document).ready(function () {
-                function getNowFormatDate() {
-                    var day = new Date();
-                    var Year = 0;
-                    var Month = 0;
-                    var Day = 0;
-                    var CurrentDate = "";
-                    Year = day.getFullYear();
-                    Month = day.getMonth() + 1;
-                    Day = day.getDate();
-                    CurrentDate += Year + "-";
-                    if (Month >= 10) {
-                        CurrentDate += Month + "-";
-                    }
-                    else {
-                        CurrentDate += "0" + Month + "-";
-                    }
-                    if (Day >= 10) {
-                        CurrentDate += Day;
-                    }
-                    else {
-                        CurrentDate += "0" + Day;
-                    }
-                    return CurrentDate;
-                }
-                $("#<%=txtBirthDay.ClientID%>").attr('placeholder', getNowFormatDate);
-                <%--$("#txtDId").autocomplete({
+                $("#txtDId").autocomplete({
                     minLength: 1,
                     source: function (request, response) {
                         $.ajax({
@@ -154,7 +102,7 @@
                         $(this).blur();
                         return false;
                     }
-                });--%>
+                });
             });
 
         </script>

@@ -173,6 +173,9 @@
     <Content Include="Manage\CM\AddArticle.aspx" />
     <Content Include="Manage\Companies\Detail.aspx" />
     <Content Include="Manage\Companies\Default.aspx" />
+    <Content Include="Manage\Systems\LoanerAutoComplete.aspx" />
+    <Content Include="Manage\Systems\AddAUInfo.aspx" />
+    <Content Include="Manage\Services\UserInfo.aspx" />
     <Content Include="Manage\Services\Instr.aspx" />
     <Content Include="Manage\Services\DevDetail.aspx" />
     <Content Include="Manage\Services\Advisory1.aspx" />
@@ -938,6 +941,27 @@
     </Compile>
     <Compile Include="Manage\Companies\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\LoanerAutoComplete.aspx.cs">
+      <DependentUpon>LoanerAutoComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\LoanerAutoComplete.aspx.designer.cs">
+      <DependentUpon>LoanerAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\AddAUInfo.aspx.cs">
+      <DependentUpon>AddAUInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\AddAUInfo.aspx.designer.cs">
+      <DependentUpon>AddAUInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Services\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Services\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Services\Instr.aspx.cs">
       <DependentUpon>Instr.aspx</DependentUpon>

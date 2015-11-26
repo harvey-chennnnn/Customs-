@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>
+    <%--<script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>--%>
     <title>设备维护</title>
 </head>
 <body>
@@ -52,7 +52,7 @@
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>入库时间：</label>
                     <div class="controls">
-                        <input type="text" id="txtBirthDay" placeholder="入库时间 2114-01-01" runat="server" onfocus="WdatePicker()" />
+                        <input type="text" id="txtBirthDay" placeholder="" runat="server" onfocus="WdatePicker()" />
                     </div>
                 </div>
                 <div class="control-group">
@@ -67,6 +67,33 @@
             <asp:Button ID="btnSub" CssClass="btn btn-success" runat="server" Text="确定" OnClick="btnSub_Click" />
             <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
         </div>
+        <script>
+            function getNowFormatDate() {
+                var day = new Date();
+                var Year = 0;
+                var Month = 0;
+                var Day = 0;
+                var CurrentDate = "";
+                Year = day.getFullYear();
+                Month = day.getMonth() + 1;
+                Day = day.getDate();
+                CurrentDate += Year + "-";
+                if (Month >= 10) {
+                    CurrentDate += Month + "-";
+                }
+                else {
+                    CurrentDate += "0" + Month + "-";
+                }
+                if (Day >= 10) {
+                    CurrentDate += Day;
+                }
+                else {
+                    CurrentDate += "0" + Day;
+                }
+                return CurrentDate;
+            }
+            $("#<%=txtBirthDay.ClientID%>").attr('placeholder', getNowFormatDate);
+        </script>
     </form>
 </body>
 </html>

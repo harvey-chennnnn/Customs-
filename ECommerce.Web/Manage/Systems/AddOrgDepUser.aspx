@@ -95,7 +95,7 @@
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>手机</label>
                     <div class="controls">
-                        <input type="text" id="txtCell" placeholder="手机" runat="server" />
+                        <input type="text" id="txtCell" placeholder="手机" runat="server" maxlength="11" />
                     </div>
                 </div>
                 <%--<div class="control-group">

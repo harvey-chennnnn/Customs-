@@ -80,10 +80,10 @@ namespace ECommerce.Web.Manage.Systems {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写用户名！');</script>");
                 return;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(userName, @"^[\u4E00-\u9FA5\uf900-\ufa2d\w]{6,16}")) {
-                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名只能用中文、英文、数字、下划线、6-16个字符，请重新输入！');</script>");
-                return;
-            }
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(userName, @"^[\u4E00-\u9FA5\uf900-\ufa2d\w]{6,16}")) {
+            //    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名只能用中文、英文、数字、下划线、6-16个字符，请重新输入！');</script>");
+            //    return;
+            //}
             if (string.IsNullOrEmpty(Request.QueryString["empId"])) {
                 if (string.IsNullOrEmpty(pwd)) {
                     Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写密码！');</script>");
@@ -91,7 +91,7 @@ namespace ECommerce.Web.Manage.Systems {
                 }
             }
             if (string.IsNullOrEmpty(Request.QueryString["empId"])) {
-                if (pwd.Length<6) {
+                if (pwd.Length < 6) {
                     Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('密码长度需6位以上！');</script>");
                     return;
                 }
@@ -127,7 +127,7 @@ namespace ECommerce.Web.Manage.Systems {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写手机号码！');</script>");
                 return;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(cell, @"^[1]+[3,4,5,8]+\d{9}$")) {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(cell, @"^[1]+[3,4,5,8]+\d{9}$") || cell.Length > 11) {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('手机号码格式错误，请重新输入！');</script>");
                 return;
 
@@ -141,7 +141,7 @@ namespace ECommerce.Web.Manage.Systems {
             //    return;
             //}
             var orgid = "0";
-            var type = 1;
+            var type = 15;
             if (1 != type) {
                 //orgid = ddlOrgName.SelectedValue;
             }
@@ -157,7 +157,7 @@ namespace ECommerce.Web.Manage.Systems {
                     model.HomeAddress = "";
                     model.Phone = cell;
                     model.Sex = sex;
-                    var res = _dataDal.UpdateEmpUser(orgid, Request.QueryString["empId"], name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, "","","");
+                    var res = _dataDal.UpdateEmpUser(orgid, Request.QueryString["empId"], name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, "", "", "");
                     if (res == "1") {
                         Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
                         //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");

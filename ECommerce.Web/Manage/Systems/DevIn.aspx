@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>
+    <%--<script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>--%>
     <title>归还</title>
     <style>
         .form-horizontal .controls {
@@ -60,7 +60,8 @@
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>归还时间：</label>
                     <div class="controls">
-                        <input type="text" id="txtReturnDate" placeholder="归还时间 2114-01-01" runat="server" onfocus="WdatePicker()" />
+                        <asp:HiddenField ID="HiddenField1" runat="server" />
+                        <input type="text" id="txtReturnDate" placeholder="" runat="server" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'HiddenField1\')}'})" />
                     </div>
                 </div>
                 <div class="control-group">

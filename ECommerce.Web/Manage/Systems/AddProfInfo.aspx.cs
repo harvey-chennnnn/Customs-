@@ -63,7 +63,9 @@ namespace ECommerce.Web.Manage.Systems {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写设备唯一编号！');</script>");
                 return;
             }
-            if (string.IsNullOrEmpty(EnteringDate)) {
+            if (string.IsNullOrEmpty(EnteringDate))
+            {
+                //EnteringDate = DateTime.Now.ToString();
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写入库时间！');</script>");
                 return;
             }
