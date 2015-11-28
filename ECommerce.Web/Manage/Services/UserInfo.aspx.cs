@@ -47,7 +47,7 @@ namespace ECommerce.Web.Manage.Services {
                 }
             }
             //分页方法
-            Pager1.GetDataBind("Repeater", "rptListWork", sql, pageNum, pageSize, "", "rownum", "ProfInfo.aspx?name=" + name + "&");
+            Pager1.GetDataBind("Repeater", "rptListWork", sql, pageNum, pageSize, "", "rownum", "UserInfo.aspx?name=" + name + "&");
             #endregion
         }
 
