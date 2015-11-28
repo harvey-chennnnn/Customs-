@@ -9,8 +9,8 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <%--<script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>--%>
-    <link href="/Scripts/jquery-ui-1.8.7.custom.css" rel="stylesheet" />
-    <script src="/Scripts/jquery-ui-1.8.7.custom.min.js"></script>
+    <%--<link href="/Scripts/jquery-ui-1.8.7.custom.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-ui-1.8.7.custom.min.js"></script>--%>
     <title>借出</title>
     <style>
         .form-horizontal .controls {
