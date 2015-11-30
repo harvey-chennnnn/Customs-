@@ -9,6 +9,7 @@ using ECommerce.Web.UI;
 
 namespace ECommerce.Web.Manage.Companies {
     public partial class Detail : WebPage {
+        private ECommerce.Admin.DAL.AUserInfo _aUserInfo = new ECommerce.Admin.DAL.AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             try {
@@ -45,7 +46,7 @@ namespace ECommerce.Web.Manage.Companies {
                         sb.Append("<li class=\"in\">");
                         sb.Append("<div class=\"message\">");
                         sb.Append("<span class=\"arrow\"></span>");
-                        sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + dt.Rows[i]["FromUser"] + "</a>");
+                        sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + GetName(dt.Rows[i]["FromUser"]) + "</a>");
                         sb.Append("<span class=\"datetime\"> " +
                                   Convert.ToDateTime(dt.Rows[i]["CreateTime"])
                                       .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
@@ -60,5 +61,14 @@ namespace ECommerce.Web.Manage.Companies {
             #endregion
             return sb;
         }
+
+        protected string GetName(object userName) {
+            var auser = _aUserInfo.GetModel(" UserName='" + userName + "' ", new List<SqlParameter>());
+            if (null != auser) {
+                return auser.Name;
+            }
+            return userName.ToString();
+        }
+
     }
 }

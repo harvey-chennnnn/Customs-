@@ -17,6 +17,7 @@ namespace ECommerce.Web.Manage.Services {
     public partial class DevDetail : UI.WebPage {
         readonly LoanInfo _loanInfoDal = new LoanInfo();
         readonly DeviceList _deviceListDal = new DeviceList();
+        readonly AUserInfo _aUserInfo = new AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             try {
@@ -31,7 +32,13 @@ namespace ECommerce.Web.Manage.Services {
                                 litLoanDate.Text = model.LoanDate != null
                                     ? Convert.ToDateTime(model.LoanDate).ToString("yyyy-MM-dd")
                                     : "";
-                                litLoaner.Text = model.Loaner;
+                                var auserInfo = _aUserInfo.GetModel(" UserName='" + model.Loaner + "' ", new List<SqlParameter>());
+                                if (null != auserInfo) {
+                                    litLoaner.Text = auserInfo.Name;
+                                }
+                                else {
+                                    litLoaner.Text = model.Loaner;
+                                }
                                 litPkey.Text = model.PKey;
                                 litStatus.Text = model.LoanStatus == "1" ? "已借出" : "未借出";
                                 BindLoanInfo();
@@ -71,13 +78,10 @@ namespace ECommerce.Web.Manage.Services {
                           loaner + "') OR (UserName='" + loaner + "' AND FromUser='" + CurrentEmp.EmplName +
                           "') ORDER BY InfoId DESC ";
                 var dt = mySQlHelper.ExecuteDataset(sql).Tables[0];
-                if (dt.Rows.Count > 0)
-                {
+                if (dt.Rows.Count > 0) {
                     sb.Append("<ul class=\"clearfix\">");
-                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
-                    {
-                        if (CurrentEmp.EmplName == dt.Rows[i]["FromUser"].ToString())
-                        {
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--) {
+                        if (CurrentEmp.EmplName == dt.Rows[i]["FromUser"].ToString()) {
                             sb.Append("<li class=\"out\">");
                             sb.Append("<div class=\"message\">");
                             sb.Append("<span class=\"arrow\"></span>");
@@ -90,12 +94,11 @@ namespace ECommerce.Web.Manage.Services {
                             sb.Append("</div>");
                             sb.Append("</li>");
                         }
-                        else
-                        {
+                        else {
                             sb.Append("<li class=\"in\">");
                             sb.Append("<div class=\"message\">");
                             sb.Append("<span class=\"arrow\"></span>");
-                            sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + dt.Rows[i]["FromUser"] +
+                            sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + GetName(dt.Rows[i]["FromUser"]) +
                                       "</a>");
                             sb.Append("<span class=\"datetime\"> " +
                                       Convert.ToDateTime(dt.Rows[i]["CreateTime"])
@@ -108,8 +111,7 @@ namespace ECommerce.Web.Manage.Services {
                     }
                     sb.Append("</ul>");
                 }
-                else
-                {
+                else {
                     sb.Append("<div style=\"text-align: center\">暂无消息</div>");
                 }
 
@@ -123,10 +125,18 @@ namespace ECommerce.Web.Manage.Services {
 
         private void BindLoanInfo() {
             List<SqlParameter> parameters = new List<SqlParameter>();
-            var str = " DID='" + Request.QueryString["did"] + "' order by CreateDate desc ";
-            var dt = _loanInfoDal.GetList(str, parameters).Tables[0];
+            var str = " LoanInfo.DID='" + Request.QueryString["did"] + "' order by LoanInfo.CreateDate desc ";
+            var dt = _loanInfoDal.GetLoanerList(str, parameters).Tables[0];
             rptListWork.DataSource = dt;
             rptListWork.DataBind();
+        }
+
+        protected string GetName(object userName) {
+            var auser = _aUserInfo.GetModel(" UserName='" + userName + "' ", new List<SqlParameter>());
+            if (null != auser) {
+                return auser.Name;
+            }
+            return userName.ToString();
         }
 
         /// <summary>

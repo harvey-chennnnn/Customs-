@@ -557,6 +557,24 @@ namespace ECommerce.Admin.DAL
             return model;
         }
 
+        public ECommerce.Admin.Model.DeviceList GetModelLoaner(int DID) {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select DeviceList.*,AUserInfo.UserName from DeviceList left join AUserInfo on DeviceList.Loaner=AUserInfo.UserName ");
+            strSql.Append(" where DID=@DID ");
+            Database db = DatabaseFactory.CreateDatabase();
+            DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+            db.AddInParameter(dbCommand, "DID", DbType.Int32, DID);
+            ECommerce.Admin.Model.DeviceList model = null;
+            using (IDataReader dataReader = db.ExecuteReader(dbCommand)) {
+                if (dataReader.Read()) {
+                    model = ReaderBind(dataReader);
+                }
+            }
+            return model;
+        }
+
+
         #endregion
 	}
 }

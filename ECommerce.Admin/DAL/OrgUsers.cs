@@ -514,7 +514,7 @@ namespace ECommerce.Admin.DAL
         public Model.OrgUsers GetModelByEmplId(int emplId) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select UId,EmplId,UserName,UserPwd,AddTime,Type,Status,LastLoginTime from OrgUsers ");
+            strSql.Append("select * from OrgUsers ");
             strSql.Append(" where EmplId=@emplId ");
             Database db = DatabaseFactory.CreateDatabase();
             DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
@@ -534,7 +534,7 @@ namespace ECommerce.Admin.DAL
         public Model.OrgUsers GetModelByUserName(string userName) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select UId,EmplId,UserName,UserPwd,AddTime,Type,Status,LastLoginTime from OrgUsers ");
+            strSql.Append("select * from OrgUsers ");
             strSql.Append(" where Status=1 and UID=((SELECT UID FROM OrgUsers where EmplId =( SELECT EmplId FROM OrgEmployees WHERE OrgId!=1 and  EmplId IN ( SELECT EmplId FROM OrgUsers WHERE UserName = @userName))))");
             Database db = DatabaseFactory.CreateDatabase();
             DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());

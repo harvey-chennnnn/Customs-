@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 namespace ECommerce.Web.Manage.Services {
     public partial class ApplyList : ECommerce.Web.UI.WebPage {
         private ECommerce.Admin.DAL.ApplyList aDAL = new ECommerce.Admin.DAL.ApplyList();
+        private ECommerce.Admin.DAL.AUserInfo _aUserInfo = new ECommerce.Admin.DAL.AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
@@ -128,6 +129,14 @@ namespace ECommerce.Web.Manage.Services {
         /// <param name="e"></param>
         protected void btnSearch_Click(object sender, EventArgs e) {
             DataBingList(true);
+        }
+
+        protected string GetName(object userName) {
+            var auser = _aUserInfo.GetModel(" UserName='" + userName + "' ", new List<SqlParameter>());
+            if (null != auser) {
+                return auser.Name;
+            }
+            return userName.ToString();
         }
     }
 }

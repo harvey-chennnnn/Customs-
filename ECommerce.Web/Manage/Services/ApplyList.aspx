@@ -79,7 +79,7 @@
                                         <%#Eval("FromUser")%>
                                     </td>
                                     <td style="text-align: center">
-                                        <%#Eval("username")%>
+                                        <%#GetName(Eval("username"))%>
                                     </td>
                                     <td style="text-align: center">
                                         <a href="/Manage/Companies/Detail.aspx?fu=<%#Eval("FromUser") %>&tu=<%#Eval("username") %>"><%#Eval("Message")%></a>

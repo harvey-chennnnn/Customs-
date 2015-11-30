@@ -3,6 +3,7 @@ using ECommerce.Admin.Model;
 
 namespace ECommerce.Web.Manage.Systems {
     public partial class ChangePass : UI.WebPage {
+        public Admin.DAL.OrgUsers dalAccount = new Admin.DAL.OrgUsers();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
         }
@@ -11,10 +12,14 @@ namespace ECommerce.Web.Manage.Systems {
             try {
                 if (Session["CurrentUser"] != null) {
                     var user = Session["CurrentUser"] as OrgUsers;
+                    user = dalAccount.GetModel(user.UId);
+                    if (null == user) {
+                        Response.Redirect("Login.aspx", true);
+                    }
                     string uPwd = txtOldPwd.Text.Trim();
                     string nPwd = txtNewPwd.Text.Trim();
                     var nPwd2 = txtNewPwd2.Text.Trim();
-                    var dalAccount = new Admin.DAL.OrgUsers();
+
                     if (nPwd.Length < 6) {
                         Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('新密码长度需6位以上！');</script>");
                         return;

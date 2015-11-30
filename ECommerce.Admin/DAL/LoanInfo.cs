@@ -516,6 +516,24 @@ namespace ECommerce.Admin.DAL {
             }
         }
 
+        public DataSet GetLoanerList(string strWhere, List<SqlParameter> parameters) {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select AUserInfo.Name,LoanInfo.* ");
+            strSql.Append(" FROM LoanInfo left join AUserInfo on AUserInfo.UserName=LoanInfo.Loaner ");
+            Database db = DatabaseFactory.CreateDatabase();
+            if (strWhere.Trim() != "") {
+                strSql.Append(" where " + strWhere);
+            }
+            DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+            if (parameters.Count > 0) {
+                foreach (SqlParameter sqlParameter in parameters) {
+                    dbCommand.Parameters.Add(sqlParameter);
+                }
+            }
+            return db.ExecuteDataSet(dbCommand);
+        }
+
+
         #endregion
     }
 }

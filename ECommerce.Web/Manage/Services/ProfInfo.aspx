@@ -89,7 +89,7 @@
                                 <td style="text-align: center"><%#Eval("Loanable").ToString()=="1"?"是":"否"%></td>
                                 <td style="text-align: center"><%#Eval("LoanStatus").ToString()=="1"?"已借出":"未借出"%></td>
                                 <td style="text-align: center"><%#Eval("LoanDate")!=DBNull.Value?Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd"):""%></td>
-                                <td style="text-align: center"><%#Eval("Loaner")%></td>
+                                <td style="text-align: center"><%#Eval("Name")%></td>
                                 <td style="text-align: center"><%#Convert.ToDateTime(Eval("EnteringDate")).ToString("yyyy-MM-dd")%></td>
                                 <td style="text-align: center"><a href="/Manage/Services/DevDetail.aspx?did=<%#Eval("DID")%>&name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>" class="btn btn-mini" data-title="查看明细">查看</a></td>
                                 <td style="text-align: center">

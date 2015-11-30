@@ -219,7 +219,7 @@
                         <asp:Repeater ID="rptListWork" runat="server">
                             <ItemTemplate>
                                 <tr>
-                                    <td style="text-align: center"><%#Eval("Loaner")%></td>
+                                    <td style="text-align: center"><%#Eval("Name")%></td>
                                     <td style="text-align: center"><%#Eval("LoanDate")!=DBNull.Value?Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd"):""%></td>
                                     <td style="text-align: center"><%#Eval("ReturnDate")!=DBNull.Value?Convert.ToDateTime(Eval("ReturnDate")).ToString("yyyy-MM-dd"):""%></td>
                                     <td style="text-align: center"><%#Eval("OpName")%></td>

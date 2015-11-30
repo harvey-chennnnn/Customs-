@@ -152,12 +152,13 @@ namespace ECommerce.Web.Manage.Systems {
                         Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('人员不存在！');</script>");
                         return;
                     }
+                    var user = _dataDal1.GetModelByEmplId(model.EmplId);
                     model.EmplName = name;
                     model.Birthday = DateTime.Now;
                     model.HomeAddress = "";
                     model.Phone = cell;
                     model.Sex = sex;
-                    var res = _dataDal.UpdateEmpUser(orgid, Request.QueryString["empId"], name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, type, "", "", "");
+                    var res = _dataDal.UpdateEmpUser(orgid, Request.QueryString["empId"], name, sex, DateTime.Now.ToString(), "", cell, userName, pwd, Convert.ToInt32(user.Type), "", "", "");
                     if (res == "1") {
                         Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");
                         //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>window.top.$op.location=window.top.$op.location;window.top.$modal.destroy();</script>");

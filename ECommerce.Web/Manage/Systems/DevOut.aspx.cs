@@ -123,7 +123,7 @@ namespace ECommerce.Web.Manage.Systems {
                     LoanDate = Convert.ToDateTime(LoanDate),
                     DID = Convert.ToInt32(Request.QueryString["OrgId"]),
                     LoID = auser.AUID,
-                    Loaner = Loaner,
+                    Loaner = auser.UserName,
                     UId = CurrentUser.UId,
                     OpName = CurrentUser.UserName,
                     Status = 1
