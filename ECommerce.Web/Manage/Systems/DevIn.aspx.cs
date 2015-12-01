@@ -12,6 +12,7 @@ namespace ECommerce.Web.Manage.Systems {
     public partial class DevIn : UI.WebPage {
         private readonly DeviceList _dataDal = new DeviceList();
         private readonly LoanInfo _loanInfo = new LoanInfo();
+        private readonly AUserInfo _aUserInfo = new AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
@@ -43,7 +44,8 @@ namespace ECommerce.Web.Manage.Systems {
                     var lmodel = _loanInfo.GetModel(Convert.ToInt32(model.LoanerID));
                     litLoanDescri.Text = lmodel.LoanDescri;
                     HiddenField1.Value = litLoanDate.Text = Convert.ToDateTime(lmodel.LoanDate).ToString("yyyy-MM-dd");
-                    litLoaner.Text = lmodel.Loaner;
+                    var auser = _aUserInfo.GetModel(" UserName='" + lmodel.Loaner + "' ", new List<SqlParameter>());
+                    litLoaner.Text = null != auser ? auser.Name : lmodel.Loaner;
                     //ddltype.SelectedValue = model.Loanable.ToString();
                 }
             }

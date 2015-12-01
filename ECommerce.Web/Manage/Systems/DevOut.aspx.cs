@@ -59,15 +59,15 @@ namespace ECommerce.Web.Manage.Systems {
         protected void btnSub_Click(object sender, EventArgs e) {
             //var LoID = ddltype.SelectedValue;
             //var Loaner = ddltype.SelectedItem.Text;
-            //var LoID = HiddenField1.Value;
+            var LoID = HiddenField1.Value;
             var Loaner = txtDId.Value;
             var LoanDescri = txtdescr.Value;
             var LoanDate = txtBirthDay.Value;
-            if (string.IsNullOrEmpty(Loaner)) {
+            if (string.IsNullOrEmpty(Loaner) || string.IsNullOrEmpty(LoID)) {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写借出人！');</script>");
                 return;
             }
-            var auser = _aUserInfo.GetModel(" Name='" + Loaner + "' ", new List<SqlParameter>());
+            var auser = _aUserInfo.GetModel(Convert.ToInt32(LoID));
             if (null == auser) {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('借出人不存在！');</script>");
                 return;

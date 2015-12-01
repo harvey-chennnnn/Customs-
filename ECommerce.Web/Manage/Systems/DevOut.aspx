@@ -111,7 +111,7 @@
                     return CurrentDate;
                 }
                 $("#<%=txtBirthDay.ClientID%>").attr('placeholder', getNowFormatDate);
-                <%--$("#txtDId").autocomplete({
+                $("#txtDId").autocomplete({
                     minLength: 1,
                     source: function (request, response) {
                         $.ajax({
@@ -154,7 +154,7 @@
                         $(this).blur();
                         return false;
                     }
-                });--%>
+                });
             });
 
         </script>

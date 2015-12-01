@@ -10,6 +10,7 @@ using ECommerce.DBUtilities;
 
 namespace ECommerce.Web.Manage.Systems {
     public partial class ProductAutoComplete : System.Web.UI.Page {
+        private ECommerce.Admin.DAL.AUserInfo _aUserInfo = new ECommerce.Admin.DAL.AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
 
@@ -18,15 +19,16 @@ namespace ECommerce.Web.Manage.Systems {
                 string callback = Request.QueryString["jsoncallback"];
                 var term = HttpUtility.UrlDecode(Request.QueryString["term"]);
                 if (!string.IsNullOrEmpty(term)) {
-                    MySQlHelper h = new MySQlHelper();
-                    string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!='' and username like '%" + term + "%'";
-                    DataTable dt = h.ExecuteQuery(sql, CommandType.Text);
+                    //MySQlHelper h = new MySQlHelper();
+                    //string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!='' and username like '%" + term + "%'";
+                    //DataTable dt = h.ExecuteQuery(sql, CommandType.Text);
+                    DataTable dt = _aUserInfo.GetList(" Name like '%" + term + "%'", new List<SqlParameter>()).Tables[0];
                     string data = "";
                     if (dt.Rows.Count > 0) {
                         string names = "";
                         for (int i = 0; i < dt.Rows.Count; i++) {
 
-                            string s = "{\"label\":\"" + dt.Rows[i]["UserName"] + "\",\"value\":\"" + dt.Rows[i]["UID"] + "\"},";
+                            string s = "{\"label\":\"" + dt.Rows[i]["Name"] + " - " + dt.Rows[i]["UserName"] + "\",\"value\":\"" + dt.Rows[i]["ID"] + "\"},";
                             names += s;
 
                         }
