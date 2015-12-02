@@ -92,6 +92,7 @@
     <Content Include="DLL\Microsoft.Practices.Unity.Interception.dll" />
     <Content Include="DLL\Microsoft.ReportViewer.Common.dll" />
     <Content Include="DLL\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="DLL\MySql.Data.dll" />
     <Content Include="DLL\Newtonsoft.Json.dll" />
     <Content Include="DLL\Senparc.Weixin.MP.dll" />
     <Content Include="DLL\ServerInfo.dll" />

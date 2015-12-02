@@ -64,7 +64,7 @@
                     source: function (request, response) {
                         $.ajax({
                             type: "GET",
-                            url: "ProductAutoComplete.aspx",
+                            url: "AUserAutoComplete.aspx",
                             dataType: "json",
                             data: {
                                 term: request.term

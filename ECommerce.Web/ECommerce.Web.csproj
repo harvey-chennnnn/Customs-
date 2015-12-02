@@ -173,6 +173,7 @@
     <Content Include="Manage\CM\AddArticle.aspx" />
     <Content Include="Manage\Companies\Detail.aspx" />
     <Content Include="Manage\Companies\Default.aspx" />
+    <Content Include="Manage\Systems\AUserAutoComplete.aspx" />
     <Content Include="Manage\Systems\LoanerAutoComplete.aspx" />
     <Content Include="Manage\Systems\AddAUInfo.aspx" />
     <Content Include="Manage\Services\UserInfo.aspx" />
@@ -941,6 +942,13 @@
     </Compile>
     <Compile Include="Manage\Companies\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\AUserAutoComplete.aspx.cs">
+      <DependentUpon>AUserAutoComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\AUserAutoComplete.aspx.designer.cs">
+      <DependentUpon>AUserAutoComplete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\LoanerAutoComplete.aspx.cs">
       <DependentUpon>LoanerAutoComplete.aspx</DependentUpon>
