@@ -150,25 +150,27 @@
                 </div>
                 <div>
                     <h5>设备信息：</h5>
-                    <table style="width: 100%;border: 1px solid #ddd;" cellspacing="0" cellpadding="0" class="table-form">
+                    <table style="width: 100%; border: 1px solid #ddd;" cellspacing="0" cellpadding="0" class="table-form">
                         <tr>
-                            <td class="tf-label">名称：
+                            <td valign="top" class="tf-label">名称：
                             </td>
-                            <td class="tf-con">
+                            <td colspan="3" valign="top" class="tf-con">
                                 <asp:Literal ID="litDevName" runat="server"></asp:Literal>
                             </td>
-                            <td class="tf-label">唯一编号：
+                        </tr>
+                        <tr>
+                            <td valign="top" class="tf-label">唯一编号：
                             </td>
-                            <td class="tf-con">
+                            <td colspan="3" valign="top" class="tf-con">
                                 <asp:Literal ID="litPkey" runat="server"></asp:Literal>
                             </td>
                         </tr>
                         <tr>
                             <td valign="top" class="tf-label">备注：</td>
-                            <td colspan="3" valign="top" class="tf-con">
-                                <div style="width: 450px;">
-                                    <asp:Literal ID="litDescri" runat="server"></asp:Literal>
-                                </div>
+                            <td colspan="3" valign="top" class="tf-con"><asp:Literal ID="litDescri" runat="server"></asp:Literal>
+                                <%--<div style="width: 450px;">
+                                    
+                                </div>--%>
 
                             </td>
                         </tr>
@@ -180,11 +182,13 @@
                         </tr>
                         <tr>
                             <td valign="top" class="tf-label">借出人：</td>
-                            <td valign="top" class="tf-con">
+                            <td colspan="3" valign="top" class="tf-con">
                                 <asp:Literal ID="litLoaner" runat="server"></asp:Literal>
                             </td>
+                        </tr>
+                        <tr>
                             <td valign="top" class="tf-label">借出时间：</td>
-                            <td valign="top" class="tf-con">
+                            <td colspan="3" valign="top" class="tf-con">
                                 <asp:Literal ID="litLoanDate" runat="server"></asp:Literal>
                             </td>
                         </tr>
