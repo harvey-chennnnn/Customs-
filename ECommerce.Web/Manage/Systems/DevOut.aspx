@@ -127,7 +127,7 @@
                             success: function (data) {
                                 response(data);
                                 if (data == "" || data == null) {
-                                    $("#txtDId").val('');
+                                    $("#<%=HiddenField1.ClientID%>").val('');
                                     $("#spError").html("查无此人");
                                 } else {
                                     $("#spError").html("");
@@ -154,6 +154,8 @@
                         $(this).blur();
                         return false;
                     }
+                }).bind("input.autocomplete", function () {
+                    $(this).trigger('keydown.autocomplete');
                 });
             });
 
