@@ -9,9 +9,10 @@ using System.Web;
 using ECommerce.DBUtilities;
 
 namespace ECommerce.Web.Manage.Systems {
-    public partial class ProductAutoComplete : System.Web.UI.Page {
+    public partial class ProductAutoComplete : UI.WebPage {
         private ECommerce.Admin.DAL.AUserInfo _aUserInfo = new ECommerce.Admin.DAL.AUserInfo();
         protected void Page_Load(object sender, EventArgs e) {
+            VerifyPage("", true);
             if (!IsPostBack) {
 
                 #region
@@ -22,7 +23,7 @@ namespace ECommerce.Web.Manage.Systems {
                     //MySQlHelper h = new MySQlHelper();
                     //string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!='' and username like '%" + term + "%'";
                     //DataTable dt = h.ExecuteQuery(sql, CommandType.Text);
-                    DataTable dt = _aUserInfo.GetList(" Name like '%" + term + "%'", new List<SqlParameter>()).Tables[0];
+                    DataTable dt = _aUserInfo.GetList(" Name like '%" + term + "%' and EntID='" + CurrentEmp.OrgId + "'", new List<SqlParameter>()).Tables[0];
                     string data = "";
                     if (dt.Rows.Count > 0) {
                         string names = "";

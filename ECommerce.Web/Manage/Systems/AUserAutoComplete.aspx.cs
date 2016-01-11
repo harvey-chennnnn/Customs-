@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using ECommerce.DBUtilities;
+using ECommerce.Web.UI;
 
 namespace ECommerce.Web.Manage.Systems {
-    public partial class AUserAutoComplete : System.Web.UI.Page {
+    public partial class AUserAutoComplete : WebPage {
         protected void Page_Load(object sender, EventArgs e) {
+            VerifyPage("", false);
             if (!IsPostBack) {
 
                 #region
@@ -19,14 +21,14 @@ namespace ECommerce.Web.Manage.Systems {
                 var term = HttpUtility.UrlDecode(Request.QueryString["term"]);
                 if (!string.IsNullOrEmpty(term)) {
                     MySQlHelper h = new MySQlHelper();
-                    string sql = "SELECT UserName,UID FROM dr_user WHERE UserName IS NOT NULL AND UserName!='' and username like '%" + term + "%'";
+                    string sql = "SELECT UserName,UID,CONVERT(IsEnterprise,SIGNED) as IsEnterprise FROM dr_user WHERE UserName IS NOT NULL AND UserName!='' and username like '%" + term + "%' and IsEnterprise='" + CurrentEmp.OrgId + "'";
                     DataTable dt = h.ExecuteQuery(sql, CommandType.Text);
                     string data = "";
                     if (dt.Rows.Count > 0) {
                         string names = "";
                         for (int i = 0; i < dt.Rows.Count; i++) {
 
-                            string s = "{\"label\":\"" + dt.Rows[i]["UserName"] + "\",\"value\":\"" + dt.Rows[i]["UID"] + "\"},";
+                            string s = "{\"label\":\"" + dt.Rows[i]["UserName"] + "\",\"value\":\"" + dt.Rows[i]["UID"] + "\",\"entId\":\"" + dt.Rows[i]["IsEnterprise"].ToString() + "\"},";
                             names += s;
 
                         }

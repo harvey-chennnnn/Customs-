@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.WebControls;
 using ECommerce.Admin.DAL;
 
 namespace ECommerce.Web.Manage.Systems {
@@ -10,10 +11,11 @@ namespace ECommerce.Web.Manage.Systems {
         private readonly OrgUsers _dataDal1 = new OrgUsers();
         private readonly OrgOrganize _orgOrganizeDal = new OrgOrganize();
         private readonly SYS_RoleInfo _roleInfoDal = new SYS_RoleInfo();
+        private readonly EnterpriseList _enterpriseList = new EnterpriseList();
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             if (!IsPostBack) {
-                //BindOrgName();
+                BindOrgName();
                 if (!string.IsNullOrEmpty(Request.QueryString["empId"])) {
                     BindData(Request.QueryString["empId"]);
                 }
@@ -31,6 +33,7 @@ namespace ECommerce.Web.Manage.Systems {
                 //txtBirthDay.Value = Convert.ToDateTime(model.Birthday).ToString("yyyy-MM-dd");
                 //txtAddr.Value = model.HomeAddress;
                 txtCell.Value = model.Phone;
+                ddlOrgName.SelectedValue = model.OrgId.ToString();
                 List<SqlParameter> parameters = new List<SqlParameter>();
                 var parameter = new SqlParameter("@EmplId", DbType.AnsiString) { Value = model.EmplId };
                 parameters.Add(parameter);
@@ -50,15 +53,16 @@ namespace ECommerce.Web.Manage.Systems {
             catch (Exception) {
             }
         }
-        //private void BindOrgName() {
-        //    List<SqlParameter> parameters = new List<SqlParameter>();         //创建sql参数存储对象
-        //    string sqlWhere = " Role_Status =1 ";
-        //    DataSet dtor = _roleInfoDal.GetList(sqlWhere);
-        //    ddlOrgName.DataSource = dtor;
-        //    ddlOrgName.DataTextField = "Role_Name";
-        //    ddlOrgName.DataValueField = "Role_Id";
-        //    ddlOrgName.DataBind();
-        //}
+        private void BindOrgName() {
+            List<SqlParameter> parameters = new List<SqlParameter>();         //创建sql参数存储对象
+            string sqlWhere = " Status =1 ";
+            DataSet dtor = _enterpriseList.GetList(sqlWhere, parameters);
+            ddlOrgName.DataSource = dtor;
+            ddlOrgName.DataTextField = "EnterpriseName";
+            ddlOrgName.DataValueField = "EnterpriseID";
+            ddlOrgName.DataBind();
+            ddlOrgName.Items.Insert(0, new ListItem("请选择所属企业", "-1"));
+        }
 
         protected void btnSub_Click(object sender, EventArgs e) {
             var name = txtName.Value.Trim();
@@ -71,6 +75,7 @@ namespace ECommerce.Web.Manage.Systems {
             var pw = txtpw.Value.Trim();
             //var uUser = txtUuser.Value.Trim();
             //var uPwd = txtUpwd.Value.Trim();
+            var orgid = ddlOrgName.SelectedValue;
             if (string.IsNullOrEmpty(name)) {
                 //Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写姓名！');window.parent.$modal.destroy();</script>");
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写姓名！');</script>");
@@ -132,6 +137,10 @@ namespace ECommerce.Web.Manage.Systems {
                 return;
 
             }
+            if (string.IsNullOrEmpty(orgid) || "-1" == orgid) {
+                Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请选择所属企业！');</script>");
+                return;
+            }
             //if (string.IsNullOrEmpty(uUser)) {
             //    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写测评用户名！');</script>");
             //    return;
@@ -140,11 +149,10 @@ namespace ECommerce.Web.Manage.Systems {
             //    Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写测评密码！');</script>");
             //    return;
             //}
-            var orgid = "0";
             var type = 15;
-            if (1 != type) {
-                //orgid = ddlOrgName.SelectedValue;
-            }
+            //if (1 != type) {
+            //    orgid = ddlOrgName.SelectedValue;
+            //}
             if (!string.IsNullOrEmpty(Request.QueryString["empId"])) {
                 try {
                     var model = _dataDal.GetModel(Convert.ToInt32(Request.QueryString["empId"]));

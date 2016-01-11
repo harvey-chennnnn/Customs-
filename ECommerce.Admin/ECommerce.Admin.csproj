@@ -78,6 +78,7 @@
     <Compile Include="DAL\DevelopAnswer.cs" />
     <Compile Include="DAL\DevelopmentService.cs" />
     <Compile Include="DAL\DeviceList.cs" />
+    <Compile Include="DAL\EnterpriseList.cs" />
     <Compile Include="DAL\FactroyInfo.cs" />
     <Compile Include="DAL\FileList.cs" />
     <Compile Include="DAL\Financel.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Model\DevelopAnswer.cs" />
     <Compile Include="Model\DevelopmentService.cs" />
     <Compile Include="Model\DeviceList.cs" />
+    <Compile Include="Model\EnterpriseList.cs" />
     <Compile Include="Model\FactroyInfo.cs" />
     <Compile Include="Model\FileList.cs" />
     <Compile Include="Model\Financel.cs" />

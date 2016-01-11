@@ -40,7 +40,7 @@ namespace ECommerce.Web.Manage.Services {
                                     litLoaner.Text = model.Loaner;
                                 }
                                 litPkey.Text = model.PKey;
-                                litStatus.Text = model.LoanStatus == "1" ? "已借出" : "未借出";
+                                litStatus.Text = "1" == model.LoanStatus.ToString() ? "已借出" : "未借出";
                                 BindLoanInfo();
                                 litMsg.Text = GetMsg(model.Loaner).ToString();
                             }

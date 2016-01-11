@@ -48,6 +48,7 @@
                         <input type="text" id="txtDId" placeholder="小天使帐户名" runat="server" />
                         <span id="spError" style="color: red;"></span>
                         <asp:HiddenField ID="HiddenField1" runat="server" />
+                        <asp:HiddenField ID="HiddenField2" runat="server" />
                     </div>
                 </div>
 
@@ -76,6 +77,7 @@
                                 response(data);
                                 if (data == "" || data == null) {
                                     $("#<%=HiddenField1.ClientID%>").val('');
+                                    $("#<%=HiddenField2.ClientID%>").val('');
                                     $("#spError").html("查无此人");
                                 } else {
                                     $("#spError").html("");
@@ -90,6 +92,7 @@
                         $(this).val(b.item.label);
                         $(".ui-autocomplete").addClass("txb");
                         $("#<%=HiddenField1.ClientID%>").val(b.item.value);
+                        $("#<%=HiddenField2.ClientID%>").val(b.item.entId);
                         $(this).addClass("txb");
                         $(this).blur();
                         return false;

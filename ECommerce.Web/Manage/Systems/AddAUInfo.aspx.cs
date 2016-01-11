@@ -46,7 +46,7 @@ namespace ECommerce.Web.Manage.Systems {
             var name = txtName.Value.Trim();
             var LoID = HiddenField1.Value;
             var Loaner = txtDId.Value;
-
+            var EntID = HiddenField2.Value;
             if (string.IsNullOrEmpty(name)) {
                 Page.ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('请填写姓名！');</script>");
                 return;
@@ -100,7 +100,8 @@ namespace ECommerce.Web.Manage.Systems {
                     CreateDate = DateTime.Now,
                     UserName = Loaner,
                     AUID = Convert.ToInt32(LoID),
-                    UID = CurrentUser.UId
+                    UID = CurrentUser.UId,
+                    EntID = Convert.ToInt32(EntID)
                 };
                 var exists = _dataDal.GetModel(" UserName='"+Loaner+"' ", new List<SqlParameter>());
                 if (null != exists) {

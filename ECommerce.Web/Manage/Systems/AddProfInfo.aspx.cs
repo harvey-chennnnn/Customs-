@@ -93,6 +93,7 @@ namespace ECommerce.Web.Manage.Systems {
                     dt.PurchaseDep = PurchaseDep;
                     dt.Purchaser = Purchaser;
                     dt.UID = CurrentUser.UId;
+                    //dt.EntID = Convert.ToInt32(CurrentEmp.OrgId);
 
                     var res = _dataDal.Update(dt);
                     if (res) {
@@ -118,7 +119,8 @@ namespace ECommerce.Web.Manage.Systems {
                     PurchaseDep = PurchaseDep,
                     Purchaser = Purchaser,
                     UID = CurrentUser.UId,
-                    Status = 1
+                    Status = 1,
+                    EntID = Convert.ToInt32(CurrentEmp.OrgId)
                 };
                 var exists = _dataDal.GetModel(" PKey='" + PKey + "' ", new List<SqlParameter>());
                 if (null != exists) {

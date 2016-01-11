@@ -10,7 +10,7 @@
 namespace ECommerce.Web.Manage.Systems {
     
     
-    public partial class AddAUInfo {
+    public partial class AddEnterprise {
         
         /// <summary>
         /// form1 控件。
@@ -22,40 +22,22 @@ namespace ECommerce.Web.Manage.Systems {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtName 控件。
+        /// txtEnterpriseID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEnterpriseID;
         
         /// <summary>
-        /// txtDId 控件。
+        /// txtEnterpriseName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDId;
-        
-        /// <summary>
-        /// HiddenField1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
-        
-        /// <summary>
-        /// HiddenField2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEnterpriseName;
         
         /// <summary>
         /// btnSub 控件。

@@ -111,6 +111,13 @@
                             <input id="txtUpwd" runat="server" name="txtUpwd" placeholder="测评密码" type="text" cssclass="input_txt border_radius" autocomplete="off" /></span>
                     </div>
                 </div>--%>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword"><span style="color: red;">*</span>所属企业</label>
+                    <div class="controls">
+                        <asp:DropDownList ID="ddlOrgName" runat="server">
+                            </asp:DropDownList>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-footer">

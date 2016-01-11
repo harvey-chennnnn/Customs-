@@ -173,6 +173,8 @@
     <Content Include="Manage\CM\AddArticle.aspx" />
     <Content Include="Manage\Companies\Detail.aspx" />
     <Content Include="Manage\Companies\Default.aspx" />
+    <Content Include="Manage\Systems\AddEnterprise.aspx" />
+    <Content Include="Manage\Services\EnterpriseInfo.aspx" />
     <Content Include="Manage\Systems\AUserAutoComplete.aspx" />
     <Content Include="Manage\Systems\LoanerAutoComplete.aspx" />
     <Content Include="Manage\Systems\AddAUInfo.aspx" />
@@ -944,6 +946,20 @@
     </Compile>
     <Compile Include="Manage\Companies\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\AddEnterprise.aspx.cs">
+      <DependentUpon>AddEnterprise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\AddEnterprise.aspx.designer.cs">
+      <DependentUpon>AddEnterprise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Services\EnterpriseInfo.aspx.cs">
+      <DependentUpon>EnterpriseInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Services\EnterpriseInfo.aspx.designer.cs">
+      <DependentUpon>EnterpriseInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\AUserAutoComplete.aspx.cs">
       <DependentUpon>AUserAutoComplete.aspx</DependentUpon>

@@ -56,7 +56,7 @@
                         <th nowrap="nowrap">用户名</th>
                         <th nowrap="nowrap">性别</th>
                         <th nowrap="nowrap">电话</th>
-                        <%--<th nowrap="nowrap">地址</th>--%>
+                        <th nowrap="nowrap">所属企业</th>
                         <th nowrap="nowrap">人员类型</th>
                         <th nowrap="nowrap">创建时间</th>
                         <th nowrap="nowrap">上次登录</th>
@@ -72,6 +72,7 @@
                                 <td style="text-align: center"><%#Eval("UserName")%></td>
                                 <td style="text-align: center"><%#Eval("Sex").ToString()=="1" ? "男":"女"%></td>
                                 <td style="text-align: center"><%#Eval("Phone")%></td>
+                                <td style="text-align: center"><%#Eval("EnterpriseName")%></td>
                                 <td style="text-align: center"><%#Eval("Role_Name")%></td>
                                 <td style="text-align: center"><%#Convert.ToDateTime(Eval("Addtime")).ToString("yyyy-MM-dd")%></td>
                                 <td style="text-align: center"><%#Eval("LastLoginTime")==DBNull.Value?"":Convert.ToDateTime(Eval("LastLoginTime")).ToString("yyyy-MM-dd")%></td>

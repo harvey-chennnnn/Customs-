@@ -15,31 +15,31 @@ namespace ECommerce.Web.Manage.Systems
             if (!IsPostBack)
             {
                 BindData(false);
-                int[][] aa = new int[4][];
+                //int[][] aa = new int[4][];
 
-                int[] a = { 1, 2, 3, 4, 5 };
+                //int[] a = { 1, 2, 3, 4, 5 };
 
-                int[] b = { 6, 7, 8, 9 };
+                //int[] b = { 6, 7, 8, 9 };
 
-                int[] c = { 10, 11, 12 };
+                //int[] c = { 10, 11, 12 };
 
-                int[] d = { 13, 14 };
+                //int[] d = { 13, 14 };
 
-                aa[0] = a;
+                //aa[0] = a;
 
-                aa[1] = b;
+                //aa[1] = b;
 
-                aa[2] = c;
+                //aa[2] = c;
 
-                aa[3] = d;
+                //aa[3] = d;
 
 
 
-                MyClass ff = new MyClass(aa);
+                //MyClass ff = new MyClass(aa);
 
-                ff.MySelf();
+                //ff.MySelf();
 
-                ArrayList dataSource = ff.FirstList;
+                //ArrayList dataSource = ff.FirstList;
             }
         }
 
@@ -94,7 +94,7 @@ namespace ECommerce.Web.Manage.Systems
             int pageNum = 1;
             int pageSize = 10;
             //分页查询语句
-            string sql = "select row_number() over(order by  OrgEmployees.Addtime desc,OrgEmployees.EmplId DESC) as rownum,OrgEmployees.*,OrgUsers.UId,OrgUsers.LastLoginTime,OrgUsers.Type ,OrgOrganize.OrgName,OrgUsers.UserName,SYS_RoleInfo.Role_Name FROM OrgEmployees join OrgUsers on OrgUsers.EmplId=OrgEmployees.EmplId left join OrgOrganize on OrgOrganize.OrgId=OrgEmployees.OrgId and  OrgOrganize.Status=1 left join SYS_RoleInfo on SYS_RoleInfo.Role_Id=OrgUsers.Type where OrgEmployees.Status=1 and OrgUsers.Status=1";
+            string sql = "select row_number() over(order by  OrgEmployees.Addtime desc,OrgEmployees.EmplId DESC) as rownum,EnterpriseList.EnterpriseName,OrgEmployees.*,OrgUsers.UId,OrgUsers.LastLoginTime,OrgUsers.Type ,OrgOrganize.OrgName,OrgUsers.UserName,SYS_RoleInfo.Role_Name FROM OrgEmployees join OrgUsers on OrgUsers.EmplId=OrgEmployees.EmplId left join OrgOrganize on OrgOrganize.OrgId=OrgEmployees.OrgId and  OrgOrganize.Status=1 left join SYS_RoleInfo on SYS_RoleInfo.Role_Id=OrgUsers.Type left join EnterpriseList on EnterpriseList.EnterpriseID=OrgEmployees.OrgId where OrgEmployees.Status=1 and OrgUsers.Status=1";
             var name = string.Empty;
             if (!string.IsNullOrEmpty(txtRealName.Value))
             {

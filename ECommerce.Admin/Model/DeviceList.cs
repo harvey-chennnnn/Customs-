@@ -17,7 +17,7 @@ namespace ECommerce.Admin.Model
 		private int? _loanable=1;
 		private string _purchasedep;
 		private string _purchaser;
-		private string _loanstatus= "0";
+		private int? _loanstatus=0;
 		private int? _loanerid;
 		private string _loaner;
 		private DateTime? _loandate;
@@ -27,6 +27,7 @@ namespace ECommerce.Admin.Model
 		private int? _uid;
 		private DateTime? _enteringdate;
 		private DateTime? _createdate= DateTime.Now;
+		private int? _entid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -78,7 +79,7 @@ namespace ECommerce.Admin.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string LoanStatus
+		public int? LoanStatus
 		{
 			set{ _loanstatus=value;}
 			get{return _loanstatus;}
@@ -154,6 +155,14 @@ namespace ECommerce.Admin.Model
 		{
 			set{ _createdate=value;}
 			get{return _createdate;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? EntID
+		{
+			set{ _entid=value;}
+			get{return _entid;}
 		}
 		#endregion Model
 

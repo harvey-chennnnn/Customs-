@@ -22,7 +22,7 @@ namespace ECommerce.Web.Manage.Services {
             int pageNum = 1;
             int pageSize = 10;
             //分页查询语句
-            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.ID DESC) as rownum,oo.* FROM AUserInfo oo where 1=1 ";
+            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.ID DESC) as rownum,oo.* FROM AUserInfo oo where oo.EntID='" + CurrentEmp.OrgId + "' ";
             var name = string.Empty;
             if (!string.IsNullOrEmpty(txtRealName.Value)) {
                 name = txtRealName.Value;
@@ -33,7 +33,7 @@ namespace ECommerce.Web.Manage.Services {
                 txtRealName.Value = name;
                 sql += " and  oo.Name like '%" + name + "%' ";
             }
-            
+
             if (!isFirstPage) {
                 try {
 
