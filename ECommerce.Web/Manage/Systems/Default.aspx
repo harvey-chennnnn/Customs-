@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.Default" %>
 
+<%@ Import Namespace="ECommerce.Lib.Security" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
     <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css">
     <link href="/themes/sco.js/css/scojs.css" rel="stylesheet" />
     <script src="/themes/js/jquery.min.js"></script>
@@ -75,10 +77,10 @@
                 <asp:Literal ID="litRoleTree" runat="server"></asp:Literal>
             </div>
             <div style="bottom: 30px; position: absolute; text-align: center; line-height: 30px;">
-                <img width="50%" height="50%" src="/images/sitelogo.png" /><br/>
+                <img width="50%" height="50%" src="/images/sitelogo.png" /><br />
                 <strong>西安擎天软件科技有限公司</strong><br />
                 service@angeletsoft.cn<br />
-                <strong style="font-size: 16px;color:dodgerblue">4000291776</strong><br />
+                <strong style="font-size: 16px; color: dodgerblue">4000291776</strong><br />
                 西安高新技术产业开发区<br />
                 锦业路69号创业研发园<br />
                 瞪羚谷B座五楼504<br />

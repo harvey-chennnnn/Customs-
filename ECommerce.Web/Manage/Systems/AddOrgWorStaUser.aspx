@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddOrgWorStaUser.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.AddOrgWorStaUser" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
     <%--<link href="/themes/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <script src="/themes/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/themes/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>--%>

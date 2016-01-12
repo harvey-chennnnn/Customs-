@@ -40,10 +40,10 @@
       <publishTime>01/11/2016 21:53:47</publishTime>
     </File>
     <File Include="bin/ECommerce.dll">
-      <publishTime>01/11/2016 22:31:08</publishTime>
+      <publishTime>01/12/2016 19:21:52</publishTime>
     </File>
     <File Include="bin/ECommerce.Lib.dll">
-      <publishTime>01/11/2016 21:53:48</publishTime>
+      <publishTime>01/12/2016 19:21:52</publishTime>
     </File>
     <File Include="bin/ECommerce.Order.dll">
       <publishTime>03/25/2014 15:06:05</publishTime>
@@ -115,7 +115,7 @@
       <publishTime>07/30/2015 20:57:30</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/26/2015 22:33:04</publishTime>
@@ -5149,16 +5149,16 @@
       <publishTime>07/30/2015 20:56:55</publishTime>
     </File>
     <File Include="Manage/Area/Area.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/Area/AreaAtt.aspx">
       <publishTime>07/30/2015 20:56:55</publishTime>
     </File>
     <File Include="Manage/Area/AreaMain.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/BaselineData/Default.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:12:14</publishTime>
     </File>
     <File Include="Manage/BaselineData/Detail.aspx">
       <publishTime>09/03/2015 14:52:21</publishTime>
@@ -5215,7 +5215,7 @@
       <publishTime>07/30/2015 20:56:59</publishTime>
     </File>
     <File Include="Manage/Companies/Default.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/Companies/Detail.aspx">
       <publishTime>11/21/2015 22:59:31</publishTime>
@@ -5239,7 +5239,7 @@
       <publishTime>07/30/2015 20:57:00</publishTime>
     </File>
     <File Include="Manage/MeasurementData/Default.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/MeasurementData/Detail.aspx">
       <publishTime>09/03/2015 20:53:37</publishTime>
@@ -5383,7 +5383,7 @@
       <publishTime>12/09/2015 21:23:06</publishTime>
     </File>
     <File Include="Manage/Services/EnterpriseInfo.aspx">
-      <publishTime>01/11/2016 21:35:56</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/Services/Instr.aspx">
       <publishTime>11/24/2015 22:45:00</publishTime>
@@ -5428,7 +5428,7 @@
       <publishTime>07/30/2015 20:57:00</publishTime>
     </File>
     <File Include="Manage/SysLogs/ValueCompare.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/Systems/AddArea.aspx">
       <publishTime>12/20/2014 14:13:24</publishTime>
@@ -5443,7 +5443,7 @@
       <publishTime>12/20/2014 14:13:24</publishTime>
     </File>
     <File Include="Manage/Systems/AddArticleType.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddAUInfo.aspx">
       <publishTime>01/11/2016 19:56:21</publishTime>
@@ -5452,7 +5452,7 @@
       <publishTime>07/30/2015 20:57:05</publishTime>
     </File>
     <File Include="Manage/Systems/AddColumn.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddEarlyWCount.aspx">
       <publishTime>03/03/2014 11:34:51</publishTime>
@@ -5461,7 +5461,7 @@
       <publishTime>02/11/2014 17:25:11</publishTime>
     </File>
     <File Include="Manage/Systems/AddEnterprise.aspx">
-      <publishTime>01/11/2016 21:42:07</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddFarmerAcc.aspx">
       <publishTime>02/24/2014 18:04:27</publishTime>
@@ -5479,7 +5479,7 @@
       <publishTime>12/17/2014 20:49:41</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgDepUser.aspx">
-      <publishTime>01/11/2016 19:33:20</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgLogistics.aspx">
       <publishTime>12/17/2014 20:49:42</publishTime>
@@ -5503,10 +5503,10 @@
       <publishTime>08/03/2015 10:07:58</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgWorkStation.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddOrgWorStaUser.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddProductBrand.aspx">
       <publishTime>01/23/2014 14:50:02</publishTime>
@@ -5530,7 +5530,7 @@
       <publishTime>10/13/2015 22:35:20</publishTime>
     </File>
     <File Include="Manage/Systems/AddProfType.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddRechargeInfo.aspx">
       <publishTime>02/24/2014 18:04:27</publishTime>
@@ -5563,13 +5563,13 @@
       <publishTime>07/30/2015 20:57:05</publishTime>
     </File>
     <File Include="Manage/Systems/AddSystemPageConfig.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddSystemRoleInfo.aspx">
-      <publishTime>11/06/2015 20:43:39</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AddWorStaMach.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/AJAX/AddPC.aspx">
       <publishTime>07/30/2015 20:57:01</publishTime>
@@ -5668,7 +5668,7 @@
       <publishTime>12/09/2015 21:23:06</publishTime>
     </File>
     <File Include="Manage/Systems/ChangePass.aspx">
-      <publishTime>11/07/2015 21:30:56</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/ChFarmerAcc.aspx">
       <publishTime>12/19/2014 14:47:26</publishTime>
@@ -5710,7 +5710,7 @@
       <publishTime>01/23/2014 14:50:04</publishTime>
     </File>
     <File Include="Manage/Systems/Default.aspx">
-      <publishTime>11/21/2015 22:05:22</publishTime>
+      <publishTime>01/12/2016 19:01:45</publishTime>
     </File>
     <File Include="Manage/Systems/DevIn.aspx">
       <publishTime>11/26/2015 20:00:33</publishTime>
@@ -5743,10 +5743,10 @@
       <publishTime>12/15/2014 08:37:58</publishTime>
     </File>
     <File Include="Manage/Systems/OrgDefault.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/OrgDep.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/OrgLogistics.aspx">
       <publishTime>12/19/2014 14:47:26</publishTime>
@@ -5773,10 +5773,10 @@
       <publishTime>08/03/2015 10:07:58</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserDefault.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserDep.aspx">
-      <publishTime>01/11/2016 19:14:29</publishTime>
+      <publishTime>01/12/2016 19:12:04</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserLogistics.aspx">
       <publishTime>12/17/2014 20:49:43</publishTime>
@@ -5794,7 +5794,7 @@
       <publishTime>08/03/2015 10:07:58</publishTime>
     </File>
     <File Include="Manage/Systems/OrgWorStaDefault.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/OutBill.aspx">
       <publishTime>02/28/2014 16:10:27</publishTime>
@@ -5839,22 +5839,22 @@
       <publishTime>07/30/2015 20:57:05</publishTime>
     </File>
     <File Include="Manage/Systems/SystemPageConfig.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/SystemRoleInfo.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/SystemSetPage.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:15</publishTime>
     </File>
     <File Include="Manage/Systems/SystemSetRole.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:15</publishTime>
     </File>
     <File Include="Manage/Systems/Top.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:15:15</publishTime>
     </File>
     <File Include="Manage/Systems/UserRole.aspx">
-      <publishTime>11/06/2015 20:43:38</publishTime>
+      <publishTime>01/12/2016 19:02:53</publishTime>
     </File>
     <File Include="Manage/Systems/Welcome.aspx">
       <publishTime>11/21/2015 22:37:07</publishTime>

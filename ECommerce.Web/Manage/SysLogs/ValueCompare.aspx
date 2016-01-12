@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ValueCompare.aspx.cs" Inherits="ECommerce.Web.Manage.SysLogs.ValueCompare" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
     <script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>
 </head>
 

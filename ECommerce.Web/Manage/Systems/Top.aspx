@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Top.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.Top" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-            <div class="logo">海关笔记本防盗系统</div>
+            <div class="logo"><%= SecurityMgr.GetEntName() %></div>
             <div class="userinfo" id="divLogged" runat="server">
                 欢迎您，<strong><asp:Literal ID="litUserName" runat="server"></asp:Literal></strong> 登录成功！ <a href="#">通知</a> | <a href="ChangePass.aspx" target="mainFrame">密码更改</a><strong>
                     <asp:LinkButton ID="lbtnLogout" runat="server" OnClick="lbtnLogout_Click">[退出]</asp:LinkButton></strong>

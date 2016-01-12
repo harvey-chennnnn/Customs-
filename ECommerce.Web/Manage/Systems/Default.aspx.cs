@@ -35,13 +35,13 @@ namespace ECommerce.Web.Manage.Systems
                 var title = "";
                 if (CurrentUser.Type == 1)
                 {
-                    title = "海关笔记本防盗系统";
+                    title = SecurityMgr.GetEntName();
                 }
                 else
                 {
                     var emp = _orgEmployeesDal.GetModel(Convert.ToInt32(CurrentUser.EmplId));
                     var org = _orgOrganizeDal.GetModel(Convert.ToInt64(emp.OrgId));
-                    title = "海关笔记本防盗系统";
+                    title = SecurityMgr.GetEntName();
                 }
                 litTitle.Text = title;
             }

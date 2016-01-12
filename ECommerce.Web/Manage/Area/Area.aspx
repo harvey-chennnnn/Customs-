@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Area.aspx.cs" Inherits="ECommerce.Web.Manage.Area.Area" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <%@ Register Src="/UserControl/OrgTree.ascx" TagName="OrgTree" TagPrefix="uc1" %>
 
@@ -7,7 +8,7 @@
 <html>
 <head runat="server">
     <meta charset="utf-8">
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
     <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css">
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/jquerylayout/jquery.ui.all.js"></script>

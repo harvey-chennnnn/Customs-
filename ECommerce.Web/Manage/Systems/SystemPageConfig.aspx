@@ -1,10 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SystemPageConfig.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.SystemPageConfig" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
     <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>

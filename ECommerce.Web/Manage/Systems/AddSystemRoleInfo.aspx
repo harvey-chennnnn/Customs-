@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddSystemRoleInfo.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.AddSystemRoleInfo" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <!DOCTYPE HTML>
 <html>
@@ -7,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
 </head>
 <body>
     <form id="form1" runat="server" style="margin: 0">

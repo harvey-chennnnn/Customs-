@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddWorStaMach.aspx.cs" Inherits="ECommerce.Web.Manage.Systems.AddWorStaMach" %>
+<%@ Import Namespace="ECommerce.Lib.Security" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +10,7 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>海关笔记本防盗系统</title>
+    <title><%= SecurityMgr.GetEntName() %></title>
 </head>
 <body>
     <iframe id="ifrSub" name="ifrSub" width="100%" height="100%" frameborder="0" style="display: none" src=""></iframe>
