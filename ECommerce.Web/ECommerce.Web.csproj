@@ -173,6 +173,12 @@
     <Content Include="Manage\CM\AddArticle.aspx" />
     <Content Include="Manage\Companies\Detail.aspx" />
     <Content Include="Manage\Companies\Default.aspx" />
+    <Content Include="Manage\DeviceMonitor\DevPos.aspx" />
+    <Content Include="Manage\DeviceMonitor\DeviceMonitor.aspx" />
+    <Content Include="Manage\DeviceMonitor\DevMap.aspx" />
+    <Content Include="Manage\DeviceMonitor\DeviceDes.aspx" />
+    <Content Include="Manage\DeviceMonitor\DeviceDesList.aspx" />
+    <Content Include="Manage\Systems\DesData.aspx" />
     <Content Include="Manage\Systems\AddEnterprise.aspx" />
     <Content Include="Manage\Services\EnterpriseInfo.aspx" />
     <Content Include="Manage\Systems\AUserAutoComplete.aspx" />
@@ -946,6 +952,48 @@
     </Compile>
     <Compile Include="Manage\Companies\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DevPos.aspx.cs">
+      <DependentUpon>DevPos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DevPos.aspx.designer.cs">
+      <DependentUpon>DevPos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DeviceMonitor.aspx.cs">
+      <DependentUpon>DeviceMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DeviceMonitor.aspx.designer.cs">
+      <DependentUpon>DeviceMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DevMap.aspx.cs">
+      <DependentUpon>DevMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DevMap.aspx.designer.cs">
+      <DependentUpon>DevMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DeviceDes.aspx.cs">
+      <DependentUpon>DeviceDes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DeviceDes.aspx.designer.cs">
+      <DependentUpon>DeviceDes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DeviceDesList.aspx.cs">
+      <DependentUpon>DeviceDesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\DeviceMonitor\DeviceDesList.aspx.designer.cs">
+      <DependentUpon>DeviceDesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\DesData.aspx.cs">
+      <DependentUpon>DesData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\DesData.aspx.designer.cs">
+      <DependentUpon>DesData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\AddEnterprise.aspx.cs">
       <DependentUpon>AddEnterprise.aspx</DependentUpon>

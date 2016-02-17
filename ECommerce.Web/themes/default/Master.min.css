@@ -1025,3 +1025,11 @@ body,
     font-size: 12px;
     padding: 3px 8px;
 }
+
+.dev-pos {
+    border: 1px solid #D6D6D6;
+    padding: 5px;
+}
+.dev-pos p {
+    margin: 0;
+}

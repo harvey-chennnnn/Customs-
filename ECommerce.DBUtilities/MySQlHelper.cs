@@ -83,6 +83,14 @@ namespace ECommerce.DBUtilities {
             return res;
         }
 
+        public object ExecuteObject(string cmdText, CommandType ct) {
+            using (cmd = new MySqlCommand(cmdText, GetConn())) {
+                cmd.CommandType = ct;
+                return cmd.ExecuteScalar();
+            }
+        }
+
+
         /// <summary>
         /// 执行不带参数的查询SQL语句或存储过程
         /// </summary>
