@@ -71,10 +71,10 @@ namespace ECommerce.Admin.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into DeviceList(");
-			strSql.Append("PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID)");
+			strSql.Append("PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID,ReID)");
 
 			strSql.Append(" values (");
-			strSql.Append("@PKey,@DeviceName,@Loanable,@PurchaseDep,@Purchaser,@LoanStatus,@LoanerID,@Loaner,@LoanDate,@Status,@DeviceDispose,@Descri,@UID,@EnteringDate,@CreateDate,@EntID)");
+			strSql.Append("@PKey,@DeviceName,@Loanable,@PurchaseDep,@Purchaser,@LoanStatus,@LoanerID,@Loaner,@LoanDate,@Status,@DeviceDispose,@Descri,@UID,@EnteringDate,@CreateDate,@EntID,@ReID)");
 			strSql.Append(";select @@IDENTITY");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
@@ -94,6 +94,7 @@ namespace ECommerce.Admin.DAL
 			db.AddInParameter(dbCommand, "EnteringDate", DbType.DateTime, model.EnteringDate);
 			db.AddInParameter(dbCommand, "CreateDate", DbType.DateTime, model.CreateDate);
 			db.AddInParameter(dbCommand, "EntID", DbType.Int32, model.EntID);
+			db.AddInParameter(dbCommand, "ReID", DbType.Int32, model.ReID);
 			int result;
 			object obj = db.ExecuteScalar(dbCommand);
 			if(!int.TryParse(obj.ToString(),out result))
@@ -124,7 +125,8 @@ namespace ECommerce.Admin.DAL
 			strSql.Append("UID=@UID,");
 			strSql.Append("EnteringDate=@EnteringDate,");
 			strSql.Append("CreateDate=@CreateDate,");
-			strSql.Append("EntID=@EntID");
+			strSql.Append("EntID=@EntID,");
+			strSql.Append("ReID=@ReID");
 			strSql.Append(" where DID=@DID ");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
@@ -145,6 +147,7 @@ namespace ECommerce.Admin.DAL
 			db.AddInParameter(dbCommand, "EnteringDate", DbType.DateTime, model.EnteringDate);
 			db.AddInParameter(dbCommand, "CreateDate", DbType.DateTime, model.CreateDate);
 			db.AddInParameter(dbCommand, "EntID", DbType.Int32, model.EntID);
+			db.AddInParameter(dbCommand, "ReID", DbType.Int32, model.ReID);
 			int rows=db.ExecuteNonQuery(dbCommand);
 
 			if (rows > 0)
@@ -209,7 +212,7 @@ namespace ECommerce.Admin.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID from DeviceList ");
+			strSql.Append("select DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID,ReID from DeviceList ");
 			strSql.Append(" where DID=@DID ");
 			Database db = DatabaseFactory.CreateDatabase();
 			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
@@ -302,6 +305,10 @@ namespace ECommerce.Admin.DAL
 				{
 					model.EntID=Convert.ToInt32(row["EntID"].ToString());
 				}
+				if(row["ReID"]!=null && row["ReID"].ToString()!="")
+				{
+					model.ReID=Convert.ToInt32(row["ReID"].ToString());
+				}
 			}
 			return model;
 		}
@@ -314,7 +321,7 @@ namespace ECommerce.Admin.DAL
 		public DataSet GetList(string strWhere, List<SqlParameter> parameters)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID ");
+			strSql.Append("select DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID,ReID ");
 			strSql.Append(" FROM DeviceList ");
 			Database db = DatabaseFactory.CreateDatabase();
 			if(strWhere.Trim()!="")
@@ -346,7 +353,7 @@ namespace ECommerce.Admin.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID ");
+			strSql.Append(" DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID,ReID ");
 			strSql.Append(" FROM DeviceList ");
 			Database db = DatabaseFactory.CreateDatabase();
 			if(strWhere.Trim()!="")
@@ -452,7 +459,7 @@ namespace ECommerce.Admin.DAL
 		public List<ECommerce.Admin.Model.DeviceList> GetListArray(string strWhere, List<SqlParameter> parameters)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID ");
+			strSql.Append("select DID,PKey,DeviceName,Loanable,PurchaseDep,Purchaser,LoanStatus,LoanerID,Loaner,LoanDate,Status,DeviceDispose,Descri,UID,EnteringDate,CreateDate,EntID,ReID ");
 			strSql.Append(" FROM DeviceList ");
 			if(strWhere.Trim()!="")
 			{
@@ -542,6 +549,11 @@ namespace ECommerce.Admin.DAL
 			if(ojb != null && ojb != DBNull.Value)
 			{
 				model.EntID=Convert.ToInt32(ojb);
+			}
+			ojb = dataReader["ReID"];
+			if(ojb != null && ojb != DBNull.Value)
+			{
+				model.ReID=Convert.ToInt32(ojb);
 			}
 			return model;
 		}

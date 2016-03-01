@@ -67,9 +67,7 @@
                                 <td style="text-align: center"><%#Eval("DeviceName")%></td>
                                 <td style="text-align: center"><%#Eval("LoanDate")!=DBNull.Value?Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd"):""%></td>
                                 <td style="text-align: center"><%#Eval("Name")%></td>
-                                <td style="text-align: center"></td>
-                                <td style="text-align: center"></td>
-                                <td style="text-align: center"></td>
+                                <%#GetReData(Eval("ReID"))%>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>

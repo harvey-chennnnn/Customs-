@@ -39,7 +39,7 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
                                 if (dt.Rows.Count > 0) {
                                     var str = "";
                                     for (int i = 0; i < dt.Rows.Count; i++) {
-                                        str += dt.Rows[i]["WifiLat"] + "," + dt.Rows[i]["ServiceIp"] + "|";
+                                        str += dt.Rows[i]["WifiLat"] + "," + (i + 1) + ". " + Convert.ToDateTime(dt.Rows[i]["TraceTime"]).ToString("yyyy-MM-dd hh:mm:ss") + " " + dt.Rows[i]["ServiceIp"] + "|";
                                     }
                                     hfPos.Value = str.Substring(0, str.Length - 1);
                                 }

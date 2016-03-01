@@ -23,18 +23,34 @@
     <iframe id="ifrSub" name="ifrSub" width="100%" height="100%" frameborder="0" style="display: none" src=""></iframe>
     <form id="form1" runat="server" style="margin: 0" target="ifrSub">
         <div class="form-horizontal">
-            <div class="modal-body">
+            <div class="modal-body" id="dcontext">
                 <h1 style="text-align: center; color: red">警告</h1>
-                <p>您现在要 销毁
-                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>上的数据。</p>
-                <p>点击确定销毁后，该电脑上除系统盘外所有数据将被清空并且不可恢复！</p>
-                <p>请谨慎操作！</p>
+                <div>
+                    <p>
+                        您现在要 销毁
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>上的数据。
+                    </p>
+                    <p>点击确定销毁后，该电脑上除系统盘外所有数据将被清空并且不可恢复！</p>
+                    <p>请谨慎操作！</p>
+                </div>
             </div>
         </div>
         <div class="modal-footer">
-            <asp:Button ID="btnSub" CssClass="btn btn-success" runat="server" Text="确定销毁" BackColor="Red" />
-            <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+            <a onclick="goAdd(this);" class="btn btn-success" style="background-color: red">确定销毁</a>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
         </div>
+        <script type="text/javascript">
+            function goAdd(obj) {
+                $.ajax({
+                    type: 'POST', url: '/Manage/Systems/Ajax/DesData.aspx?did=<%=Request.QueryString["did"]%>', success: function (data) {
+                        if (data != "") {
+                            $("#dcontext").html(data);
+                            $(obj).hide();
+                        }
+                    }
+                });
+            }
+        </script>
     </form>
 </body>
 </html>

@@ -31,7 +31,7 @@
                     <ItemTemplate>
                         <h5>记录<%# Container.ItemIndex+1 %>：</h5>
                         <div class="dev-pos">
-                            <p>记录时间=<%#Eval("TraceTime")!=DBNull.Value?Convert.ToDateTime(Eval("TraceTime")).ToString("yyyy-MM-dd HH:MM:SS"):""%></p>
+                            <p>记录时间=<%#Eval("TraceTime")!=DBNull.Value?Convert.ToDateTime(Eval("TraceTime")).ToString("yyyy-MM-dd hh:mm:ss"):""%></p>
                             <p>Wi-Fi定位经纬度=<%#Eval("WifiLat")%> <a href="/Manage/DeviceMonitor/DevMap.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>&tid=<%#Eval("TraceId")%>">查看地图</a></p>
                             <p>服务器地址=<%#Eval("ServiceIp")%></p>
                             <p>Windows登陆名=<%#Eval("LogonName")%></p>

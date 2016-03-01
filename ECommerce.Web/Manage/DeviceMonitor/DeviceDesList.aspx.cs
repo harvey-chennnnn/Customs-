@@ -133,5 +133,17 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
             }
             return str;
         }
+
+        protected string GetReData(object eval) {
+            var str = "<td style=\"text-align: center\"></td><td style=\"text-align: center\"></td><td style=\"text-align: center\"></td>";
+            if (eval != null) {
+                var sql = "select * from dr_execute_order where id='" + eval + "'";
+                DataTable dt = mySQlHelper.ExecuteQuery(sql, CommandType.Text);
+                if (dt.Rows.Count > 0) {
+                    str = "<td style=\"text-align: center\">" + dt.Rows[0]["Status"] + "</td><td style=\"text-align: center\">" + Convert.ToDateTime(dt.Rows[0]["CreateTime"]).ToString("yyyy-MM-dd hh:mm:ss") + "</td><td style=\"text-align: center\">" + Convert.ToDateTime(dt.Rows[0]["UpdateTime"]).ToString("yyyy-MM-dd hh:mm:ss") + "</td>";
+                }
+            }
+            return str;
+        }
     }
 }

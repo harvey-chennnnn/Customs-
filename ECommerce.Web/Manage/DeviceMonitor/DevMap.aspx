@@ -80,10 +80,10 @@
                     var pointtmp;
                     var posi = $("#<%=hfPos.ClientID%>").val();
                     var ps = posi.split('|');
-                    var level = 5;
-                    if (ps.length === 1) {
-                        level = 19;
-                    }
+                    //var level = 5;
+                    //if (ps.length === 1) {
+                    //    level = 19;
+                    //}
                     if (ps.length > 0) {
                         for (var i = 0; i < ps.length; i++) {
                             var po = ps[i].split(',');
@@ -91,7 +91,7 @@
                                 point = new BMap.Point(po[1], po[0]);
                                 if (pointtmp == undefined) {
                                     pointtmp = point;
-                                    map.centerAndZoom(point, level);
+                                    map.centerAndZoom(point, 19);
                                 }
                                 addMarker(point, po[2]);
                             }

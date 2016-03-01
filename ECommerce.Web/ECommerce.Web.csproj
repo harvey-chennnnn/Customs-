@@ -78,6 +78,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ECommerce.Lib\DLL\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ECommerce.Lib\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Senparc.Weixin.MP">
       <HintPath>..\ECommerce.Lib\DLL\Senparc.Weixin.MP.dll</HintPath>
     </Reference>
@@ -178,6 +182,7 @@
     <Content Include="Manage\DeviceMonitor\DevMap.aspx" />
     <Content Include="Manage\DeviceMonitor\DeviceDes.aspx" />
     <Content Include="Manage\DeviceMonitor\DeviceDesList.aspx" />
+    <Content Include="Manage\Systems\AJAX\DesData.aspx" />
     <Content Include="Manage\Systems\DesData.aspx" />
     <Content Include="Manage\Systems\AddEnterprise.aspx" />
     <Content Include="Manage\Services\EnterpriseInfo.aspx" />
@@ -987,6 +992,13 @@
     </Compile>
     <Compile Include="Manage\DeviceMonitor\DeviceDesList.aspx.designer.cs">
       <DependentUpon>DeviceDesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Systems\AJAX\DesData.aspx.cs">
+      <DependentUpon>DesData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Systems\AJAX\DesData.aspx.designer.cs">
+      <DependentUpon>DesData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Systems\DesData.aspx.cs">
       <DependentUpon>DesData.aspx</DependentUpon>

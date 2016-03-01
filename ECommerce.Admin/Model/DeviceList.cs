@@ -28,6 +28,7 @@ namespace ECommerce.Admin.Model
 		private DateTime? _enteringdate;
 		private DateTime? _createdate= DateTime.Now;
 		private int? _entid;
+		private int? _reid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -163,6 +164,14 @@ namespace ECommerce.Admin.Model
 		{
 			set{ _entid=value;}
 			get{return _entid;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? ReID
+		{
+			set{ _reid=value;}
+			get{return _reid;}
 		}
 		#endregion Model
 

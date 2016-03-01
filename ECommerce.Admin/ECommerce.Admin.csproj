@@ -75,6 +75,7 @@
     <Compile Include="DAL\BenchmarkCriteria.cs" />
     <Compile Include="DAL\ComInfo.cs" />
     <Compile Include="DAL\CustomerService.cs" />
+    <Compile Include="DAL\DesList.cs" />
     <Compile Include="DAL\DevelopAnswer.cs" />
     <Compile Include="DAL\DevelopmentService.cs" />
     <Compile Include="DAL\DeviceList.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Model\BenchmarkCriteria.cs" />
     <Compile Include="Model\ComInfo.cs" />
     <Compile Include="Model\CustomerService.cs" />
+    <Compile Include="Model\DesList.cs" />
     <Compile Include="Model\DevelopAnswer.cs" />
     <Compile Include="Model\DevelopmentService.cs" />
     <Compile Include="Model\DeviceList.cs" />
