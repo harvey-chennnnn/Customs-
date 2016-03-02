@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>设备位置监控</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="top-thing">
+				<div class="user-box clearfix">
+					<div class="user-icon-box"><img src="image/user-img.png" alt=""><i></i></div>
+					<span class="user-name">火影忍者</span>
+					<i class="btn"></i>
+				</div>
+			</div>
+			<div class="content clearfix">
+				<div class="left-box" id="left-box">
+					<dl style="border-top: none">
+						<dt><span class="btn-box clearfix"><i class="dt-icon icon1"></i><strong>人员管理</strong><i class="icon-arrow"></i></span></dt>
+						<dd>管理员</dd>
+						<dd>员工管理</dd>
+					</dl>
+					<dl>
+						<dt><span class="btn-box clearfix"><i class="dt-icon icon2"></i><strong>设备管理</strong></span></dt>
+						<dd class="on">设备列表</dd>
+					</dl>
+					<dl>
+						<dt><span class="btn-box clearfix"><i class="dt-icon icon3"></i><strong>消息管理</strong></span></dt>
+						<dd>消息列表</dd>
+					</dl>
+					<dl style="border-bottom: none">
+						<dt><span class="btn-box clearfix"><i class="dt-icon icon4"></i><strong>小天使</strong></span></dt>
+						<dd>小天使介绍</dd>
+						<dd>小天使操作说明</dd>
+					</dl>
+				</div>
+				<div class="right" id="right-box">
+					<h2 class="title">设备管理</h2>
+					<div class="right-main-box right-main-box2">
+						<p class="search-box clearfix">
+							<span>设备名称：</span>
+							<input type="text" placeholder="请输入设备名称">
+							<span>借出人：</span>
+							<input type="text" placeholder="请输入借出人姓名">
+							<a href="javascript:;" class="search-btn">搜索</a>
+						</p>
+						<div class="tab3-box">
+							<table class="tab3" width="913" cellspacing="0">
+								<tr>
+									<th width="132">设备Id</th>
+									<th width="230">设备名称</th>
+									<th width="141">借出人</th>
+									<th width="247">最后记录时间</th>
+									<th>查看位置</th>
+								</tr>
+							</table>
+							<table class="tab3 tab4" width="840" cellspacing="0" id="tab4">
+								<tr>
+									<td width="63">1</td>
+									<td width="294">联想E420</td>
+									<td width="80">张三</td>
+									<td width="310">2015-11-13</td>
+									<td width=""><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>联想E420</td>
+									<td>张三</td>
+									<td>2015-11-13</td>
+									<td><a href="javascript:;" class="check">查看</a></td>
+								</tr>
+							</table>
+							<p class="page-box">
+								<a href="javascript:;" class="on">1</a>
+								<a href="javascript:;">2</a>
+								<a href="javascript:;">3</a>
+								<span>…</span>
+								<a href="javascript:;">4</a>
+								<a href="javascript:;">5</a>
+								<a href="javascript:;">&#x3E;</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footer-text clearfix">
+					<p class="footer-left">西安擎天软件科技有限公司&nbsp;service@angeletsoft.cn
+						<br />
+						<span>地址：西安高新技术产业开发区 锦业路69号创业研发园 瞪羚谷B座五楼504</span></p>
+					<a href="javascript:;" class="telephone"></a>
+					<a href="javascript:;" class="angle-logo"></a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="base.js"></script>
+	<script src="http://www.w3school.com.cn/jquery/jquery.js"></script>
+	<script>
+		$("#tab4").find("td").hover(function(){
+			$(this).parent('tr').addClass('on').siblings().removeClass('on')
+		},function(){
+			$(this).parent('tr').removeClass('on').siblings().removeClass('on')
+		})
+	</script>
+</html>
