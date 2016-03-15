@@ -18,13 +18,13 @@ namespace ECommerce.Web {
                 //TextBox2.Text = "1";
 
                 try {
-                    var httpCookie = Request.Cookies["UserName"];
-                    var cookie = Request.Cookies["PassWord"];
-                    if (httpCookie != null)
-                        TextBox1.Text = DotNet.Framework.Common.DEncrypt.DESEncrypt.Decrypt(httpCookie.Value);
+                    //var httpCookie = Request.Cookies["UserName"];
+                    //var cookie = Request.Cookies["PassWord"];
+                    //if (httpCookie != null)
+                    //    TextBox1.Text = DotNet.Framework.Common.DEncrypt.DESEncrypt.Decrypt(httpCookie.Value);
 
-                    if (cookie != null)
-                        TextBox2.Attributes.Add("value", DotNet.Framework.Common.DEncrypt.DESEncrypt.Decrypt(cookie.Value));
+                    //if (cookie != null)
+                    //    TextBox2.Attributes.Add("value", DotNet.Framework.Common.DEncrypt.DESEncrypt.Decrypt(cookie.Value));
                     //if (httpCookie != null && cookie != null)
                     //{
                     //var res = SecurityMgr.Login(DotNet.Framework.Common.DEncrypt.DESEncrypt.Decrypt(httpCookie.Value), DotNet.Framework.Common.DEncrypt.DESEncrypt.Decrypt(cookie.Value));

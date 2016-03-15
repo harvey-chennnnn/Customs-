@@ -36,8 +36,8 @@
                             <p>服务器地址=<%#Eval("ServiceIp")%></p>
                             <p>Windows登陆名=<%#Eval("LogonName")%></p>
                             <p>计算机名称=<%#Eval("ComputerName")%></p>
-                            <p>本机IP地址=<%#Eval("LocalIp")%></p>
-                            <p>穿透代理,直接获得的IP地址=<%#Eval("ProxyIpFirst")%></p>
+                            <p>本机IP地址=<%#GetIp(Eval("LocalIp"))%></p>
+                            <p>穿透代理,直接获得的IP地址=<%#GetIp(Eval("ProxyIpFirst"))%></p>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

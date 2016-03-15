@@ -81,6 +81,7 @@
   <ItemGroup>
     <Content Include="DLL\ASPNETAJAXWeb.ValidateCode.dll" />
     <Content Include="DLL\DotNet.Framework.Common.dll" />
+    <Content Include="DLL\dsEncrypt.dll" />
     <Content Include="DLL\ECommerce.DBUtilities.dll" />
     <Content Include="DLL\HtmlAgilityPack.dll" />
     <Content Include="DLL\LitJSON.dll" />

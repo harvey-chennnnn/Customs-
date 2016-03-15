@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using dsEncrypt;
 using ECommerce.DBUtilities;
 
 namespace ECommerce.Web.Manage.DeviceMonitor {
@@ -63,6 +64,13 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
                 return auser.Name;
             }
             return userName.ToString();
+        }
+
+        protected string GetIp(object eval)
+        {
+            var ds = new dsEncryptBean();
+            return ds.Encrypt(eval.ToString());
+
         }
     }
 }

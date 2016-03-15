@@ -13,15 +13,6 @@ namespace ECommerce.Web.Manage.Systems {
     public partial class Default {
         
         /// <summary>
-        /// form86 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form86;
-        
-        /// <summary>
         /// litTitle 控件。
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace ECommerce.Web.Manage.Systems {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litTitle;
+        
+        /// <summary>
+        /// form86 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form86;
         
         /// <summary>
         /// litUserName 控件。
