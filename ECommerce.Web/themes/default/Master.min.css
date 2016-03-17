@@ -412,10 +412,12 @@ a:hover {
 
 
 body.pd {
-    padding: 15px;
+    /*padding: 15px;*/
     overflow-x: hidden;
-    background-color: #FFFFFF;
+    background-color: #ffffff !important;
     background-image: none;
+    width: auto !important;
+  height: auto !important;
 }
 
 .pannel {

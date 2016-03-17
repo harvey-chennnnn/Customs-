@@ -543,7 +543,14 @@ html,body {
 	color: #2d2d2d;
 	padding-left: 30px;
 }
-
+.pd {
+    /*padding: 15px;*/
+    overflow-x: hidden;
+    background-color: #ffffff !important;
+    background-image: none;
+    /*width: auto !important;
+  height: auto !important;*/
+}
 .search-btn {
 	float: left;
 	width: 68px;
@@ -820,4 +827,90 @@ html,body {
 
 .tab4 .green {
 	color: #1aaa02;
+}
+.table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+.table th {
+    height: 47px;
+    color: #ffffff;
+  background: #198ede;
+  border: none;
+  text-align: center;
+  line-height: 34px;
+  border-top: 1px solid #d4d7db;
+  border-bottom: 1px solid #d4d7db;
+  font-size: 13px;
+}
+.table tbody {
+    border: 20px solid transparent;
+}
+.table td {
+    border-top: none;
+    height: 47px;
+    font-size: 12px;
+  color: #333333;
+  text-align: center;
+  line-height: 34px;
+  border-bottom: 1px solid #d4d7db;
+}
+.btn-mini {
+    text-decoration: none;
+  color: #1387ff;
+}
+
+.form-inline {
+	line-height: 30px;
+	padding: 25px 0 35px 52px;
+    zoom: 1;
+}
+.form-inline span {
+  float: left;
+  font-size: 13px;
+  color: #2d2d2d;
+  padding-left: 30px;
+}
+.input-small {
+    width: 210px;
+  height: 30px;
+  padding-left: 14px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #d4d7db;
+  float: left;
+}
+.btn-success {
+    float: left;
+  width: 68px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  color: #f5f8fb;
+  background: #198ede;
+  border-radius: 3px;
+  margin-left: 15px;
+  text-decoration: none;
+    border: 0;
+}
+.btn-toolbar {
+    line-height: 30px;
+	padding: 25px 0 35px 52px;
+    zoom: 1;
+}
+.btn-toolbar .btn-mini {
+    float: left;
+  width: 68px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  color: #f5f8fb;
+  background: #198ede;
+  border-radius: 3px;
+  margin-left: 15px;
+  text-decoration: none;
+    border: 0;
 }

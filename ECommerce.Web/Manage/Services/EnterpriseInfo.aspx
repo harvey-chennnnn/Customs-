@@ -7,7 +7,8 @@
 <head>
     <meta charset="utf-8" />
     <title><%= SecurityMgr.GetEntName() %></title>
-    <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/style.css">
+    <%--<link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />--%>
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>
 </head>
@@ -40,12 +41,9 @@
 <body class="pd">
     <form id="form1" runat="server">
         <div class="pannel">
-            <div class="pannel-header">
-                <strong>企业管理</strong>
-            </div>
             <div class="pannel-body">
                 <div class="form-inline">
-                    企业名称：<input type="text" runat="server" id="txtRealName" placeholder="企业名称" class="input-small" />
+                    <span>企业名称：</span><input type="text" runat="server" id="txtRealName" placeholder="企业名称" class="input-small" />
                     <asp:Button ID="btnSearchRole" runat="server" CssClass="btn btn-success" OnClick="btnSearchRole_Click" Text="搜索" />
                 </div>
                 <div class="btn-toolbar">
