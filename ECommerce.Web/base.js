@@ -1,8 +1,7 @@
 window.onload = function() {
 	function setWidth() {
-	    var rightBox = document.getElementById('right-box');
-		var h = document.getElementById('left-box').offsetHeight - 24;
-		rightBox.style.height = h + 'px';
+	    var h = $("#left-box").height()+25;
+	    $("#right-box").height(h-12);
 		$("#mainFrame").height(h-103);
 	}
 	setWidth();

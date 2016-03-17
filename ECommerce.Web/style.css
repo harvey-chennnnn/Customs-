@@ -298,7 +298,7 @@ html,body {
 
 .right-main-box {
 	width: 923px;
-	background: #ffffff;
+	/*background: #ffffff;*/
 	margin: 15px auto 0;
 	/*min-height: 426px;*/
 	/*padding-bottom: 30px;*/	
@@ -477,6 +477,7 @@ html,body {
 }
 
 .message-btn {
+    border: 0;
 	width: 86px;
 	height: 26px;
 	text-align: center;
@@ -546,7 +547,7 @@ html,body {
 .pd {
     /*padding: 15px;*/
     overflow-x: hidden;
-    background-color: #ffffff !important;
+    background-color: #f5f8fb !important;
     background-image: none;
     /*width: auto !important;
   height: auto !important;*/
@@ -597,8 +598,20 @@ html,body {
 
 .page-box {
 	text-align: right;
-	width: 840px;
-	padding: 18px 0 18px;
+	/*width: 840px;*/
+	padding: 18px;
+        display: inline-block;
+}
+
+.page-box li{
+    float: left;
+    list-style:none;
+    margin-left: 3px;
+}
+
+.page-box .active a{
+    background: #198ede;
+    color: #ffffff;
 }
 
 .page-box a {
@@ -829,6 +842,7 @@ html,body {
 	color: #1aaa02;
 }
 .table {
+    background-color: #ffffff;
     width: 100%;
     border-spacing: 0px;
     border-collapse: separate;
@@ -843,9 +857,6 @@ html,body {
   border-top: 1px solid #d4d7db;
   border-bottom: 1px solid #d4d7db;
   font-size: 13px;
-}
-.table tbody {
-    border: 20px solid transparent;
 }
 .table td {
     border-top: none;
@@ -862,8 +873,11 @@ html,body {
 }
 
 .form-inline {
+    background-color: #ffffff;
+    height: 25px;
 	line-height: 30px;
-	padding: 25px 0 35px 52px;
+	padding: 25px 0 25px 52px;
+    margin-bottom: 10px;
     zoom: 1;
 }
 .form-inline span {
@@ -882,9 +896,9 @@ html,body {
   float: left;
 }
 .btn-success {
-    float: left;
+    /*float: left;*/
   width: 68px;
-  height: 30px;
+  /*height: 30px;*/
   text-align: center;
   line-height: 30px;
   font-size: 13px;
@@ -896,8 +910,10 @@ html,body {
     border: 0;
 }
 .btn-toolbar {
+    background-color: #ffffff;
     line-height: 30px;
-	padding: 25px 0 35px 52px;
+	padding: 25px 0 25px 0px;
+    height: 25px;
     zoom: 1;
 }
 .btn-toolbar .btn-mini {
@@ -913,4 +929,23 @@ html,body {
   margin-left: 15px;
   text-decoration: none;
     border: 0;
+}
+.table .thd {
+    width: 20px;
+}
+
+.table .tbd {
+    width: 20px;
+    border-bottom: 0px;
+}
+.contents {
+    border: 1px solid #d4d7db;
+    background-color: #ffffff;
+}
+.pull-right{float: right}
+.left-box dd.active, .left-box dd:hover {
+    color: #424242;
+    padding-left: 66px;
+    border-left: 4px solid #007eff;
+    background: #b0c1e1;
 }

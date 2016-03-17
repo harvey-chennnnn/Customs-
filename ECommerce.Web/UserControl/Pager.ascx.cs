@@ -26,9 +26,9 @@ namespace ECommerce.Web.UserControl {
             int pCount;//页总数
             var ds = SqlServer.PR_Pager(pSql, pNum, pSiz, sort, rowNumName, out pCount, out rCount);
             //litPageSize.Text = pSiz.ToString(CultureInfo.InvariantCulture);
-            labPcount.Text = pCount == 0 ? "1" : pCount.ToString(CultureInfo.InvariantCulture);
-            lblCount.Text = rCount.ToString(CultureInfo.InvariantCulture);
-            litPageNo.Text = pNum.ToString();
+            //labPcount.Text = pCount == 0 ? "1" : pCount.ToString(CultureInfo.InvariantCulture);
+            //lblCount.Text = rCount.ToString(CultureInfo.InvariantCulture);
+            //litPageNo.Text = pNum.ToString();
             switch (controlType) {
                 case "DataList":
                     ((DataList)(Parent.FindControl(controlId))).DataSource = ds;
@@ -103,9 +103,9 @@ namespace ECommerce.Web.UserControl {
             int pCount;//页总数
             var ds = _mySQlHelper.Pager(pSql, pNum, pSiz, sort, out pCount, out rCount);
             //litPageSize.Text = pSiz.ToString(CultureInfo.InvariantCulture);
-            labPcount.Text = pCount == 0 ? "1" : pCount.ToString(CultureInfo.InvariantCulture);
-            lblCount.Text = rCount.ToString(CultureInfo.InvariantCulture);
-            litPageNo.Text = pNum.ToString();
+            //labPcount.Text = pCount == 0 ? "1" : pCount.ToString(CultureInfo.InvariantCulture);
+            //lblCount.Text = rCount.ToString(CultureInfo.InvariantCulture);
+            //litPageNo.Text = pNum.ToString();
             switch (controlType) {
                 case "DataList":
                     ((DataList)(Parent.FindControl(controlId))).DataSource = ds;

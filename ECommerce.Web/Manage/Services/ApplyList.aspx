@@ -6,7 +6,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>消息列表</title>
-    <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/style.css">
+    <%--<link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />--%>
     <script type="text/javascript" src="/themes/js/jquery-1.8.0.min.js"></script>
     <script src="/themes/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>
@@ -35,13 +36,13 @@
             </div>
         </div>
         <div class="pannel">
-            <div class="pannel-header">
+            <%--<div class="pannel-header">
                 <strong>消息列表</strong>
-            </div>
+            </div>--%>
             <div class="pannel-body">
 
                 <div class="form-inline">
-                    发送人：<input type="text" runat="server" id="txtProName" placeholder="发送人" class="input-small" />
+                    <span>发送人：</span><input type="text" runat="server" id="txtProName" placeholder="发送人" class="input-small" />
 
                     <%--状态：<asp:DropDownList runat="server" ID="ddlStatus" Width="120px" OnSelectedIndexChanged="btnSearch_Click" AutoPostBack="True">
                         <asp:ListItem Value="-1" Selected="True">处理状态</asp:ListItem>
@@ -56,9 +57,9 @@
                     <asp:LinkButton ID="btnoBackCheck" class="btn btn-mini" OnCommand="btnBackCheck_Click" OnClientClick="return confirm('你确定要取消吗？')" runat="server">取消</asp:LinkButton>
 
                 </div>--%>
-                <div class="class">
+                <div class="contents">
                     <table class="table table-bordered" border="0" style="width: 100%" id="tabList">
-                        <tr>
+                        <tr><th class="thd"></th>
                             <th class="id" nowrap="nowrap" style="text-align: center">
                                 <input type="checkbox" name="cbSelectAll" id="cbSelectAll"></th>
                             <th nowrap="nowrap" style="text-align: center">发送人
@@ -68,11 +69,11 @@
                             <th nowrap="nowrap" style="text-align: center">内容
                             </th>
                             <th nowrap="nowrap" style="text-align: center">发送时间
-                            </th>
+                            </th><th class="thd"></th>
                         </tr>
                         <asp:Repeater ID="rptArticle" runat="server">
                             <ItemTemplate>
-                                <tr>
+                                <tr><td class="tbd"></td>
                                     <td style="text-align: center">
                                         <asp:CheckBox ID="cbSelect" Name="cbSelect" ToolTip='<%#Eval("InfoId") %>' Text="" runat="server" /></td>
                                     <td style="text-align: center">
@@ -82,10 +83,10 @@
                                         <%#GetName(Eval("username"))%>
                                     </td>
                                     <td style="text-align: center">
-                                        <a href="/Manage/Companies/Detail.aspx?fu=<%#Eval("FromUser") %>&tu=<%#Eval("username") %>"><%#Eval("Message")%></a>
+                                        <a class="btn btn-mini" href="/Manage/Companies/Detail.aspx?fu=<%#Eval("FromUser") %>&tu=<%#Eval("username") %>"><%#Eval("Message")%></a>
                                     </td>
                                     <td style="text-align: center"><%#Convert.ToDateTime(Eval("CreateTime")).ToString("yyyy-MM-dd")%></td>
-                                </tr>
+                                <td class="tbd"></td></tr>
                             </ItemTemplate>
                         </asp:Repeater>
                     </table>

@@ -17,6 +17,10 @@
         .btn, .btn:hover, .btn:focus {
             background-position: 0 30px;
         }
+        .btn-success {
+            background-image: -webkit-gradient(linear,0 0,0 100%,from(red),to(red));
+            background-image: -webkit-linear-gradient(top,red,red);
+        }
     </style>
 </head>
 <body>

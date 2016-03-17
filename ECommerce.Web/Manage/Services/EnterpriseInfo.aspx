@@ -50,18 +50,22 @@
                     <a href="javascript:void(0);" class="btn btn-mini" onclick="addData();">新增</a>
                     <asp:LinkButton ID="btndelRole" class="btn btn-mini" OnCommand="btnDelAll_Click" OnClientClick="return confirm('你确定要删除吗？')" runat="server">删除</asp:LinkButton>
                 </div>
+                <div class="contents">
                 <table class="table table-bordered" border="0" id="tabRole">
                     <tr>
+                        <th class="thd"></th>
                         <th class="id" nowrap="nowrap">
                             <input type="checkbox" name="cboSelectAll" id="cboSelectAll"></th>
                         <th nowrap="nowrap">企业ID</th>
                         <th nowrap="nowrap">企业名称</th>
                         <th nowrap="nowrap">创建时间</th>
                         <th nowrap="nowrap" class="act">操作</th>
+                        <th class="thd"></th>
                     </tr>
                     <asp:Repeater ID="RepeaterMyRole" runat="server">
                         <ItemTemplate>
                             <tr>
+                                <td class="tbd"></td>
                                 <td class="id">
                                     <asp:CheckBox ID="cbSalesRole" Name="cbSalesRole" ToolTip='<%#Eval("ELID") %>' Text="" runat="server" /></td>
                                 <td style="text-align: center"><%#Eval("EnterpriseID")%> </td>
@@ -71,11 +75,13 @@
                                     <a href="javascript:void(0);" class="btn btn-mini" onclick="editData('<%#Eval("ELID")%>')">编辑</a>
                                     <asp:LinkButton ID="btnDeleteRole" CssClass="btn btn-mini" CommandName='<%#Eval("ELID")%>' OnCommand="lbtnDel_Click" OnClientClick="return confirm('你确定要删除吗？')" runat="server">删除</asp:LinkButton>
                                 </td>
+                                <td class="tbd"></td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
                 </table>
                 <uc1:Pager ID="Pager1" runat="server" />
+                    </div>
             </div>
         </div>
     </form>

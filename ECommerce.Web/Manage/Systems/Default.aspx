@@ -89,7 +89,7 @@
         $(this).parent('tr').removeClass('on').siblings().removeClass('on')
     })
 
-    $('.left-box dl').click(function() {
+    $('.left-box dl').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
             $(this).siblings().find("dd").hide();
@@ -97,16 +97,27 @@
             $(this).removeClass('active');
             $(this).addClass('active');
             $(this).siblings().find("dd").hide();
-            $(this).find("dd").slideDown();
+            $(this).find("dd").show();
         }
+        setWidth();
     });
     var frame = $("#mainFrame");
     var alink = $(".left-box dd ");
     alink.click(function () {
+        $(".left-box dd ").removeClass('active');
+        $(this).addClass('active');
         //alert("跳转到页面"+$(this).children().find('a').attr('name'));	
         $("#tname").html($(this).text());
         frame.attr("src", $(this).attr('name'));
-    })
+    });
+    function setWidth() {
+        var h = $("#left-box").height() + 25;
+        $("#right-box").height(h - 12);
+        $("#mainFrame").height(h - 103);
+    }
 
+    window.onload = setWidth;
+        setWidth();
+        window.onresize = setWidth();
 </script>
 </html>

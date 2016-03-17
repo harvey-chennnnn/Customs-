@@ -36,13 +36,13 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
                                 Repeater1.DataBind();
                             }
 
-                            //var auserInfo = _aUserInfo.GetModel(" UserName='" + model.Loaner + "' ", new List<SqlParameter>());
-                            //if (null != auserInfo) {
-                            //    litLoaner.Text = auserInfo.Name;
-                            //}
-                            //else {
-                            //    litLoaner.Text = model.Loaner;
-                            //}
+                            var auserInfo = _aUserInfo.GetModel(" UserName='" + model.Loaner + "' ", new List<SqlParameter>());
+                            if (null != auserInfo) {
+                                litLoaner.Text = auserInfo.Name;
+                            }
+                            else {
+                                litLoaner.Text = model.Loaner;
+                            }
                         }
                     }
                 }

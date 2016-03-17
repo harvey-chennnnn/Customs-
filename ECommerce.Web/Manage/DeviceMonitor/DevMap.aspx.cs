@@ -47,10 +47,10 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
 
                             var auserInfo = _aUserInfo.GetModel(" UserName='" + model.Loaner + "' ", new List<SqlParameter>());
                             if (null != auserInfo) {
-                                //litLoaner.Text = auserInfo.Name;
+                                litLoaner.Text = auserInfo.Name;
                             }
                             else {
-                                //litLoaner.Text = model.Loaner;
+                                litLoaner.Text = model.Loaner;
                             }
                         }
                     }

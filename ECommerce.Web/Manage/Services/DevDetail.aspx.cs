@@ -79,37 +79,53 @@ namespace ECommerce.Web.Manage.Services {
                           "') ORDER BY InfoId DESC ";
                 var dt = mySQlHelper.ExecuteDataset(sql).Tables[0];
                 if (dt.Rows.Count > 0) {
-                    sb.Append("<ul class=\"clearfix\">");
+                    //sb.Append("<ul class=\"clearfix\">");
                     for (int i = dt.Rows.Count - 1; i >= 0; i--) {
                         if (CurrentEmp.EmplName == dt.Rows[i]["FromUser"].ToString()) {
-                            sb.Append("<li class=\"out\">");
-                            sb.Append("<div class=\"message\">");
-                            sb.Append("<span class=\"arrow\"></span>");
-                            sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + CurrentEmp.EmplName + "</a>");
-                            sb.Append("<span class=\"datetime\"> " +
-                                      Convert.ToDateTime(dt.Rows[i]["CreateTime"])
-                                          .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
-                            sb.Append("<span class=\"body\">" + dt.Rows[i]["Message"]);
-                            sb.Append("</span>");
+                            sb.Append("<div class=\"message-right clearfix\">");
+                            sb.Append("<span class=\"name\">" + CurrentEmp.EmplName + "</span>");
+                            sb.Append("<p class=\"message\"><i></i>" + dt.Rows[i]["Message"] + "</p>");
+                            sb.Append("<span class=\"time\">" +
+                                          Convert.ToDateTime(dt.Rows[i]["CreateTime"])
+                                              .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
                             sb.Append("</div>");
-                            sb.Append("</li>");
+
+                            //sb.Append("<li class=\"out\">");
+                            //sb.Append("<div class=\"message\">");
+                            //sb.Append("<span class=\"arrow\"></span>");
+                            //sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + CurrentEmp.EmplName + "</a>");
+                            //sb.Append("<span class=\"datetime\"> " +
+                            //          Convert.ToDateTime(dt.Rows[i]["CreateTime"])
+                            //              .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
+                            //sb.Append("<span class=\"body\">" + dt.Rows[i]["Message"]);
+                            //sb.Append("</span>");
+                            //sb.Append("</div>");
+                            //sb.Append("</li>");
                         }
                         else {
-                            sb.Append("<li class=\"in\">");
-                            sb.Append("<div class=\"message\">");
-                            sb.Append("<span class=\"arrow\"></span>");
-                            sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + GetName(dt.Rows[i]["FromUser"]) +
-                                      "</a>");
-                            sb.Append("<span class=\"datetime\"> " +
-                                      Convert.ToDateTime(dt.Rows[i]["CreateTime"])
-                                          .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
-                            sb.Append("<span class=\"body\">" + dt.Rows[i]["Message"]);
-                            sb.Append("</span>");
+                            sb.Append("<div class=\"message-left clearfix\">");
+                            sb.Append("<span class=\"name\">" + GetName(dt.Rows[i]["FromUser"]) + "</span>");
+                            sb.Append("<p class=\"message\"><i></i>" + dt.Rows[i]["Message"] + "</p>");
+                            sb.Append("<span class=\"time\">" +
+                                          Convert.ToDateTime(dt.Rows[i]["CreateTime"])
+                                              .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
                             sb.Append("</div>");
-                            sb.Append("</li>");
+
+                            //sb.Append("<li class=\"in\">");
+                            //sb.Append("<div class=\"message\">");
+                            //sb.Append("<span class=\"arrow\"></span>");
+                            //sb.Append("<a class=\"name\" href=\"javascript:void(0);\">" + GetName(dt.Rows[i]["FromUser"]) +
+                            //          "</a>");
+                            //sb.Append("<span class=\"datetime\"> " +
+                            //          Convert.ToDateTime(dt.Rows[i]["CreateTime"])
+                            //              .ToString("yyyy-MM-dd HH:mm:ss") + "</span>");
+                            //sb.Append("<span class=\"body\">" + dt.Rows[i]["Message"]);
+                            //sb.Append("</span>");
+                            //sb.Append("</div>");
+                            //sb.Append("</li>");
                         }
                     }
-                    sb.Append("</ul>");
+                    //sb.Append("</ul>");
                 }
                 else {
                     sb.Append("<div style=\"text-align: center\">暂无消息</div>");

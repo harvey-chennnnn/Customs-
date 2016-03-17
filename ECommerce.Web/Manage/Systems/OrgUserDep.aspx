@@ -9,7 +9,8 @@
 <head>
     <meta charset="utf-8" />
     <title><%= SecurityMgr.GetEntName() %></title>
-    <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/style.css">
+    <%--<link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />--%>
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>
     <script type="text/javascript">
@@ -37,20 +38,19 @@
 <body class="pd">
     <form id="form1" runat="server">
         <div class="pannel" style="border-top: none">
-            <div class="pannel-header">
-                <strong>人员管理</strong>
-            </div>
             <div class="pannel-body">
                 <div class="form-inline">
-                    姓名：<input type="text" runat="server" id="txtRealName" class="input-small" placeholder="姓名" />
+                    <span>姓名：</span><input type="text" runat="server" id="txtRealName" class="input-small" placeholder="姓名" />
                     <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-success" Text="搜索" OnClick="btnSearch_Click" />
                 </div>
                 <div class="btn-toolbar">
                     <a href="javascript:void(0);" class="btn btn-mini" onclick="addData();">新增</a>
                     <asp:LinkButton ID="btnDelAll" class="btn btn-mini" OnClientClick="return confirm('你确定要删除吗？')" runat="server" OnClick="btnDelAll_Click">删除</asp:LinkButton>
                 </div>
+                <div class="contents">
                 <table class="table table-bordered" border="0" id="tabList">
                     <tr>
+                        <th class="thd"></th>
                         <th class="id" nowrap="nowrap">
                             <input type="checkbox" name="cbSelAll" id="cbSelAll" /></th>
                         <th nowrap="nowrap">人员姓名</th>
@@ -63,10 +63,12 @@
                         <th nowrap="nowrap">上次登录</th>
                         <%--<th class="act" nowrap="nowrap">设置角色</th>--%>
                         <th class="act" nowrap="nowrap">操作</th>
+                        <th class="thd"></th>
                     </tr>
                     <asp:Repeater ID="rptList" runat="server">
                         <ItemTemplate>
                             <tr>
+                                <td class="tbd"></td>
                                 <td class="id">
                                     <asp:CheckBox ID="cbList" Name="cbList" ToolTip='<%#Eval("EmplId") %>' Text="" runat="server" /></td>
                                 <td style="text-align: center"><%#Eval("EmplName")%></td>
@@ -81,12 +83,13 @@
                                     <a href="javascript:void(0);" class="btn btn-mini" onclick="openModal('/Manage/Systems/AddOrgDepUser.aspx?empId=<%#Eval("EmplId")%>','编辑人员信息')">编辑</a>
                                     <asp:LinkButton ID="lbtnDel" CssClass="btn btn-mini" CommandName='<%#Eval("EmplId")%>' OnCommand="lbtnDel_Click" OnClientClick="return confirm('你确定要删除吗？')" runat="server" Visible='<%#Eval("EmplId").ToString()!="2"%>'>删除</asp:LinkButton>
                                 </td>
+                                <td class="tbd"></td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
                 </table>
                 <uc1:Pager ID="Pager1" runat="server" />
-            </div>
+            </div> </div>
         </div>
     </form>
 </body>

@@ -4,7 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/style.css">
+    <%--<link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />--%>
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>
@@ -102,19 +103,20 @@
 </head>
 <body class="pd" style="overflow-y: auto;">
     <form id="form5" runat="server" style="padding: 0px">
-        <div class="pannel">
-            <div class="pannel-header"><strong>消息明细</strong></div>
-            <div class="pannel-body">
-                <div class="btn-toolbar">
-                    <input type="button" class="btn btn-mini" value="返回" onclick="javascript: history.back();">
-                </div>
-                <div class="chats-list chats" style="margin-bottom: 100px">
-                    <ul>
-                        <asp:Literal ID="litMsg" runat="server"></asp:Literal>
-                    </ul>
+        <div class="contents">
+            <div class="right-main">
+                <h3 class="title2">消息明细</h3>
+                <div class="message-box" id="dMsg" runat="server" style="border-top: 0;">
+                    <asp:Literal ID="litMsg" runat="server"></asp:Literal>
+                    
+                    <%--<p class="message-input-box clearfix">
+                        <textarea name="textarea" class="message-input"></textarea>
+                        <button type="submit" class="message-btn">发送消息</button>
+                    </p>--%>
                 </div>
             </div>
         </div>
+        
     </form>
 </body>
 </html>

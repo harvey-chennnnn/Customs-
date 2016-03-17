@@ -6,7 +6,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>设备位置</title>
-    <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/style.css">
+    <%--<link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />--%>
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>
@@ -38,22 +39,12 @@
 <body class="pd">
     <form id="form5" runat="server" style="padding: 0px;">
         <asp:HiddenField ID="hfPos" runat="server" />
-        <div class="pannel">
-            <div class="pannel-header">
-                <strong>
-                    <asp:Literal ID="litDevName" runat="server"></asp:Literal></strong>
-                <div class="pull-right">
-                    <a href="/Manage/DeviceMonitor/DevPos.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>" class="btn btn-small">列表</a>
-                    <a href="/Manage/DeviceMonitor/DevMap.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>" class="btn btn-small active">地图</a>
-                </div>
-            </div>
-
-            <div class="pannel-body">
-                <div class="btn-toolbar">
-                    <a href="/Manage/DeviceMonitor/DeviceMonitor.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>" class="btn btn-mini">返回</a>
-                </div>
-                <div id="container" style="height: 550px; width: 100%;"></div>
-                <script type="text/javascript">
+        <div class="contents">
+        <div class="position-history-box" style="padding-right: 28px;">
+							<div class="map-btn-box"><a href="/Manage/DeviceMonitor/DevPos.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>">列表</a><a href="/Manage/DeviceMonitor/DevMap.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>" class="on">地图</a></div>
+							<p class="position-history-title"><span><asp:Literal ID="litLoaner" runat="server"></asp:Literal></span><asp:Literal ID="litDevName" runat="server"></asp:Literal>的位置记录</p>
+							<div class="map-box" id="container" style="height: 625px; width: 100%;"></div>
+            <script type="text/javascript">
                     var map = new BMap.Map("container");          // 创建地图实例  
                     map.enableScrollWheelZoom(true);
                     map.enableDragging();
@@ -98,8 +89,7 @@
                         }
                     }
                 </script>
-            </div>
-        </div>
+						</div></div>        
     </form>
 </body>
 </html>

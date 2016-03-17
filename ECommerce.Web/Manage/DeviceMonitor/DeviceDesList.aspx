@@ -8,7 +8,8 @@
 <head>
     <meta charset="utf-8" />
     <title>销毁列表</title>
-    <link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/style.css">
+    <%--<link href="/themes/default/Master.min.css" rel="stylesheet" type="text/css" />--%>
     <script src="/themes/js/jquery.min.js"></script>
     <script src="/themes/plugins/adminjs/admin.page.js"></script>
     <script type="text/javascript">
@@ -39,17 +40,17 @@
 <body class="pd">
     <form id="form1" runat="server">
         <div class="pannel" style="border-top: none">
-            <div class="pannel-header">
+            <%--<div class="pannel-header">
                 <strong>销毁列表</strong>
-            </div>
+            </div>--%>
             <div class="pannel-body">
                 <div class="form-inline">
-                    设备名称：<input type="text" runat="server" id="txtRealName" class="input-small" placeholder="设备名称" />
-                    借出人：<input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
+                    <span>设备名称：</span><input type="text" runat="server" id="txtRealName" class="input-small" placeholder="设备名称" />
+                    <span>借出人：</span><input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
                     <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-success" Text="搜索" OnClick="btnSearch_Click" />
-                </div>
+                </div><div class="contents">
                 <table class="table table-bordered" border="0" id="tabList">
-                    <tr>
+                    <tr><th class="thd"></th>
                         <th class="id" nowrap="nowrap">
                             <input type="checkbox" name="cbSelAll" id="cbSelAll" /></th>
                         <th nowrap="nowrap">设备名称</th>
@@ -57,23 +58,23 @@
                         <th nowrap="nowrap">借出人</th>
                         <th nowrap="nowrap">当前状态</th>
                         <th nowrap="nowrap">销毁指令发送时间</th>
-                        <th nowrap="nowrap">状态改变时间</th>
+                        <th nowrap="nowrap">状态改变时间</th><th class="thd"></th>
                     </tr>
                     <asp:Repeater ID="rptListWork" runat="server">
                         <ItemTemplate>
-                            <tr>
+                            <tr><td class="tbd"></td>
                                 <td class="id">
                                     <asp:CheckBox ID="cbList" Name="cbList" ToolTip='<%#Eval("DID") %>' Text="" runat="server" /></td>
                                 <td style="text-align: center"><%#Eval("DeviceName")%></td>
                                 <td style="text-align: center"><%#Eval("LoanDate")!=DBNull.Value?Convert.ToDateTime(Eval("LoanDate")).ToString("yyyy-MM-dd"):""%></td>
                                 <td style="text-align: center"><%#Eval("Name")%></td>
-                                <%#GetReData(Eval("ReID"))%>
+                                <%#GetReData(Eval("ReID"))%><td class="tbd"></td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
                 </table>
                 <uc1:Pager ID="Pager1" runat="server" />
-            </div>
+            </div></div>
         </div>
     </form>
 </body>
