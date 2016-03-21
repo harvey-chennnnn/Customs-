@@ -14,6 +14,8 @@
     <script src="/themes/js/jquery.min.js"></script>
     <script type="text/javascript" src="/themes/js/My97DatePicker/WdatePicker.js"></script>
     <script src="/themes/sco.js/js/sco.modal.js"></script>
+    <script src="/themes/plugins/jquerylayout/jquery.ui.all.js"></script>
+    <script src="/themes/plugins/jquerylayout/jquery.layout.min.js"></script>
     <link href="/Scripts/jquery-ui-1.8.7.custom.css" rel="stylesheet" />
     <script src="/Scripts/jquery-ui-1.8.7.custom.min.js"></script>
     <script type="text/javascript">
@@ -24,6 +26,9 @@
         var $op;
         var $tmp;
         var $ajaxget;
+        $(document).ready(function () {
+            $('body').layout({ west__size: 203, spacing_closed: 0, spacing_open: 0, resizable: false, south__closable: false, north__closable: false, west__closable: false });
+        });
         function openModal(url, title) {
             window.top.$op = this.window;
             window.top.$modal = window.top.$.scojs_modal({ remote: url, title: title });
@@ -40,7 +45,10 @@
 
 <body>
     <form runat="server" id="form86">
-        <div class="wrap">
+            <div class="ui-layout-center" style="overflow: hidden;border: 12px solid #dde2eb;background: #f5f8fb;">
+            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" frameborder="0" scrolling="auto" src="Welcome.aspx"></iframe>
+        </div>
+            <div class="ui-layout-north" style="overflow: visible;">
             <div class="top-thing">
 				<i class="logo1"></i>
 				<i class="logo2"></i>
@@ -56,17 +64,15 @@
 					</div>
 				</div>
 			</div>
-            
-            <div class="content clearfix">
+            </div>
+            <div class="ui-layout-west" style="background: url(/image/left.jpg);-webkit-background-size: 100% 100%;background-size: 100% 100%; overflow-x: hidden;">
+            <%--<div class="content clearfix">--%>
                 <div class="left-box" id="left-box">
                     <asp:Literal ID="litRoleTree" runat="server"></asp:Literal>
                 </div>
-                <div class="right" id="right-box">
-                    <h2 class="title" id="tname">&nbsp;</h2>
-                    <div class="right-main-box right-main-box2">
-                    <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" frameborder="0" scrolling="auto"  src="Welcome.aspx"></iframe></div>
+            <%--</div>--%>
                 </div>
-            </div>
+            <div class="ui-layout-south" style="overflow: visible">
             <div class="footer">
                 <div class="footer-text clearfix">
                     <p class="footer-left">
@@ -77,33 +83,33 @@
                     <a href="javascript:;" class="telephone"></a>
                     <a href="javascript:;" class="angle-logo"></a>
                 </div>
-            </div>
-        </div>
+            </div> </div>
     </form>
 </body>
-<script src="/base.js"></script>
+<%--<script src="/base.js"></script>--%>
 <script>
-    $("#tab4").find("td").hover(function () {
+    $("#tab4").find("td").hover(function() {
         $(this).parent('tr').addClass('on').siblings().removeClass('on')
-    }, function () {
+    }, function() {
         $(this).parent('tr').removeClass('on').siblings().removeClass('on')
-    })
+    });
 
     $('.left-box dl').click(function () {
         if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $(this).siblings().find("dd").hide();
+            //$(this).removeClass('active');
+            //$(this).find("dd").hide();
         } else {
-            $(this).removeClass('active');
+            $(this).siblings().removeClass('active');
             $(this).addClass('active');
             $(this).siblings().find("dd").hide();
             $(this).find("dd").show();
         }
-        setWidth();
+        //setWidth();
     });
     var frame = $("#mainFrame");
     var alink = $(".left-box dd ");
-    alink.click(function () {
+    alink.click(function (e) {
+        
         $(".left-box dd ").removeClass('active');
         $(this).addClass('active');
         //alert("跳转到页面"+$(this).children().find('a').attr('name'));	
@@ -116,8 +122,8 @@
         $("#mainFrame").height(h - 103);
     }
 
-    window.onload = setWidth;
-        setWidth();
-        window.onresize = setWidth();
+    //window.onload = setWidth;
+    //    setWidth();
+    //    window.onresize = setWidth();
 </script>
 </html>

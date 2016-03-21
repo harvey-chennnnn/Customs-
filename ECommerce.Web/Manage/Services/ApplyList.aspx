@@ -40,7 +40,7 @@
                 <strong>消息列表</strong>
             </div>--%>
             <div class="pannel-body">
-
+                <h2 class="title">消息列表</h2>
                 <div class="form-inline">
                     <span>发送人：</span><input type="text" runat="server" id="txtProName" placeholder="发送人" class="input-small" />
 

@@ -39,6 +39,7 @@
     <form id="form1" runat="server">
         <div class="pannel" style="border-top: none">
             <div class="pannel-body">
+                <h2 class="title">管理员</h2>
                 <div class="form-inline">
                     <span>姓名：</span><input type="text" runat="server" id="txtRealName" class="input-small" placeholder="姓名" />
                     <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-success" Text="搜索" OnClick="btnSearch_Click" />
@@ -89,7 +90,8 @@
                     </asp:Repeater>
                 </table>
                 <uc1:Pager ID="Pager1" runat="server" />
-            </div> </div>
+            </div>
+            </div>
         </div>
     </form>
 </body>

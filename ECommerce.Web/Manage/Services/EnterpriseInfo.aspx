@@ -42,6 +42,7 @@
     <form id="form1" runat="server">
         <div class="pannel">
             <div class="pannel-body">
+                <h2 class="title">企业管理</h2>
                 <div class="form-inline">
                     <span>企业名称：</span><input type="text" runat="server" id="txtRealName" placeholder="企业名称" class="input-small" />
                     <asp:Button ID="btnSearchRole" runat="server" CssClass="btn btn-success" OnClick="btnSearchRole_Click" Text="搜索" />

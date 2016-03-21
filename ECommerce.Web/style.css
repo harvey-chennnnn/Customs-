@@ -29,7 +29,7 @@
 html,body {
 	width: 100% !important;
 	height: 100% !important;
-	background-color: #CACACA !important;
+	background-color: #CACACA;
 	font-size: 12px !important;
     font-family: none !important;
 }
@@ -82,13 +82,13 @@ html,body {
 }
 
 .left-box {
-	width: 203px;
-	background: url(image/left.jpg);
+	/*width: 203px;*/
+	/*background: url(image/left.jpg);
 	-webkit-background-size: 100% 100%;
-	background-size: 100% 100%;
+	background-size: 100% 100%;*/
 	padding-top: 25px;
 	float: left;
-	min-height: 516px;
+	/*min-height: 516px;*/
 }
 
 .footer-text {
@@ -127,8 +127,10 @@ html,body {
 }
 
 .user-box {
-	margin-left: 1020px;
+	/*margin-left: 1020px;*/
 	position: relative;
+    float: right;
+    margin-right: 50px;
 }
 
 .user-box:hover .other-btn{
@@ -191,11 +193,11 @@ html,body {
 	float: right;
 }
 .user-box:hover .btn1{
-	background-position: -367px -111px;
-	width: 12px;
-	height: 8px;
-	margin-left: 8px;
-	margin-top: 17px;
+	/*background-position: -367px -111px;*/
+	/*width: 12px;*/
+	/*height: 8px;*/
+	/*margin-left: 8px;*/
+	/*margin-top: 17px;*/
 }
 
 .left-box dt {
@@ -228,7 +230,7 @@ html,body {
 }
 
 .icon1-arrow {
-	float: left;
+	float: right;
 	background-position: -232px -125px;
 	width: 14px;
 	height: 8px;
@@ -316,6 +318,7 @@ html,body {
 	border-bottom: 1px solid #dbdbdb;
 	font-size: 18px;
     color: black;
+    margin-bottom: 15px;
 }
 
 .title2 {
@@ -551,6 +554,9 @@ html,body {
     background-image: none;
     /*width: auto !important;
   height: auto !important;*/
+    /*border: 12px solid #dde2eb;*/
+    background: #f5f8fb;
+    /*padding: 12px;*/
 }
 .search-btn {
 	float: left;
@@ -948,4 +954,9 @@ html,body {
     padding-left: 66px;
     border-left: 4px solid #007eff;
     background: #b0c1e1;
+}
+.pannel {
+    padding: 0 25px;
+    background-color: #f5f8fb;
+    background: #f5f8fb;
 }

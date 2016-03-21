@@ -103,6 +103,9 @@
 </head>
 <body class="pd" style="overflow-y: auto;">
     <form id="form5" runat="server" style="padding: 0px">
+        <div class="pannel" style="border-top: none">
+            <h2 class="title" style="background-color: #f5f8fb;"></h2>
+            <div class="pannel-body">
         <div class="contents">
             <div class="right-main">
                 <h3 class="title2">消息明细</h3>
@@ -116,7 +119,8 @@
                 </div>
             </div>
         </div>
-        
+        </div>
+            </div>
     </form>
 </body>
 </html>

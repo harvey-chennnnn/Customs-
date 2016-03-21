@@ -45,7 +45,7 @@
 <body class="pd">
     <form id="form1" runat="server">
         <div class="pannel" style="border-top: none">
-            
+            <h2 class="title">员工管理</h2>
             <div class="pannel-body">
                 <div class="form-inline">
                     <span>姓名：</span><input type="text" runat="server" id="txtRealName" class="input-small" placeholder="姓名" />

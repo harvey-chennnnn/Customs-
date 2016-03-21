@@ -37,6 +37,7 @@
         <div class="pannel" style="border-top: none">
             
             <div class="pannel-body">
+                <h2 class="title">设备监控</h2>
                 <div class="form-inline">
                     <span>设备名称：</span><input type="text" runat="server" id="txtRealName" class="input-small" placeholder="设备名称" />
                     <span>借出人：</span><input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
@@ -76,7 +77,8 @@
                     </asp:Repeater>
                 </table>
                 <uc1:Pager ID="Pager1" runat="server" />
-            </div></div>
+            </div>
+            </div>
         </div>
     </form>
 </body>
