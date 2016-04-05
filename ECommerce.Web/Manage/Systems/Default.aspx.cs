@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Web;
 using ECommerce.Admin.Model;
 using ECommerce.Lib.Security;
 using Microsoft.Practices.EnterpriseLibrary.Data;
@@ -35,7 +36,12 @@ namespace ECommerce.Web.Manage.Systems {
                     var org = _orgOrganizeDal.GetModel(Convert.ToInt64(emp.OrgId));
                     title = SecurityMgr.GetEntName();
                 }
-                litTitle.Text = title;
+                litTitle.Text =  title;
+                if (null != HttpContext.Current.Session["CurrentEnt"])
+                {
+                    Literal1.Text =
+                        ((Admin.Model.EnterpriseList) HttpContext.Current.Session["CurrentEnt"]).EnterpriseName;
+                }
             }
         }
 
@@ -57,7 +63,7 @@ SELECT PC_Id FROM SYS_RoleForPage WHERE Role_Id IN (SELECT Role_Id FROM SYS_User
                         if (i == 0) {
                             sbr.Append(" style=\"border-top: none\"");
                         }
-                        sbr.Append("><dt><span class=\"btn-box clearfix\"><i class=\"dt-icon icon1\"></i><strong>" + dt.Rows[i]["PC_Name"] + "</strong><i class=\"icon1-arrow\"></i></span></dt>");
+                        sbr.Append("><dt><span class=\"btn-box clearfix\"><i class=\"dt-icon icon1\" style=\"background-position: " + dt.Rows[i]["PC_Icon"] + ";\"></i><strong>" + dt.Rows[i]["PC_Name"] + "</strong><i class=\"icon1-arrow\"></i></span></dt>");
                         //循环子菜单
                         GetSonMenu(mi, dt.Rows[i]["PC_Id"].ToString(), sbr, dtUser.UId.ToString());
                         sbr.Append("</dl>");

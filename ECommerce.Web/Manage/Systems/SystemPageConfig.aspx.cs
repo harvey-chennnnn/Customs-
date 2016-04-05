@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using System.Web.UI.WebControls;
 using ECommerce.Admin.DAL;
@@ -31,7 +33,7 @@ namespace ECommerce.Web.Manage.Systems
 
         private void BindDataTable()
         {
-            DataSet dt = mPage.GetList(" PC_State=1 ");
+            DataSet dt = mPage.GetList(" PC_State=1 ",null);
             dataTable = dt.Tables[0];
         }
 

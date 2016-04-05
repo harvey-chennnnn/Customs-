@@ -50,8 +50,8 @@
         </div>
             <div class="ui-layout-north" style="overflow: visible;">
             <div class="top-thing">
-				<i class="logo1"></i>
-				<i class="logo2"></i>
+				<span class="logo1"><asp:Literal ID="Literal1" runat="server"></asp:Literal><span class="logo-big-text">防盗系统</span></span>
+				<span class="logo2">擎天电脑防盗监管系统让您的笔记本安全放心</span>
 				<div class="user-box clearfix">
 					<div class="user-icon-box"><%--<img src="/image/user-img.png" alt="">--%><i></i></div>
 					<div class="user-name clearfix">

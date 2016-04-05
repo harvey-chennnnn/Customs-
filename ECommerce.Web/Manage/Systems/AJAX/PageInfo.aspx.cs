@@ -67,7 +67,7 @@ namespace ECommerce.Web.Manage.Systems.AJAX
                     if (!string.IsNullOrEmpty(detpg_id))
                     {
                         int dtpg_id = int.Parse(detpg_id);//得到需要删除的记录的编号（Id）
-                        DataSet dt = mPage.GetList(" PC_ParentId =" + dtpg_id);
+                        DataSet dt = mPage.GetList(" PC_ParentId =" + dtpg_id,null);
                         bool res = false;
                         if (dt.Tables[0].Rows.Count > 0)
                         {
@@ -126,7 +126,7 @@ namespace ECommerce.Web.Manage.Systems.AJAX
                                 var page = mPage.GetModel(Convert.ToInt32(pc_id));
                                 if (page != null)
                                 {
-                                    var ds = mPage.GetList(" PC_Name='" + PCNames + "' and PC_Id !=" + pc_id );
+                                    var ds = mPage.GetList(" PC_Name='" + PCNames + "' and PC_Id !=" + pc_id,null );
                                     if (ds.Tables[0].Rows.Count > 0)
                                     {
                                         Response.Write("功能名称已存在");
@@ -156,7 +156,7 @@ namespace ECommerce.Web.Manage.Systems.AJAX
                                 {
                                     sqlWher = " PC_Name='" + PCNames + "' and PC_ParentId=0";
                                 }
-                                var ds = mPage.GetList(sqlWher);
+                                var ds = mPage.GetList(sqlWher,null);
                                 if (ds.Tables[0].Rows.Count > 0)
                                 {
                                     Response.Write("功能名称已存在");

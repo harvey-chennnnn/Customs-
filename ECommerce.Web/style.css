@@ -30,7 +30,7 @@ html,body {
 	width: 100% !important;
 	height: 100% !important;
 	background-color: #CACACA;
-	font-size: 12px !important;
+	/*font-size: 12px !important;*/
     font-family: none !important;
 }
 
@@ -48,7 +48,8 @@ html,body {
 .top-thing {
 	height: 62px;
 	width: 100%;
-	background: url(image/top.jpg) #12477e 0 50% no-repeat;
+	background: url(image/top.jpg) #12477e no-repeat;
+    background-size: 100% 100%;
 	position: relative;
 	padding-top: 18px;
 }
@@ -57,8 +58,23 @@ html,body {
 	display: block;
 	width: 203px;
 	height: 80px;
-	background-image: url(image/logo1.png);
+	/*background-image: url(image/logo1.png);*/
 	left: 0;top: 0;
+	text-align: center;
+	line-height: 24px;
+	padding-top: 15px;
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	color: #D6DEEC;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-style: italic;
+    background-color: #12477e;
+}
+.logo-big-text{
+	display: block;
+	font-size: 26px;
+	color: #fff;
+	font-style: normal;
 }
 
 .logo2{
@@ -66,9 +82,14 @@ html,body {
 	display: block;
 	width: 440px;
 	height: 80px;
-	background-image: url(image/logo2.png);
+	/*background-image: url(image/logo2.png);*/
 	left: 203px;
 	top: 0;
+	line-height: 80px;
+	padding-left: 20px;
+	font-style: italic;
+	color: #5A8FC5;
+	font-family:"楷体";
 }
 
 .content {
@@ -159,7 +180,7 @@ html,body {
 	padding-left: 18px;
 	color: #b1c2d4;
 	float: left;
-	width: 85px;
+	/*width: 85px;*/
 	position: relative;
 }
 .user-name a{
@@ -169,7 +190,7 @@ html,body {
 }
 .other-btn{
 	position: absolute;
-	left: -25px;
+	left: -15px;
 	top: 20px;
 	padding-top: 42px;
 	display: none;
@@ -193,11 +214,11 @@ html,body {
 	float: right;
 }
 .user-box:hover .btn1{
-	/*background-position: -367px -111px;*/
-	/*width: 12px;*/
-	/*height: 8px;*/
-	/*margin-left: 8px;*/
-	/*margin-top: 17px;*/
+	background-position: -232px -125px;
+	width: 12px;
+	height: 8px;
+	margin-left: 8px;
+	margin-top: 17px;
 }
 
 .left-box dt {
@@ -607,6 +628,7 @@ html,body {
 	/*width: 840px;*/
 	padding: 18px;
         display: inline-block;
+    font-size: 12px;
 }
 
 .page-box li{
@@ -653,7 +675,7 @@ html,body {
 }
 
 .position-history-box {
-	padding-left: 28px;
+	padding: 0px 28px;
 }
 
 .position-history-title {
@@ -673,7 +695,8 @@ html,body {
 	height: 27px;
 	position: absolute;
 	top: 18px;
-	left: 690px;
+	/*left: 690px;*/
+    right: 28px;
 }
 
 .map-btn-box a {
@@ -693,7 +716,7 @@ html,body {
 }
 
 .position-history-list-title {
-	width: 835px;
+	/*width: 835px;*/
 	background: #198ede;
 	font-size: 13px;
 	line-height: 40px;
@@ -718,7 +741,7 @@ html,body {
 .position-history-imformation {
 	border: 1px solid #d4d7db;
 	border-top: none;
-	width: 861px;
+	/*width: 861px;*/
 	padding: 14px 0 14px;
 }
 

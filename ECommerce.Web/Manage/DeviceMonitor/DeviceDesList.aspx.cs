@@ -29,7 +29,7 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
             int pageNum = 1;
             int pageSize = 10;
             //分页查询语句
-            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.DID DESC) as rownum,oo.*,AUserInfo.Name FROM DeviceList oo left join AUserInfo on oo.Loaner=AUserInfo.UserName where oo.status=1 and oo.EntID='" + CurrentEmp.OrgId + "'";
+            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.DID DESC) as rownum,oo.*,AUserInfo.Name FROM DesList dl join DeviceList oo on dl.DID=oo.DID left join AUserInfo on oo.Loaner=AUserInfo.UserName where oo.status=1 and oo.EntID='" + CurrentEmp.OrgId + "'";
             var name = string.Empty;
             if (!string.IsNullOrEmpty(txtRealName.Value)) {
                 name = txtRealName.Value;
@@ -140,7 +140,7 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
                 var sql = "select * from dr_execute_order where id='" + eval + "'";
                 DataTable dt = mySQlHelper.ExecuteQuery(sql, CommandType.Text);
                 if (dt.Rows.Count > 0) {
-                    str = "<td style=\"text-align: center\">" + dt.Rows[0]["Status"] + "</td><td style=\"text-align: center\">" + Convert.ToDateTime(dt.Rows[0]["CreateTime"]).ToString("yyyy-MM-dd hh:mm:ss") + "</td><td style=\"text-align: center\">" + Convert.ToDateTime(dt.Rows[0]["UpdateTime"]).ToString("yyyy-MM-dd hh:mm:ss") + "</td>";
+                    str = "<td style=\"text-align: center\">" + (dt.Rows[0]["Status"].ToString()=="True"?"成功":"失败") + "</td><td style=\"text-align: center\">" + Convert.ToDateTime(dt.Rows[0]["CreateTime"]).ToString("yyyy-MM-dd hh:mm:ss") + "</td><td style=\"text-align: center\">" + Convert.ToDateTime(dt.Rows[0]["UpdateTime"]).ToString("yyyy-MM-dd hh:mm:ss") + "</td>";
                 }
             }
             return str;

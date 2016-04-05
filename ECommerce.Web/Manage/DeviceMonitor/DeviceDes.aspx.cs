@@ -29,7 +29,7 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
             int pageNum = 1;
             int pageSize = 10;
             //分页查询语句
-            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.DID DESC) as rownum,oo.*,AUserInfo.Name FROM DeviceList oo left join AUserInfo on oo.Loaner=AUserInfo.UserName where oo.status=1 and oo.EntID='" + CurrentEmp.OrgId + "'";
+            string sql = "select row_number() over(order by  oo.CreateDate desc,oo.DID DESC) as rownum,oo.*,AUserInfo.Name FROM DeviceList oo left join AUserInfo on oo.Loaner=AUserInfo.UserName where oo.status=1 and oo.LoanStatus=1 and oo.EntID='" + CurrentEmp.OrgId + "'";
             var name = string.Empty;
             if (!string.IsNullOrEmpty(txtRealName.Value)) {
                 name = txtRealName.Value;

@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿
+using System;
 namespace ECommerce.Admin.Model
 {
 	/// <summary>
@@ -18,6 +18,7 @@ namespace ECommerce.Admin.Model
 		private int? _pc_havechild;
 		private int? _pc_parentid;
 		private int? _pc_state=1;
+		private string _pc_icon;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -73,6 +74,14 @@ namespace ECommerce.Admin.Model
 		{
 			set{ _pc_state=value;}
 			get{return _pc_state;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PC_Icon
+		{
+			set{ _pc_icon=value;}
+			get{return _pc_icon;}
 		}
 		#endregion Model
 

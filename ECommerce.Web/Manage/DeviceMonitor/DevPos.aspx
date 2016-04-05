@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DevPos.aspx.cs" Inherits="ECommerce.Web.Manage.DeviceMonitor.DevPos" %>
 
+<%@ Register Src="/UserControl/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +18,12 @@
         <div class="contents">
             <div class="position-history-box">
                 <div class="map-btn-box"><a href="/Manage/DeviceMonitor/DevPos.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>" class="on">列表</a><a href="/Manage/DeviceMonitor/DevMap.aspx?name=<%=Request.QueryString["name"] %>&loaner=<%=Request.QueryString["loaner"] %>&Page=<%=Request.QueryString["Page"] %>&did=<%=Request.QueryString["did"] %>">地图</a></div>
-                <p class="position-history-title"><span><asp:Literal ID="litLoaner" runat="server"></asp:Literal></span><asp:Literal ID="litDevName" runat="server"></asp:Literal>的位置记录</p>
+                <p class="position-history-title"><span>
+                    <asp:Literal ID="litLoaner" runat="server"></asp:Literal></span><asp:Literal ID="litDevName" runat="server"></asp:Literal>的位置记录</p>
                 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
                         <div class="position-history-list">
-                            <p class="position-history-list-title"><span><%# Container.ItemIndex+1 %></span>记录时间=<%#Eval("TraceTime")!=DBNull.Value?Convert.ToDateTime(Eval("TraceTime")).ToString("yyyy-MM-dd hh:mm:ss"):""%></p>
+                            <p class="position-history-list-title"><span><%#(pageNum-1)*pageSize+ Container.ItemIndex+1 %></span>记录时间=<%#Eval("TraceTime")!=DBNull.Value?Convert.ToDateTime(Eval("TraceTime")).ToString("yyyy-MM-dd hh:mm:ss"):""%></p>
                             <div class="clearfix position-history-imformation">
                                 <p class="position1">
                                     <span>Wi-Fi定位经纬度</span> = <%#Eval("WifiLat")%><br>
@@ -38,6 +40,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
+                <uc1:Pager ID="Pager" runat="server" />
             </div>
         </div>
 

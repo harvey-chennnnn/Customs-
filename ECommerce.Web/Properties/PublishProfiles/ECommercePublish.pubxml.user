@@ -34,7 +34,7 @@
       <publishTime>03/16/2016 00:00:47</publishTime>
     </File>
     <File Include="bin/ECommerce.Admin.dll">
-      <publishTime>03/01/2016 22:49:25</publishTime>
+      <publishTime>04/05/2016 21:32:57</publishTime>
     </File>
     <File Include="bin/ECommerce.Area.dll">
       <publishTime>02/22/2016 19:02:19</publishTime>
@@ -46,10 +46,10 @@
       <publishTime>02/22/2016 19:02:19</publishTime>
     </File>
     <File Include="bin/ECommerce.dll">
-      <publishTime>03/17/2016 23:17:03</publishTime>
+      <publishTime>04/05/2016 22:10:48</publishTime>
     </File>
     <File Include="bin/ECommerce.Lib.dll">
-      <publishTime>03/17/2016 23:17:01</publishTime>
+      <publishTime>04/05/2016 21:32:57</publishTime>
     </File>
     <File Include="bin/ECommerce.Order.dll">
       <publishTime>03/25/2014 15:06:05</publishTime>
@@ -175,7 +175,7 @@
       <publishTime>03/02/2016 20:17:06</publishTime>
     </File>
     <File Include="image/top.jpg">
-      <publishTime>03/02/2016 20:17:06</publishTime>
+      <publishTime>04/05/2016 19:12:52</publishTime>
     </File>
     <File Include="image/user-icon.png">
       <publishTime>03/02/2016 20:17:06</publishTime>
@@ -5260,25 +5260,25 @@
       <publishTime>01/12/2016 19:15:17</publishTime>
     </File>
     <File Include="Manage/Companies/Detail.aspx">
-      <publishTime>03/17/2016 23:15:52</publishTime>
+      <publishTime>03/21/2016 22:51:43</publishTime>
     </File>
     <File Include="Manage/Companies/Report.aspx">
       <publishTime>09/03/2015 14:52:22</publishTime>
     </File>
     <File Include="Manage/DeviceMonitor/DeviceDes.aspx">
-      <publishTime>03/17/2016 23:00:47</publishTime>
+      <publishTime>03/21/2016 22:39:07</publishTime>
     </File>
     <File Include="Manage/DeviceMonitor/DeviceDesList.aspx">
-      <publishTime>03/17/2016 21:58:44</publishTime>
+      <publishTime>03/21/2016 22:39:26</publishTime>
     </File>
     <File Include="Manage/DeviceMonitor/DeviceMonitor.aspx">
-      <publishTime>03/17/2016 21:51:59</publishTime>
+      <publishTime>03/21/2016 22:38:39</publishTime>
     </File>
     <File Include="Manage/DeviceMonitor/DevMap.aspx">
       <publishTime>03/17/2016 22:57:43</publishTime>
     </File>
     <File Include="Manage/DeviceMonitor/DevPos.aspx">
-      <publishTime>03/17/2016 22:53:34</publishTime>
+      <publishTime>04/05/2016 22:06:08</publishTime>
     </File>
     <File Include="Manage/Farmer/FarmerDefault.aspx">
       <publishTime>02/14/2014 13:48:10</publishTime>
@@ -5431,7 +5431,7 @@
       <publishTime>10/14/2015 01:02:42</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList.aspx">
-      <publishTime>03/17/2016 22:02:11</publishTime>
+      <publishTime>03/21/2016 22:39:50</publishTime>
     </File>
     <File Include="Manage/Services/ApplyList1.aspx">
       <publishTime>08/14/2015 00:24:41</publishTime>
@@ -5440,7 +5440,7 @@
       <publishTime>03/17/2016 22:31:40</publishTime>
     </File>
     <File Include="Manage/Services/EnterpriseInfo.aspx">
-      <publishTime>03/17/2016 21:14:51</publishTime>
+      <publishTime>03/21/2016 22:26:17</publishTime>
     </File>
     <File Include="Manage/Services/Instr.aspx">
       <publishTime>11/24/2015 22:45:00</publishTime>
@@ -5449,7 +5449,7 @@
       <publishTime>11/24/2015 22:44:50</publishTime>
     </File>
     <File Include="Manage/Services/ProfInfo.aspx">
-      <publishTime>03/17/2016 21:48:35</publishTime>
+      <publishTime>03/21/2016 22:38:13</publishTime>
     </File>
     <File Include="Manage/Services/ProfOrg.aspx">
       <publishTime>08/13/2015 23:29:14</publishTime>
@@ -5458,7 +5458,7 @@
       <publishTime>08/13/2015 22:06:36</publishTime>
     </File>
     <File Include="Manage/Services/UserInfo.aspx">
-      <publishTime>03/17/2016 21:46:48</publishTime>
+      <publishTime>03/21/2016 22:37:41</publishTime>
     </File>
     <File Include="Manage/Store/Ajax/StoreAreaAjax.aspx">
       <publishTime>02/11/2014 17:25:12</publishTime>
@@ -5770,7 +5770,7 @@
       <publishTime>01/23/2014 14:50:04</publishTime>
     </File>
     <File Include="Manage/Systems/Default.aspx">
-      <publishTime>03/17/2016 21:56:21</publishTime>
+      <publishTime>04/05/2016 20:46:48</publishTime>
     </File>
     <File Include="Manage/Systems/DesData.aspx">
       <publishTime>03/17/2016 23:03:29</publishTime>
@@ -5839,7 +5839,7 @@
       <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserDep.aspx">
-      <publishTime>03/17/2016 21:43:27</publishTime>
+      <publishTime>03/21/2016 22:27:03</publishTime>
     </File>
     <File Include="Manage/Systems/OrgUserLogistics.aspx">
       <publishTime>12/17/2014 20:49:43</publishTime>
@@ -5905,7 +5905,7 @@
       <publishTime>01/12/2016 19:15:16</publishTime>
     </File>
     <File Include="Manage/Systems/SystemRoleInfo.aspx">
-      <publishTime>03/17/2016 20:01:38</publishTime>
+      <publishTime>03/21/2016 21:32:53</publishTime>
     </File>
     <File Include="Manage/Systems/SystemSetPage.aspx">
       <publishTime>01/12/2016 19:15:15</publishTime>
@@ -6379,7 +6379,7 @@
       <publishTime>12/09/2015 21:23:07</publishTime>
     </File>
     <File Include="style.css">
-      <publishTime>03/17/2016 23:06:41</publishTime>
+      <publishTime>04/05/2016 22:02:18</publishTime>
     </File>
     <File Include="Templelate/批量导入品牌模板.xls">
       <publishTime>05/26/2015 22:20:22</publishTime>
@@ -6775,7 +6775,7 @@
       <publishTime>11/07/2015 22:47:51</publishTime>
     </File>
     <File Include="themes/default/Master.min.css">
-      <publishTime>03/17/2016 20:01:39</publishTime>
+      <publishTime>04/05/2016 20:42:12</publishTime>
     </File>
     <File Include="themes/default/pad.css">
       <publishTime>07/30/2015 21:21:10</publishTime>

@@ -13,6 +13,7 @@ using System.Web.UI.WebControls;
 using System.Text;
 using dsEncrypt;
 using ECommerce.DBUtilities;
+using ECommerce.Web.UserControl;
 
 namespace ECommerce.Web.Manage.DeviceMonitor {
     public partial class DevPos : UI.WebPage {
@@ -20,6 +21,8 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
         readonly DeviceList _deviceListDal = new DeviceList();
         readonly AUserInfo _aUserInfo = new AUserInfo();
         readonly MySQlHelper mySQlHelper = new MySQlHelper();
+        public int pageSize = 10;
+        public int pageNum = 1;
         protected void Page_Load(object sender, EventArgs e) {
             VerifyPage("", false);
             try {
@@ -31,9 +34,21 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
                             litDevName.Text = model.DeviceName;
                             if (!string.IsNullOrEmpty(model.Loaner) && model.EntID == CurrentEmp.OrgId) {
                                 string sql = "SELECT TraceId,TraceTime,WifiLat,ServiceIp,LogonName,ComputerName,LocalIp,ProxyIpFirst FROM dr_user_trace WHERE UserName='" + model.Loaner + "'";
-                                DataTable dt = mySQlHelper.ExecuteQuery(sql, CommandType.Text);
-                                Repeater1.DataSource = dt;
-                                Repeater1.DataBind();
+                                //DataTable dt = mySQlHelper.ExecuteQuery(sql, CommandType.Text);
+                                //Repeater1.DataSource = dt;
+                                //Repeater1.DataBind();
+                                
+                                try {
+
+                                    if (!string.IsNullOrEmpty(Request.QueryString["Page"])) //页数判断
+                    {
+                                        pageNum = Convert.ToInt32(Request.QueryString["Page"]);
+                                    }
+                                }
+                                catch (Exception ex) {
+                                    pageNum = 1;
+                                }
+                                Pager.GetDataBindMySql("Repeater", "Repeater1", sql, pageNum, pageSize, "", "DevPos.aspx?did=" + dId + "&");
                             }
 
                             var auserInfo = _aUserInfo.GetModel(" UserName='" + model.Loaner + "' ", new List<SqlParameter>());
@@ -66,8 +81,7 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
             return userName.ToString();
         }
 
-        protected string GetIp(object eval)
-        {
+        protected string GetIp(object eval) {
             var ds = new dsEncryptBean();
             return ds.Encrypt(eval.ToString());
 

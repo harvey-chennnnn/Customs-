@@ -50,7 +50,7 @@ namespace ECommerce.Web.Manage.Systems
 
         private void BindDataTable()
         {
-            DataSet dt = mPages.GetList(" PC_State=1 ");
+            DataSet dt = mPages.GetList(" PC_State=1 ",null);
             dataTable = dt.Tables[0];
         }
 
