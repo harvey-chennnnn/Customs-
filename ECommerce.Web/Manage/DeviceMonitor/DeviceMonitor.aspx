@@ -42,6 +42,7 @@
                     <span>设备名称：</span><input type="text" runat="server" id="txtRealName" class="input-small" placeholder="设备名称" />
                     <span>借出人：</span><input type="text" runat="server" id="Text1" class="input-small" placeholder="借出人" />
                     <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-success" Text="搜索" OnClick="btnSearch_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><asp:Literal ID="litMsg" runat="server"></asp:Literal></font>
                 </div>
                 <%--<div class="btn-toolbar">
                     <a href="javascript:void(0);" class="btn btn-mini" onclick="addData();">新增</a>
@@ -58,6 +59,7 @@
                         <th nowrap="nowrap">查看位置</th><th class="thd"></th>
                         <%--<th nowrap="nowrap" class="act">操作</th>--%>
                     </tr>
+                    
                     <asp:Repeater ID="rptListWork" runat="server">
                         <ItemTemplate>
                             <tr><td class="tbd"></td>

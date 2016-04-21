@@ -125,20 +125,20 @@
         }
 
         .login-ok-box {
-            text-align: right;
-            padding-top: 30px;
+            text-align: center;
+            padding-top: 15px;
             width: 354px;
             margin: 0 auto;
         }
 
             .login-ok-box a {
                 color: #ffffff;
-                font-size: 14px;
+                font-size: 24px;
                 text-decoration: none;
             }
 
         .forget-tips2 {
-            margin-right: 15px;
+            /*margin-right: 15px;*/
         }
 
         .login-ok-box span {

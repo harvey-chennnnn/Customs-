@@ -23,7 +23,7 @@
                 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
                         <div class="position-history-list">
-                            <p class="position-history-list-title"><span><%#(pageNum-1)*pageSize+ Container.ItemIndex+1 %></span>记录时间=<%#Eval("TraceTime")!=DBNull.Value?Convert.ToDateTime(Eval("TraceTime")).ToString("yyyy-MM-dd hh:mm:ss"):""%></p>
+                            <p class="position-history-list-title"><span><%#(pageNum-1)*pageSize+ Container.ItemIndex+1 %></span>记录时间=<%#Eval("TraceTime")!=DBNull.Value?Convert.ToDateTime(Eval("TraceTime")).ToString("yyyy-MM-dd HH:mm:ss"):""%></p>
                             <div class="clearfix position-history-imformation">
                                 <p class="position1">
                                     <span>Wi-Fi定位经纬度</span> = <%#Eval("WifiLat")%><br>

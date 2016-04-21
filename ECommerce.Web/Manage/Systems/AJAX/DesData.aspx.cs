@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -8,54 +9,75 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ECommerce.Admin.DAL;
+using ECommerce.DBUtilities;
 
-namespace ECommerce.Web.Manage.Systems.AJAX {
-    public partial class DesData : UI.WebPage {
+namespace ECommerce.Web.Manage.Systems.AJAX
+{
+    public partial class DesData : UI.WebPage
+    {
         private readonly DesList _desListDal = new DesList();
         private readonly DeviceList _deviceListDal = new DeviceList();
-        protected void Page_Load(object sender, EventArgs e) {
+        readonly MySQlHelper mySQlHelper = new MySQlHelper();
+        protected void Page_Load(object sender, EventArgs e)
+        {
             VerifyPage("", false);
             var dId = Request.QueryString["did"];
-            if (!string.IsNullOrEmpty(dId)) {
-                try {
+            if (!string.IsNullOrEmpty(dId))
+            {
+                try
+                {
                     var model = _deviceListDal.GetModel(Convert.ToInt32(dId));
-                    if (null != model) {
-                        if (!string.IsNullOrEmpty(model.Loaner) && model.EntID == CurrentEmp.OrgId) {
-                            var dmodel = new Admin.Model.DesList {
+                    if (null != model)
+                    {
+                        if (!string.IsNullOrEmpty(model.Loaner) && model.EntID == CurrentEmp.OrgId)
+                        {
+                            var dmodel = new Admin.Model.DesList
+                            {
                                 DID = model.DID,
                                 CreateDate = DateTime.Now,
                                 Sender = CurrentUser.UserName,
                                 Receiver = model.Loaner,
                                 UID = CurrentUser.UId
                             };
-                            var result = DoRequest(dmodel);
+                            //var result = DoRequest(dmodel);
+                            var sql =
+                                "INSERT INTO dr_execute_order (Sender,Receiver,CmdOrder,OrderCotent,IsValid,CREATETIME,STATUS) VALUES ('" + CurrentUser.UserName + "','" + model.Loaner + "','DEL','D',1,'" + DateTime.Now + "',0)";
+                            var result = mySQlHelper.ExecuteScalar(sql);
                             //var result =
                             //    "{\"Logic\":true,\"Body\":{\"Sender\":\"ch\",\"Receiver\":\"ch\",\"CmdOrder\":\"DEL\",\"OrderCotent\":\"D\",\"STATUS\":\"0\",\"IsValid\":\"1\"},\"Error\":null}";
-                            var messageArr = Newtonsoft.Json.Linq.JObject.Parse(result);
-                            if (string.IsNullOrEmpty(messageArr["Error"].ToString())) {
-                                dmodel.ReID = Convert.ToInt32(messageArr["Body"]["IsValid"]);
+                            //var messageArr = Newtonsoft.Json.Linq.JObject.Parse(result);
+                            //if (string.IsNullOrEmpty(messageArr["Error"].ToString())) {
+                            if (result > 0)
+                            {
+                                //dmodel.ReID = Convert.ToInt32(messageArr["Body"]["IsValid"]);
+                                dmodel.ReID = Convert.ToInt32(result);
                                 var re = _desListDal.Add(dmodel);
-                                if (re != 0) {
-                                    model.ReID = Convert.ToInt32(messageArr["Body"]["IsValid"]);
+                                if (re != 0)
+                                {
+                                    model.ReID = Convert.ToInt32(result);
                                     _deviceListDal.Update(model);
                                     Response.Write("<p>清空指令已发送，您可以在销毁列表中查看状态。</p>");
                                     Response.End();
                                 }
-                                else {
+                                else
+                                {
                                     Response.Write("<p>发送指令失败</p>");
                                     Response.End();
                                 }
                             }
-                            else {
-                                Response.Write("<p>" + messageArr["Error"] + "</p>");
+                            else
+                            {
+                                Response.Write("<p>发送指令失败</p>");
                                 Response.End();
                             }
                         }
                     }
                 }
-                catch (System.Threading.ThreadAbortException ex) {
+                catch (System.Threading.ThreadAbortException ex)
+                {
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
                     Response.Write("<p>发送指令失败</p>");
                     Response.End();
                 }
@@ -63,8 +85,10 @@ namespace ECommerce.Web.Manage.Systems.AJAX {
         }
 
         private static readonly string DefaultUserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)";
-        public string DoRequest(Admin.Model.DesList dmodel) {
-            try {
+        public string DoRequest(Admin.Model.DesList dmodel)
+        {
+            try
+            {
                 HttpWebRequest request = null;
                 //ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
                 string url = "http://interface.angeletsoft.cn/interface_ent.php";
@@ -77,7 +101,8 @@ namespace ECommerce.Web.Manage.Systems.AJAX {
                 string form = "{\"FunctionCode\":\"EXEUTE_ORDER\",\"Body\":{\"Sender\":\"" + dmodel.Sender + "\",\"Receiver\":\"" + dmodel.Receiver + "\",\"CmdOrder\":\"DEL\",\"OrderCotent\":\"D\",\"STATUS\":\"0\",\"IsValid\":\"1\"}}";
                 byte[] data = Encoding.UTF8.GetBytes(form);
                 request.ContentLength = data.Length;
-                using (Stream stream = request.GetRequestStream()) {
+                using (Stream stream = request.GetRequestStream())
+                {
                     stream.Write(data, 0, data.Length);
                     stream.Close();
                 }
@@ -86,7 +111,8 @@ namespace ECommerce.Web.Manage.Systems.AJAX {
                 StreamReader reader = new StreamReader(wr.GetResponseStream(), Encoding.GetEncoding(cs));
                 return reader.ReadToEnd();
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 return "";
             }
         }

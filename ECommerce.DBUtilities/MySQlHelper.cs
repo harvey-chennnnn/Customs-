@@ -83,6 +83,25 @@ namespace ECommerce.DBUtilities {
             return res;
         }
 
+        public long ExecuteScalar(string cmdText)
+        {
+            long result = 0;
+            try
+            {
+                MySqlCommand mycmd = new MySqlCommand();
+                mycmd.Connection = GetConn();
+                mycmd.CommandType = CommandType.Text;
+                mycmd.CommandText = cmdText;
+                mycmd.ExecuteNonQuery();
+                result = mycmd.LastInsertedId;
+                GetConnClose();
+            }
+            catch (Exception)
+            {
+            }
+            return result;
+        }
+
         public object ExecuteObject(string cmdText, CommandType ct) {
             using (cmd = new MySqlCommand(cmdText, GetConn())) {
                 cmd.CommandType = ct;

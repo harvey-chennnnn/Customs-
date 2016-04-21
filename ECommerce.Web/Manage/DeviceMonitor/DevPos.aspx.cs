@@ -15,57 +15,71 @@ using dsEncrypt;
 using ECommerce.DBUtilities;
 using ECommerce.Web.UserControl;
 
-namespace ECommerce.Web.Manage.DeviceMonitor {
-    public partial class DevPos : UI.WebPage {
+namespace ECommerce.Web.Manage.DeviceMonitor
+{
+    public partial class DevPos : UI.WebPage
+    {
         readonly LoanInfo _loanInfoDal = new LoanInfo();
         readonly DeviceList _deviceListDal = new DeviceList();
         readonly AUserInfo _aUserInfo = new AUserInfo();
         readonly MySQlHelper mySQlHelper = new MySQlHelper();
         public int pageSize = 10;
         public int pageNum = 1;
-        protected void Page_Load(object sender, EventArgs e) {
+        protected void Page_Load(object sender, EventArgs e)
+        {
             VerifyPage("", false);
-            try {
+            try
+            {
                 var dId = Request.QueryString["did"];
-                if (!string.IsNullOrEmpty(dId)) {
+                if (!string.IsNullOrEmpty(dId))
+                {
                     var model = _deviceListDal.GetModel(Convert.ToInt32(dId));
-                    if (!IsPostBack) {
-                        if (null != model) {
+                    if (!IsPostBack)
+                    {
+                        if (null != model)
+                        {
                             litDevName.Text = model.DeviceName;
-                            if (!string.IsNullOrEmpty(model.Loaner) && model.EntID == CurrentEmp.OrgId) {
+                            if (!string.IsNullOrEmpty(model.Loaner) && model.EntID == CurrentEmp.OrgId)
+                            {
                                 string sql = "SELECT TraceId,TraceTime,WifiLat,ServiceIp,LogonName,ComputerName,LocalIp,ProxyIpFirst FROM dr_user_trace WHERE UserName='" + model.Loaner + "'";
                                 //DataTable dt = mySQlHelper.ExecuteQuery(sql, CommandType.Text);
                                 //Repeater1.DataSource = dt;
                                 //Repeater1.DataBind();
-                                
-                                try {
+
+                                try
+                                {
 
                                     if (!string.IsNullOrEmpty(Request.QueryString["Page"])) //页数判断
-                    {
+                                    {
                                         pageNum = Convert.ToInt32(Request.QueryString["Page"]);
                                     }
                                 }
-                                catch (Exception ex) {
+                                catch (Exception ex)
+                                {
                                     pageNum = 1;
                                 }
-                                Pager.GetDataBindMySql("Repeater", "Repeater1", sql, pageNum, pageSize, "", "DevPos.aspx?did=" + dId + "&");
+                                Pager.GetDataBindMySql("Repeater", "Repeater1", sql, pageNum, pageSize, " order by TraceId desc ", "DevPos.aspx?did=" + dId + "&");
                             }
 
                             var auserInfo = _aUserInfo.GetModel(" UserName='" + model.Loaner + "' ", new List<SqlParameter>());
-                            if (null != auserInfo) {
+                            if (null != auserInfo)
+                            {
                                 litLoaner.Text = auserInfo.Name;
                             }
-                            else {
+                            else
+                            {
                                 litLoaner.Text = model.Loaner;
                             }
                         }
                     }
                 }
             }
-            catch {
+            catch
+            {
             }
         }
-        private void BindLoanInfo() {
+        private void BindLoanInfo()
+        {
             List<SqlParameter> parameters = new List<SqlParameter>();
             var str = " LoanInfo.DID='" + Request.QueryString["did"] + "' order by LoanInfo.CreateDate desc ";
             var dt = _loanInfoDal.GetLoanerList(str, parameters).Tables[0];
@@ -73,15 +87,18 @@ namespace ECommerce.Web.Manage.DeviceMonitor {
             //rptListWork.DataBind();
         }
 
-        protected string GetName(object userName) {
+        protected string GetName(object userName)
+        {
             var auser = _aUserInfo.GetModel(" UserName='" + userName + "' ", new List<SqlParameter>());
-            if (null != auser) {
+            if (null != auser)
+            {
                 return auser.Name;
             }
             return userName.ToString();
         }
 
-        protected string GetIp(object eval) {
+        protected string GetIp(object eval)
+        {
             var ds = new dsEncryptBean();
             return ds.Encrypt(eval.ToString());
 
