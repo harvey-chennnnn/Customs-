@@ -109,6 +109,7 @@
         <div class="contents">
             <div class="right-main">
                 <h3 class="title2">消息明细</h3>
+                <h4 style="margin-top: 10px;">接收人：<asp:Literal ID="Literal1" runat="server"></asp:Literal></h4>
                 <div class="message-box" id="dMsg" runat="server" style="border-top: 0;">
                     <asp:Literal ID="litMsg" runat="server"></asp:Literal>
                     

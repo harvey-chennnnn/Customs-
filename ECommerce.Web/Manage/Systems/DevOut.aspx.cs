@@ -48,6 +48,7 @@ namespace ECommerce.Web.Manage.Systems {
                     litDevName.Text = model.DeviceName;
                     litPkey.Text = model.PKey;
                     litDescri.Text = model.Descri;
+                    HiddenField1.Value = Convert.ToDateTime(model.EnteringDate).ToString("yyyy-MM-dd");
                     //ddltype.SelectedValue = model.Loanable.ToString();
                 }
             }

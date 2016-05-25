@@ -30,6 +30,7 @@ namespace ECommerce.Web.Manage.Companies {
                 //sb.Append("<ul class=\"clearfix\">");
                 for (int i = dt.Rows.Count - 1; i >= 0; i--) {
                     if (CurrentEmp.EmplName == dt.Rows[i]["FromUser"].ToString()) {
+                        Literal1.Text = GetName(dt.Rows[i]["UserName"]);
                         sb.Append("<div class=\"message-right clearfix\">");
                         sb.Append("<span class=\"name\">" + CurrentEmp.EmplName + "</span>");
                         sb.Append("<p class=\"message\"><i></i>" + dt.Rows[i]["Message"] + "</p>");
@@ -50,7 +51,9 @@ namespace ECommerce.Web.Manage.Companies {
                         //sb.Append("</div>");
                         //sb.Append("</li>");
                     }
-                    else {
+                    else
+                    {
+                        Literal1.Text = GetName(dt.Rows[i]["FromUser"]);
                         sb.Append("<div class=\"message-left clearfix\">");
                         sb.Append("<span class=\"name\">" + GetName(dt.Rows[i]["FromUser"]) + "</span>");
                         sb.Append("<p class=\"message\"><i></i>" + dt.Rows[i]["Message"] + "</p>");

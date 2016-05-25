@@ -69,7 +69,8 @@
                 <div class="control-group">
                     <label class="control-label" for="inputPassword"><span style="color: red;">*</span>借出时间：</label>
                     <div class="controls">
-                        <input type="text" id="txtBirthDay" placeholder="" runat="server" onfocus="WdatePicker()" />
+                        <asp:HiddenField ID="HiddenField2" runat="server" />
+                        <input type="text" id="txtBirthDay" placeholder="" runat="server" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'HiddenField1\')}'})" />
                     </div>
                 </div>
                 <div class="control-group">
